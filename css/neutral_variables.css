@@ -1,0 +1,17 @@
+:root {
+    --mainColor: #696969;
+    --mainColor60: #69696960;
+    --brighterColor: #969696;
+    --brightestColor: #cccccc;
+    --evenBrighter: #eeeeee;
+    --darkColor: #323232;
+    --darkerColor: #232323;
+    --evenDarker: #111111;
+    --white: #ffffff;
+    --white23: #ffffff23;
+
+    --logoColor: #db463e;
+
+    --hamburgerz: var(--white);
+    --showUI: fadeIn 0.6s ease forwards;
+}

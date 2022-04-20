@@ -1,0 +1,173 @@
+.logo, #BiiP_container {top: 9px !important}
+
+html, body {overflow: hidden}
+
+
+.wrapper {
+    margin: 76px 0 0 0;
+    border-top: 1px solid var(--white23);
+    border-bottom: 1px solid var(--white23);
+    width: 100%;
+    height: auto;
+    min-height: 69vh;
+    background: #232323;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    z-index: 6;
+    position: relative;
+}
+
+.wrapper nav {
+    width: 230px;
+    min-height: 69vh;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    z-index: 8;
+}
+.content {
+    padding: 43px 15px 15px 15px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: calc(100vh - 76px);
+    min-height: calc(100vh - 62px);
+    width: calc(100vw - 230px); z-index: 7; color: var(--white);
+    background: url(/svgs/pixel23.svg) repeat-y 0 0 #232323;
+    background-size: 1px 1px
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+.content {
+    scrollbar-width: thin;
+    scrollbar-color: transparent;
+}
+
+/* Chrome, Edge, and Safari */
+.content::-webkit-scrollbar {
+    width: 18px;
+}
+#index::-webkit-scrollbar {
+    width: 9px;
+}
+
+.content::-webkit-scrollbar-track, #index::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.content::-webkit-scrollbar-thumb, #index::-webkit-scrollbar-thumb {
+    background-color: #121212;
+    border-radius: 9px;
+    border: none;
+}
+.content:hover::-webkit-scrollbar-thumb, #index:hover::-webkit-scrollbar-thumb {background-color: #323232;}
+.content::-webkit-scrollbar-thumb:hover, #index::-webkit-scrollbar-thumb:hover {background-color: #696969;}
+
+a, a:visited {color: var(--white)}
+p {color: var(--brighterColor)}
+
+.wrapper nav a, .wrapper nav a:visited {font-size: 14px; color: var(--brighterColor); text-decoration: none; margin-top: 5px}
+.wrapper nav a:hover {text-decoration: underline;}
+
+header {height: 76px; padding: 0}
+/* HERE I need to refactor the header nav a bit, use fixed font sizes, heights, paddings, margins - it doesn't look good on all screen ratios otherwise and all the extra calculations from vw and vh is making the browser slow */
+header #nav {margin: 0; width: auto; height: 76px; align-items: center; align-content: center;}
+header #nav a, header #nav a:visited {
+    font-size: 14px; padding: 0 10px
+}
+#nav a i {margin: 0 auto 9px auto}
+#nav .genesisIcon img {width: 42px; height: 42px; margin: 0 auto 3px auto}
+
+#index {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: calc(100vh - 76px);
+}
+
+#index span {font-size: 14px; color: var(--brighterColor); cursor: pointer; margin-top: 5px}
+#index span:hover {text-decoration: underline; color: var(--white)}
+
+#index .H1 {font-size: 23px; font-weight: 700; margin-top: 30px; font-family: 'Dosis', Helvetica, Arial, sans-serif}
+#index .H2 {font-size: 16px; padding-left: 16px;}
+#index .H3 {font-size: 14px; padding-left: 30px;}
+#index .H4 {font-size: 12px; padding-left: 42px;}
+
+#index #h0 {margin-top: 0}
+
+#showSidebar, .showSidebar {display: none;}
+
+#breadcrumbs {
+    color: var(--brighterColor);
+    font-size: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--white23);
+    position: absolute;
+    top: 0;
+    width: calc(100% - 278px);
+    z-index: 13;
+    background: var(--darkerColor);
+}
+#breadcrumbs a, #breadcrumbs a:visited {text-decoration: none; color: var(--brighterColor);}
+#breadcrumbs a:hover {color: var(--white)}
+
+.recruitment_message {text-align: center}
+.join_us {margin: 60px auto; display: inline-block;}
+
+footer {background: none}
+
+.shareThis {margin: 0 0 23px 0; text-align: center;}
+.sharethis-inline-share-buttons {margin-bottom: 32px}
+.sharethis-inline-share-buttons > div {display: inline-block !important; margin-bottom: 9px}
+
+@media screen and (max-width: 959px) {
+    .logo {top: 0 !important}
+    .header-gradient {height: 62px}
+    header {z-index: 8; height: 100vh; display: flex !important}
+    header #nav a, header #nav a:visited {height: 9vh; padding: 2vh 5vw; font-size: 3vh}
+    #nav .genesisIcon img {width: 32px; height: 32px}
+    #BiiP_container {top: 5px !important}
+    .wrapper {margin: 62px 0 0 0;}
+    .wrapper nav {
+        width: 100% !important; position: fixed; left: -100%; transition: left 0.3s ease;
+        background: url(/svgs/pixel23.svg) repeat-y 100% 0 #232323;
+        background-size: 1px 1px
+    }
+    #index {max-height: calc(100vh - 62px); padding-top: 30px; padding-bottom: 30px}
+    #breadcrumbs {width: 100% !important; padding: 15px; border-bottom: 0; top: -1px; left: 0}
+    .content {width: 100vw !important; max-height: calc(100vh - 105px); background: none;}
+    .content p {padding: 15px 0;}
+    .content::-webkit-scrollbar {width: 15px;}
+    .content::-webkit-scrollbar-thumb {background: #696969}
+    .showSidebar {
+        position: fixed;
+        top: 68px;
+        right: -6px;
+        z-index: 9;
+        display: block;
+        width: 32px; height: 32px;
+        border-top-left-radius: 50%; border-bottom-left-radius: 50%;
+        transition: all 0.3s ease;
+        opacity: 0.69;
+        background: url(../svgs/search.svg) var(--white) no-repeat 50% 50%;
+        background-size: 16px 16px;
+        box-shadow: 0 0 15px #00000069;
+    }
+    .showSidebar.closeSearch {  /* add this from javascript cuz it doesn't dissapear on second click (close) */
+        background: url(../svgs/close.svg) var(--white) no-repeat 38% 50%;
+        background-size: 18px 18px;
+    }
+    .showSidebar:active {background-color: #db463e}
+    #showSidebar:checked + nav {left: 0}
+    #footer_nav {padding: 0}
+    footer div {padding: 0; margin-bottom: 23px}
+    .topFooter {margin-top: 23px}
+    copy {padding: 23px 0}
+}

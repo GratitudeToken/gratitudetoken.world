@@ -1,0 +1,57 @@
+<div class="wrapper">
+    <nav>
+        <a id="languageSelect"><i>{{lang-code}}</i>{{language}}</a>
+    </nav>
+    <div id="success"></div>
+    <div id="message"></div>
+    <a href="/" class="logo"><img src="/svgs/gratitude-token-logo.svg" style="width: 32px; height: 32px"/>{{home}}</a>
+    <img src="/img/SHIELD-Stargate.jpg" alt="Stargate" class="stargate"/>
+    <h1>{{join_puzzle}}</h1>
+    <form class="choose">
+        <div class="choices">
+            <h2>{{choose_role}}</h2>
+            <input type="radio" id="awareness" name="role">
+            <label class="choice" for="awareness">{{ac}}</label>
+            <input type="radio" id="code" name="role">
+            <label class="choice" for="code">{{cl}}</label>
+        </div>
+    </form>
+    <form class="awareness">
+        <label id="awarenessUserLabel" for="username">{{choose_username}}</label>
+        <input id="username" name="username" type="text" placeholder="{{user}}" pattern="^[a-z\d\-]{3,}$" minlength="3" maxlength="23" required>
+        <input id="awarenessSubmit" type="submit" value="{{send}}">
+    </form>
+    <form class="questions">
+        <label for="user-contact">{{contact_info}}</label>
+        <input id="user-contact" type="text" title="{{contact_title}}" placeholder="&#128231; / &#128241; / Discord ID" required>
+        <label for="question1">{{{q1}}}</label>
+        <textarea id="question1" name="question1" minlength="23" required></textarea>
+        <label for="question2">{{{q2}}}</label>
+        <textarea id="question2" name="question2" minlength="23" required></textarea>
+        <input id="questionsSubmit" type="submit" value="{{send}}">
+    </form>
+    <div id="awarenessMessage" class="message"></div>
+    <form class="code">
+        <label id="codeUserLabel" for="git-username">{{git_user}}</label>
+        <input id="git-username" name="git-username" type="text" placeholder="github ID" maxlength="23" required>
+        <input id="codeSubmit" type="submit" value="{{send}}">
+    </form>
+    <div class="puzzle">
+        <div class="heading">
+            <img src="/svgs/gratitude-token-logo-white.svg">
+            {{{puzzle_text}}}
+        </div>
+        <div class="answer"></div>
+        <div class="grid">
+            <button class="tile tile--1" style="--area:A"></button>
+            <button class="tile tile--2" style="--area:B"></button>
+            <button class="tile tile--3" style="--area:C"></button>
+            <button class="tile tile--4" style="--area:D"></button>
+            <button class="tile tile--5" style="--area:E"></button>
+            <button class="tile tile--6" style="--area:F"></button>
+            <button class="tile tile--7" style="--area:G"></button>
+            <button class="tile tile--8" style="--area:H"></button>
+            <div class="tile tile--empty" style="--area:I"></div>
+        </div>
+    </div>
+</div>

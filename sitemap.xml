@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+  <loc>https://gratitudetoken.world</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://gratitudetoken.world" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://gratitudetoken.world?lang=ro" />
+  <lastmod>2022-04-05T19:34:34+00:00</lastmod>
+  <priority>1</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://gratitudetoken.world/white-paper</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://gratitudetoken.world/white-paper" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://gratitudetoken.world/white-paper?lang=ro" />
+  <lastmod>2022-04-05T19:34:34+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://gratitudetoken.world/puzzle</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://gratitudetoken.world/puzzle" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://gratitudetoken.world/puzzle?lang=ro" />
+  <lastmod>2022-04-05T19:34:34+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://gratitudetoken.world/genesis</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://gratitudetoken.world/genesis" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://gratitudetoken.world/genesis?lang=ro" />
+  <lastmod>2022-04-05T19:34:34+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://gratitudetoken.world/shield</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://gratitudetoken.world/shield" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://gratitudetoken.world/shield?lang=ro" />
+  <lastmod>2022-04-05T19:34:34+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://gratitudetoken.world/media-release-kit</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://gratitudetoken.world/media-release-kit" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://gratitudetoken.world/media-release-kit?lang=ro" />
+  <lastmod>2022-04-05T19:34:34+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://gratitudetoken.world/license-copyright.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://gratitudetoken.world/license-copyright.html" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://gratitudetoken.world/licenta-drepturi-de-autor.html" />
+  <lastmod>2022-04-05T19:34:34+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+
+
+</urlset>

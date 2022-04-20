@@ -1,0 +1,201 @@
+html, body {margin: 0; padding: 0; width: 100%; min-height: 100vh; background: #000000; overflow: hidden}
+body * {box-sizing: border-box; transition: 0.3s all; font-family: Arial, sans-serif;}
+
+#translateBody {width: 100%; height: 100%;}
+
+#languageOptions {width: 100%; height: 100%; max-width: 100%; margin-top: 0; background: rgba(0,0,0,.95); position: fixed; top: 0; z-index: 99; display: none; justify-content: center; align-items: center; align-content: center; flex-direction: column; line-height: 2; font-size: 200%; color: #eeeeee}
+#languageOptions input {display: none}
+#languageOptions label {cursor: pointer; background: transparent !important}
+#languageOptions label:hover {color: #db463e}
+#languageOptions input:checked + label {color: #db463e !important}
+
+nav {
+position: fixed;
+top: 0;
+right: 0;
+}
+
+nav a,
+nav a:visited {
+color: #db463e;
+font-size: 16px;
+margin: 0;
+display: flex;
+align-items: center;
+align-content: center;
+justify-content: flex-start;
+padding: 15px;
+opacity: 0.69;
+cursor: pointer
+}
+nav a:hover {
+opacity: 1
+}
+nav a i {
+background: #db463e;
+color: #ffffff;
+padding: 5px;
+border-radius: 100%;
+margin-right: 10px;
+font-style: normal;
+}
+
+.wrapper {width: 100%; position: static; min-height: 100vh; text-align: center; background: url(/img/section4.jpg) no-repeat 50% 50% #232323; background-size: cover; color: #ffffff; display: flex; justify-content: center; align-items: center; align-content: center; flex-direction: column;}
+form {max-width: 469px; padding: 0 10px; line-height: 1.5; z-index: 1;}
+.questions {font-size: 14px}
+.logo, .logo:visited {display: inline-block; position: fixed; left: 15px; top: 15px; color: #ffffff; font-weight: bold; text-decoration: none; text-shadow: 0 0 15px #000000;}
+.choose a, .choose a:visited {text-decoration: none; color: #ffffff; text-shadow: 0 0 15px #000000;}
+.logo img {margin-right: 6px; margin-top: -2px; display: inline-block; vertical-align: middle;}
+.choice, input[type=submit] {display: inline-block; background: transparent; border: 1px solid #ffffff; color: #ffffff; border-radius: 23px; padding: 10px 15px; font-size: 16px; margin: 23px; cursor: pointer;}
+.choice:hover, input[type=submit]:hover, input[type=radio]:checked + label {background: #db463e !important; border-color: #db463e !important; color: #ffffff !important}
+.awareness, .code, .questions, .puzzle, input[type=radio] {display: none}
+input[type=text] {display: block; min-width: 230px; margin: 10px auto; border: 0; border-radius: 5px; padding: 10px}
+textarea {font-size: 14px; display: block; background: #ffffff90; border: 0; min-height: 150px; min-width: 320px; width: 69%; max-width: calc(100% - 30px); margin: 10px auto 23px auto; padding: 10px; border-radius: 5px; white-space: pre-wrap;}
+form {margin-top: 23px} .code, .awareness {margin-top: 10px}
+.choose {margin-top: 0}
+strong {font-size: 23px}
+h1, h2 {padding: 0; margin: 0; z-index: 1;}
+h1 {margin-bottom: 12px}
+h2 {font-weight: normal; font-size: 18px; margin: 10px 0}
+.stargate {
+    width: 80vh;
+    height: 80vh;
+    mix-blend-mode: luminosity; border-radius: 100%;
+    position: fixed;
+    margin: 0 auto;
+    animation: rotate 60s linear infinite;
+    opacity: 0.69;
+    pointer-events: none
+}
+
+.questions {padding: 15px; line-height: 1.5; text-shadow: 0 0 12px #000000;}
+
+.message, #success, .error {background: rgba(0,0,0,.9); color: #ffffff; font-size: 23px; padding: 32px; display: flex; justify-content: center; align-items: center; text-align: center; position: fixed; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; pointer-events: none; white-space: pre-line; z-index: 2;}
+.error {color:#ff2e23 !important}
+#success {text-align: left; transform: scale(6); flex-direction: column; z-index: 3; height: auto; min-height: 100%; position: absolute}
+.messageAnimation {animation: message 3.2s ease forwards}
+.successAnimation {animation: fadeIn 1s ease forwards}
+#awarenessMessage {z-index: 1; line-height: 1.5}
+
+.puzzle {
+    background: linear-gradient(hsl(360, 98%, 36%), hsl(360, 92%, 42%));
+    background-blend-mode: multiply;
+    width: 90vw;
+    max-width: 400px;
+    box-shadow:
+        0 .25em 1em 0 rgba(0,0,0,0.30),
+        inset .25em .25em 1em 0 hsl(360, 88%, 72%),
+        inset .15em .15em .2em 0 hsl(360, 88%, 72%),
+        inset -.25em -.25em 1em 0 hsl(360, 88%, 22%),
+        inset -.15em -.15em .2em 0 hsl(360, 88%, 2%);
+    border-radius: 1.2em;
+    padding: 1.4em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: .5em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.puzzle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    transform: rotate(-15deg) scale(2);
+    background: linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.12));
+}
+
+.puzzle > * {
+    z-index: 1;
+}
+
+.grid {
+    grid-column-end: span 3;
+    display: grid;
+    grid-gap: 2px;
+    grid-template-areas:
+        "A B C"
+        "D E F"
+        "G H I";
+    background: #ffffff;
+}
+
+.tile,
+.answer {
+    height: 0;
+    padding-bottom: 100%;
+    grid-area: var(--area, auto);
+    border: none;
+    background: url(/white-paper/img/biosphere.jpg);
+    background-size: 300%;
+}
+
+.tile {
+    cursor: pointer;
+}
+
+.tile--empty {
+    cursor: auto;
+}
+
+.tile[disabled] {
+    cursor: not-allowed;
+}
+
+.answer {
+    grid-column-end: span 1;
+    width: 100%;
+    justify-self: flex-end;
+    background-size: 100%;
+    box-shadow:
+        inset 0 0 0 .2em hsl(360, 90%, 26%);
+}
+
+.tile--empty { background: transparent;}
+.tile--1 { background-position: top left;}
+.tile--2 { background-position: top center;}
+.tile--3 { background-position: top right;}
+.tile--4 { background-position: center left;}
+.tile--5 { background-position: center;}
+.tile--6 { background-position: center right;}
+.tile--7 { background-position: bottom left;}
+.tile--8 { background-position: bottom center;}
+
+.heading {
+    align-self: center;
+    grid-column-end: span 2;
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 6px
+}
+.heading a, .heading a:visited {color: #ffffff; display: inline-block; margin-bottom: 6px; text-align: center;}
+.heading img {display: block; width: 32px; height: 32px; margin: 0 auto 9px auto;}
+
+#success table {width: 90%; max-width: 469px; font-size: 14px}
+#success table th {padding: 6px; border: 0; background: #ffffff32}
+#success table td {padding: 6px; font-weight: normal;  border: 0; background: #ffffff12}
+
+@keyframes message {
+    0% {opacity: 0}
+    10% {opacity: 1}
+    90% {opacity: 1; transform: scale(1)}
+    100% {opacity: 0; transform: scale(9)}
+}
+@keyframes rotate {
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
+@keyframes fadeIn {
+    0% {opacity: 0; transform: scale(6)}
+    100% {opacity: 1; transform: scale(1)}
+}
+@keyframes fadeOut {
+    0% {opacity: 1}
+    100% {opacity: 0}
+}
+@media screen and (max-width: 959px) {
+    .choice, input[type=submit] {font-size: 3.2vmin; margin: 2.3vmin;}
+}

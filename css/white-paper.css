@@ -1,0 +1,141 @@
+/* Overwriting some documentation CSS */
+
+.wrapper nav {width: 320px}
+.content {width: calc(100vw - 320px); min-height: calc(100vh - 105px);}
+#breadcrumbs {width: calc(100% - 370px);}
+
+
+/* white paper specific CSS */
+
+#white-paper {margin-top: 15px;}
+img {height: initial}
+page {
+    padding: 2em; /* these are my .page margins */
+    width: 44vw;
+    height: calc(44vw * 1.4142); /* This is for setting up the white-paper container to be at A4 ratio on any screen */
+    font-size: calc(44vw * 1.4142 / 54.0103); /* After days of tests and empty internet queries, I discovered the perfect font-size formula for responsive text on a A4 paper portrait ratio, on any screen, considering my above margins (padding); if you want to have smaller or bigger font sizes or for landscape ratios and margins, you also have to adjust the JavaScript variables */
+    line-height: 1.6;
+    margin: 0 auto 2em auto;
+    background:#ffffff;
+    color: #000000;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    z-index: 12;
+    white-space: pre-wrap;
+}
+.cover {white-space: normal;}
+page, page * {user-select: text; font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+
+.smaller1 {font-size: calc(43vw * 1.4142 / 54.0103) !important}
+.smaller2 {font-size: calc(41vw * 1.4142 / 54.0103) !important}
+
+.pageNumber {
+    position: absolute;
+    z-index: 14;
+    bottom: 0.6em;
+    right: 1em;
+    color: var(--logoColor);
+}
+
+.page h1, .page h2, .page h3, .page h4 {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 1em;
+    font-weight: bold;
+    display: inline;
+    text-transform: uppercase;
+    z-index: 13;
+}
+
+html[lang="RO"] #page0 h1 {font-size: 4em;}
+
+.centered {display: block; text-align: center; font-size: 1.5em}
+
+page a, page a:visited {color: #db463e}
+
+.page h1.fullWidth {width: 44vw; font-size: 1em; position: absolute; left: 0; display: flex; align-items: center; background: #db463e; color: #ffffff; line-height: 3.2em; text-transform: uppercase;}
+.page h1 img {display: inline-block; width: 1.5em; height: 1.5em; margin: 0 0.9em;}
+
+.top0 {top: -2.19em}
+
+.page h2 {font-size: 1.44em}
+.page h3 {font-size: 1.23em}
+.page h4 {font-size: 1.12em}
+
+.page img, .page iframe, .page video {width: 100%;}
+.page img.imgCenter {margin: 0 auto; display: block}
+.page img.fullWidth {position: absolute; left: 0; width: 44vw;}
+
+.stickTop {top: 0 !important}
+.stickBottom {bottom: 0 !important}
+
+iframe, video {width: calc(44vw - 4em); height: calc((44vw - 4em) * 0.5625)}
+
+table {width: 100%}
+table td {border: 1px solid #cccccc; padding: 1em; text-align: center;}
+table th {font-weight: bold; text-align: center;}
+
+.fullWidth iframe, .fullWidth video, div.fullWidth {width: 44vw; height: calc(44vw * 0.5625); position: absolute; left: 0; background: #232323}
+
+/* For Mobile */
+@media screen and (max-width: 959px) {
+    .content {min-height: calc(100% - 62px);}
+    #white-paper {width: calc(100vw - 30px); margin-top: 0;}
+    page {
+        width: calc(100vw - 30px);
+        height: calc((100vw - 30px) * 1.4142); /* For Mobile */
+        font-size: calc((100vw - 30px) * 1.4142 / 54.0103); /* For Mobile */
+    }
+    .smaller1 {font-size: calc((100vw - 40px) * 1.4142 / 54.0103) !important}
+    .smaller2 {font-size: calc((100vw - 52px) * 1.4142 / 54.0103) !important}
+    .page img.fullWidth, .page h1.fullWidth {width: calc(100vw - 30px)}
+    iframe, video {width: calc(100vw - 4em - 30px); height: calc((100vw - 4em -30px) * 0.5625);}
+    .fullWidth iframe, .fullWidth video, div.fullWidth {width: calc(100vw - 30px); height: calc((100vw - 30px) * 0.5625);}
+}
+
+#page0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #ffffff;
+    background: url(/white-paper/img/front-cover.jpg) no-repeat 50% 0;
+    background-size: cover
+}
+#page0 .firstCoverText {font-size: 1.5em; letter-spacing: 0.32em; margin-top: -4em}
+#page0 .thirdCoverText {font-size: 1.5em; letter-spacing: normal; text-transform: uppercase;}
+
+#page0 h1 {
+    margin: 3vmax auto;
+    text-align: center;
+    font-size: 4em;
+    display: block;
+    font-family: 'Dosis', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.23em;
+}
+#page0 p {font-size: 1.6em; text-align: center; color: rgba(255,255,255,.90); display: block; position: absolute; bottom: 0;}
+#page0 small {font-size: 0.66em}
+#page0 cite {text-shadow: 0 0 1em #fdff8e;}
+
+#page1 {
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover
+}
+
+
+
+
+@media print {
+    .wrapper nav, header, header nav, .header-gradient, .logo, #BiiP_container, footer, .join_us, #breadcrumbs, #starfield {display: none !important}
+    .cover, .page {
+        background-color: #ffffff;
+        width: 210mm;
+        height: 297mm;
+        overflow: visible !important
+    }
+}

@@ -1,0 +1,17 @@
+:root {
+    --mainColor: #db463e;
+    --logoColor: #db463e;
+    --mainColor60: #db463e60;
+    --brighterColor: #f15d55;
+    --brightestColor: #ffd6d4;
+    --evenBrighter: #fff7f7;
+    --darkColor: #b82f28;
+    --darkerColor: #3a0906;
+    --evenDarker: #180201;
+    --white: #ffffff;
+    --white23: #ffffff23;
+    
+    --hamburgerz: #db463e;
+    --logo: url(/svgs/gratitude-token-logo.svg) no-repeat 50% 50%;
+    --showUI: fadeIn 0.6s ease forwards;
+}
