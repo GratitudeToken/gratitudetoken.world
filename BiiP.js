@@ -1,7 +1,14 @@
-import { $, $$ } from '/modules/selector.js';
+var $ = function (selector, parent) {
+    return (parent ? parent : document).querySelector(selector);
+};
+// Get all matching elements
+var $$ = function (selector, parent) {
+    return (parent ? parent : document).querySelectorAll(selector);
+};
 
 
-let BiiP_UI = false;
+let selectedUser = {};
+let BiiP_UI_visible = false;
 let BiiP_element = $('BiiP');
 const BiiP_svg = `
 <svg class="BiiP_svg" viewBox="0 0 512 512">
@@ -209,178 +216,1408 @@ const BiiP_svg = `
     <path d="M282,210.2v-2.7h10.8v2.7H282z"/>
 </g>
 </svg>
-`
-const BiiP_account_svg = `
-<svg viewBox="0 0 300 300" fill="#db463e"><path d="M150 0C67.1 0 0 67.1 0 150s67.1 150 150 150 150-67.1 150-150S232.9 0 150 0zm0 45c24.8 0 45 20.2 45 45 0 24.9-20.2 45-45 45s-45-20.1-45-45c0-24.8 20.2-45 45-45zm0 213c-37.6 0-70.6-19.2-90-48.3.4-29.8 60.1-46.2 90-46.2s89.5 16.4 90 46.2c-19.4 29.1-52.4 48.3-90 48.3z"/></svg>
-`
-const BiiP_style = `
-<style>
-    #BiiP_wrapper {width: 100vw; height: 100vh; position: fixed; z-index: 2147483645 !important; top: 0; left: 0; display: flex; justify-content: center; align-items: center; align-content: center; animation: bgIn 1s forwards }
+`;
 
-    BiiP {z-index: 2147483646 !important; width: 6vh; height: 6vh; position: fixed; cursor: pointer; margin: 0 auto; top: 5px; left: 0; right: 0; transition: 1s all;
-    display: flex; justify-content: center; align-items: center; align-content: center}
 
-    BiiP .BiiP_svg {width: 6vh; height: 6vh; fill: #ffffff; border-radius: 51%; transition: 0.23s all ease-in}
-    BiiP .BiiP_svg:hover {box-shadow: 0 0 100px #ffffff69}
+// TO DO: the original position of the BiiP custom element must be specified with parameters by the Keeper and added inside the style element below (remove the current values inside below)
+const BiiP_style = `<style>
 
-    .BiiP_center {width: 23vh; height: 23vh; top: 38vh !important;}
-    .BiiP_center .BiiP_svg {width: 23vh; height: 23vh}
+.toggler {width: 24px; height: 12px; margin-right: 3px; border-radius: 14px; background: #ffffff09; display: inline-block; cursor: pointer; position: relative; padding: 1px; box-sizing: content-box; vertical-align: text-bottom}
+.toggler:after {content: ''; display: block; width: 12px; height: 12px; border-radius: 51%; background: gray; position: absolute; top: 1px; left: 1px; transition: 0.23s left}
+.toggler:hover:after {background: #ffffff}
+.togglerON {background: #28402c}
+.togglerON:after {background: #67c75c; left: 12px}
 
-    .BiiP_center .userCenter {z-index: 2147483647 !important; opacity: 1 !important; animation: selectUser 1s forwards ease-out}
+.shorty {width: 100%; height: 100%; font-size: 32px; top: 0; left: 0; right: 0; *background: #00000069; position: fixed; z-index: 99; display: flex; justify-content: center; align-items: center; align-content: center; color: #ffffff; pointer-events: none; font-weight: bold; text-transform: uppercase; text-shadow: 0 0 23px black; *animation: fadeOut 0s forwards; animation-delay: 1s}
+.shorty div {animation: shorty 1s forwards ease-in-out}
 
-    biip_message {margin: 15px; display: inline-block; top: -100vh; position: fixed; font-size: 14px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; line-height: 1.5; transition: 0.32s all}
-    biip_message b {font-size: 16px}
 
-    .showBiiP_message {top: 23px;}
 
-    biip_message button {background: transparent; border: 1px dashed #db463e69; border-radius: 10px; color: #ffffff; font-size: 16px; font-weight: bold; padding: 6px 12px; margin: 3px 10px; display: inline-block; transition: all 0.32s}
-    biip_message button:hover {background: #ffffff23; border: 1px solid #ffffff32}
+.small-icon, .tiny-icon {width: 32px; height: 32px; vertical-align: top; margin-right: 6px}
+.tiny-icon {width: 16px; height: 16px; vertical-align: middle}
+.grat, .grat:before {background: url(/svgs/gratitude-token-logo.svg)}
+.manual, .manual:before {background: url(/svgs/manual.svg)}
 
-    #BiiP_circle {
-        width: 320vh;
-        height: 320vh;
-        top: -240vh;
-        transform: rotate(-180deg); border-radius: 51%; position: fixed; border: 1px dashed #ffffff01; transition: 0.69s all;
-        z-index: 2147483647 !important;
-        pointer-events: none
-    }
-    .BiiP_center #BiiP_circle {border: 1px dashed #ffffff32}
+.icon {background-repeat: no-repeat; background-position: 0 50%; background-size: contain; padding-left: 32px; height: 22px; line-height: 23px; display: inline-block}
 
-    .BiiP_username {
-        position:absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        flex-direction: column;
-        top:50%;
-        left:50%;
-        width:9vh;
-        height:9vh;
-        margin-left:-4.5vh;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
+.grat-bg {background: url(/svgs/gratitude-token-logo.svg) no-repeat 12px 50%; padding-left: 36px !important; background-size: 16px}
+.grat-bg-left0 {background-position: 0 50%; padding-left: 23px !important}
+
+.pe-none {pointer-events: none !important}
+.rlv {position: relative}
+.ovf {overflow: hidden}
+.ovf-x {overflow-x: auto}
+.textCenter {text-align: center}
+.upp {text-transform: uppercase}
+.bld {font-weight: bold}
+
+.column {flex-direction: column}
+
+/* Tables */
+.transparentTable {width: 100%;}
+.transparentTable td {padding: 6px 0}
+.transparentTable .grat-bg {background-position: 0 50%; padding-left: 23px !important}
+.oddBG {width: 100%; border-spacing: 1px; border: 1px solid #ffffff09}
+.oddBG th {background-color: #ffffff09; padding: 6px 12px;}
+.oddBG td {padding: 6px 12px;}
+.oddBG tr:nth-of-type(odd) {background-color: #ffffff09}
+
+.grid1by2, .grid1by3, .grid1by4, .grid2by2, .grid2by1, .grid2by3, .grid2by4, .grid3by1, .grid3by2, .grid3by3 {display: grid; gap: 0;}
+
+.grid1by2 {
+    grid-template-rows: repeat(1, 1fr); grid-template-columns: repeat(2, 1fr);
+}
+.grid1by3 {
+    grid-template-rows: repeat(1, 1fr); grid-template-columns: repeat(3, 1fr);
+}
+.grid1by4 {
+    grid-template-rows: repeat(1, 1fr); grid-template-columns: repeat(4, 1fr);
+}
+.grid2by1 {
+    grid-template-rows: repeat(2, 1fr); grid-template-columns: repeat(1, 1fr);
+}
+.grid2by2 {
+    grid-template-rows: repeat(2, 1fr); grid-template-columns: repeat(2, 1fr);
+}
+.grid2by3 {
+    grid-template-rows: repeat(3, 1fr); grid-template-columns: repeat(2, 1fr);
+}
+.grid2by4 {
+    grid-template-rows: repeat(4, 1fr); grid-template-columns: repeat(2, 1fr);
+}
+.grid3by1 {
+    grid-template-rows: repeat(1, 1fr); grid-template-columns: repeat(3, 1fr);
+}
+.grid3by2 {
+    grid-template-rows: repeat(2, 1fr); grid-template-columns: repeat(3, 1fr);
+}
+.grid3by3 {
+    grid-template-rows: repeat(3, 1fr); grid-template-columns: repeat(3, 1fr);
+}
+.gap5 {gap: 5px} .gap10 {gap: 10px} .gap15 {gap: 15px} .gap23 {gap: 23px}
+.grid-span2rows {grid-row: span 2;}
+.grid-span2columns {grid-column: span 2;}
+.grid-span3rows {grid-row: span 3;}
+.grid-span3columns {grid-column: span 3;}
+
+.flex-row {display: flex; justify-content: flex-start; align-content: flex-start; align-items: flex-start}
+.f1 {flex: 1}
+
+.w230 {width: 230px}
+.w50 {width: 50%}
+.w100 {width: 100%}
+.h100 {height: 100%}
+.h-auto {height: auto}
+
+.p5 {padding: 5px}
+.p10 {padding: 10px}
+.p15 {padding: 15px}
+.p23 {padding: 23px}
+
+.pt5 {padding-top: 5px !important}
+.pt10 {padding-top: 10px !important}
+.pt15 {padding-top: 15px !important}
+.pt23 {padding-top: 23px !important}
+
+.pb5 {padding-bottom: 5px}
+.pb10 {padding-bottom: 10px}
+.pb15 {padding-bottom: 15px}
+.pb23 {padding-bottom: 23px}
+
+.pl5 {padding-left: 5px}
+.pl10 {padding-left: 10px}
+.pl15 {padding-left: 15px}
+.pl23 {padding-left: 23px}
+
+.m-auto {margin: 0 auto}
+
+.m5 {margin: 5px}
+.m10 {margin: 10px}
+.m15 {margin: 15px}
+.m23 {margin: 23px}
+
+.mt0 {margin-top: 0!important}
+.mr0 {margin-right: 0!important}
+.mb0 {margin-bottom: 0!important}
+.ml0 {margin-left: 0!important}
+
+.mt5 {margin-top: 5px}
+.mt10 {margin-top: 10px}
+.mt15 {margin-top: 15px}
+.mt23 {margin-top: 23px}
+
+.mr5 {margin-right: 5px}
+.mr10 {margin-right: 10px}
+.mr15 {margin-right: 15px}
+.mr23 {margin-right: 23px}
+
+.ml5 {margin-left: 5px}
+.ml10 {margin-left: 10px}
+.ml15 {margin-left: 15px}
+.ml23 {margin-left: 23px}
+
+.mb5 {margin-bottom: 5px}
+.mb10 {margin-bottom: 10px}
+.mb15 {margin-bottom: 15px}
+.mb23 {margin-bottom: 23px}
+
+.block {display: block}
+.none {display: none !important}
+.blockInside > * {display: block}
+.ib {display: inline-block}
+.br6 {border-radius: 6px}
+.br51 {border-radius: 51%}
+.font10 {font-size: 10px}
+.font12 {font-size: 12px}
+.font14 {font-size: 14px}
+.font16 {font-size: 16px}
+.font18 {font-size: 18px}
+.font20 {font-size: 20px}
+.font23 {font-size: 23px}
+.lh1 {line-height: 1}
+.lh12 {line-height: 1}
+.lh14 {line-height: 1.4}
+.lh16 {line-height: 1.6}
+.lh2 {line-height: 2}
+.lh3 {line-height: 3}
+
+.hop50:hover {opacity: .5}
+.hop69:hover {opacity: .69}
+.hop90:hover {opacity: .9}
+.crp {cursor: pointer}
+
+.c-F {color: #ffffff}
+.c-B9 {color: #b9b9b9}
+.c-lime {color: #82ff82}
+.c-red {color: #db463e}
+.c-gray {color: gray}
+.c-lgray {color: lightgray}
+.c-green {color: #04972a}
+.c-yellow {color: #f6ff77}
+.c-orange {color: #ff8d00}
+
+.newsLink, .newsLink:visited {border: 1px solid transparent; transition: border 0.32s}
+.newsLink:hover {border-color: #ffffff}
+
+.bg-green {background-color: #04972a}
+.bg23 {background-color: #232323}
+.bg-logo {background-color: #db463e}
+
+.btn100 {min-width: 100px}
+
+.btn {
+    border-radius: 6px;
+    color: #232323;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 9px 12px;
+    background-color: #ffffff;
+    border: 0;
+    transition: 0.23s all;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block !important;
+    cursor: pointer
+}
+.btn:hover {background-color: #db463e; color: #ffffff}
+.btn-green:hover {
+    background-color: #04972a
+}
+.btn-buy:hover {background-color: #ffaca8; color: #b52d25}
+
+.big-btn {
+    display: inline-block !important;
+    padding: 10px 23px;
+    border-radius: 23px;
+    border: 1px solid #ffffff23;
+    opacity: 0.69;
+    transition: 0.23s all;
+    cursor: pointer
+}
+.big-btn:hover {opacity: 1}
+
+.transparentInput {
+    background: none;
+    display: block;
+    border: 1px solid transparent;
+    margin: 0 auto 10px auto;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    width: calc(100% - 20px);
+    border-radius: 6px;
+    transition: all 0.32s
+}
+
+.transparentInput:hover {background-color: #ffffff12; border-color: #ffffff69}
+.transparentInput:focus {border-color: #ffffff}
+
+.tdInput {background: none; border: 1px solid #ffffff12; width: 100%; padding: 10px 5px; margin: 0; font-size: 12px; color: #ffffff; transition: all 0.23s}
+.tdInput:hover {border-color: #ffffff23; background-color: #ffffff12}
+.tdInput:focus {border-color: #ffffff32}
+
+.inputText {background: #ffffff12; border: 1px solid #ffffff23; padding: 6px 12px; outline: 0; color: #ffffff69}
+.inputText:hover {border-color: #ffffff69}
+.inputText:focus {color: #ffffff; border-color: #ffffff}
+
+#BiiP_wrapper {width: 100vw; height: 100vh; position: fixed; z-index: 999999997 !important; top: 0; left: 0; display: flex; justify-content: center; align-items: center; align-content: center; animation: bgIn 1s forwards }
+
+BiiP {z-index: 999999998 !important; width: 6vh; height: 6vh; position: fixed; cursor: pointer; margin: 0 auto; top: 8px; left: 0; right: 0; transition: 1s all;
+display: flex; justify-content: center; align-items: center; align-content: center}
+
+BiiP .BiiP_svg {width: 53px; height: 53px; fill: #ffffff; border-radius: 51%; transition: 0.23s all ease-in}
+BiiP .BiiP_svg:hover {box-shadow: 0 0 100px #ffffff69;}
+.BiiP_data_visible .BiiP_svg {left: 68px; position: fixed; width: 94px; height: 94px; top: 10px}
+
+
+.BiiP_center {width: 23vh; height: 23vh; top: 38vh !important;}
+.BiiP_center .BiiP_svg {width: 23vh; height: 23vh}
+
+biip_message {width: 100%; margin: 15px; padding: 23px; display: inline-block; top: -100vh; position: fixed; font-size: 14px; font-family: Helvetica, Arial, sans-serif; color: #db463e; line-height: 1.5; transition: 0.32s all}
+biip_message b {font-size: 16px; color: #ffffff}
+
+.showBiiP_message {top: 23px;}
+
+biip_message button {background-color: #db463e32; cursor: pointer; border: 1px solid #db463e69; border-radius: 10px; color: #db463e; font-size: 16px; font-weight: bold; padding: 6px 12px; margin: 3px 10px; display: inline-block; transition: all 0.32s; min-width: 110px;}
+biip_message button:hover {background-color: #ffffff23; color: #ffffff;
+    background-size: 72px;
+    background-position: 50% 0;
+    padding-left: 12px !important;
+    border-color: #db463e;
+}
+
+#BiiP_circle {
+    width: 320vh;
+    height: 320vh;
+    top: -240vh;
+    transform: rotate(-55deg);
+    border-radius: 51%;
+    position: fixed;
+    border: 690px solid #ffffff00;
+    transition: 0.69s all;
+    z-index: 999999999 !important;
+    pointer-events: none
+}
+.BiiP_center #BiiP_circle {border: 1px solid #ffffff32}
+
+.BiiP_username {
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    top:50%;
+    left:50%;
+    width:9vh;
+    height:9vh;
+    margin-left:-4.5vh;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100%;
+    border-radius:51%;
+    color: #ffffff;
+    transition: 0.23s all;
+    cursor: pointer;
+    z-index: 999999999 !important;
+    pointer-events: all
+}
+.BiiP_username:hover {z-index: 1 !important; box-shadow: 0 0 100px #ffffff69}
+
+.BiiP_username b {margin-bottom: -123px}
+
+.userCenter b {display: none}
+
+.selectedUser {
+    z-index: 9999999999 !important;
+    background-size: cover;
+    width: 54px;
+    height: 54px;
+    position: absolute;
+    margin: 0 0 0 3px;
+    top: 3px;
+    left: 0;
+    right: 0;
+    border-radius: 51%;
+    pointer-events: none;
+    transition: all 0.32s;
+    transform-origin: center center;
+    animation: biip 0.23s forwards ease-in;
+}
+
+.BiiP_center .selectedUser {width: 23vh; height: 23vh; top: 0; margin: 0}
+.BiiP_data_visible .selectedUser {position: fixed; left: 68px; top: 10px; width: 94px; height: 94px; margin: 0}
+
+.BiiP_svg .inner_sphere {animation: rotatecircleReverse 64s infinite linear; transform-origin: center;}
+.BiiP_svg .sphere {animation: rotatecircle 32s infinite linear; transform-origin: center;}
+.BiiP_svg .orbitals {animation: rotateShrinkGrow 5s infinite cubic-bezier(0, 0.54, 1, 1); transform-origin: 256px 256px; fill: #db463e90}
+
+@keyframes bgIn {
+    0% {}
+    100% {background: rgba(0,0,0,.99)}
+}
+
+@keyframes dataIn {
+    0% {}
+    100% {width: 100vw; height: 100vh}
+}
+
+@keyframes biip {
+    0% {}
+    12% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+}
+
+@keyframes shorty {
+    0% {transform: scale(3)}
+    10% {transform: scale(1); opacity: 1}
+    60% {transform: scale(1); opacity: 1}
+    100% {transform: scale(0) rotate(1000deg); opacity: 0}
+}
+
+@keyframes fadeOut {
+    100% {opacity: 0}
+}
+
+.BiiP_data {
+    background: #232323;
+    width: 0;
+    height: 0;
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    left: 0; right: 0;
+    z-index: 99999999 !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-direction: row;
+    animation: dataIn 0.23s forwards ease-in
+}
+
+.BiiP_data a, .BiiP_data a:visited {color: #ffffff}
+
+.BiiP_nav {width: 230px; height: 100%; z-index: 2; padding-top: 111px; background: #181818; border-right: 1px solid #ffffff23; transition: all 0.23s}
+.BiiP_nav button {box-shadow: none !important; text-align: left}
+.BiiP_mobile_nav_open {left: 0 !important}
+.BiiP_mobile_nav_open + .BiiP_content {overflow: hidden !important}
+
+.BiiP_content {width: 100%; height: 100%; flex: 1; text-align: left; font-size: 12px; display: grid; padding: 10px; gap: 0; grid-template-rows: repeat(2, 1fr); grid-template-columns: repeat(2, 1fr)}
+.BiiP_content > div {margin: 10px; background: #262626; padding: 23px; border-radius: 6px; display: flex; justify-content: flex-start; align-items: flex-start; align-content: flex-start; overflow: hidden; overflow-y: auto}
+.BiiP_content * {user-select: text}
+
+.BiiP_tab {border-radius: 0; font-size: 16px; display: block; border: 0; width: 100%; padding: 23px 23px 23px 42px; background: transparent; color: #ffffff; cursor: pointer; opacity: 0.32; transition: all 0.32s}
+.BiiP_tab:hover, .BiiP_tab.activeTab {opacity: 1 !important; background-color: #ffffff06 !important;}
+
+#identity {background: url(/svgs/user.svg)}
+#relations {background: url(/svgs/connections.svg)}
+#finance {background: url(/svgs/list-check.svg)}
+
+#identity, #relations, #finance {background-repeat: no-repeat; background-position: 10px 50%; background-size: 23px 23px}
+
+#address:disabled {cursor: pointer}
+#address:hover {color: #ffffff}
+
+#BiiP_close_data,
+#BiiP_burgers {
+    content: '';
+    width: 23px; height: 23px;
+    padding: 0;
+    display: block;
+    z-index: 3;
+    background: url(/svgs/close.svg) no-repeat 50% 50%;
+    background-size: 42px 42px;
+    transition: all 0.23s;
+    position: absolute;
+    top: 10px;
+    left: 195px;
+    border: 0;
+    cursor: pointer;
+    box-shadow: none
+}
+#BiiP_burgers {background: url(/svgs/burgers.svg) no-repeat 50% 50%; top: 17px; left: 23px; width: 32px; height: 32px; background-size: 32px 32px; display: none}
+.BiiP_burgers_clicked {transform: rotate(90deg);}
+
+#BiiP_close_data:hover {background-size: 23px 23px;}
+
+.avatar img {width: 100%; height: 100%; cursor: pointer}
+.editAvatar {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+    top: 0;
+    left: -100%;
+    transition: 0.23s all;
+    z-index: 10;
+    background: url(/svgs/camera.svg) no-repeat 50% 50% #00000050;
+    background-size: 32%
+}
+.avatar img:hover + .editAvatar {
+    left: 0
+}
+
+@media screen and (max-width: 1366px) {
+    .grid1by3 > * {grid-column: span 2}
+    .grid2by1 > * {grid-row: span 2}
+    .BiiP_content {width: 100%; position: relative; display: block; overflow: hidden; overflow-y: auto}
+}
+
+
+@media screen and (max-width: 959px) {
+    .mobile-ml0 {margin-left: 0}
+    .mobile-mt23 {margin-top: 23px}
+    .mobile-mt32 {margin-top: 32px}
+
+    .BiiP_nav {width: 240px; position: absolute; top: 0; left: -100%; padding-top: 64px; border: 0}
+    .BiiP_content {padding: 64px 0 0 0}
+    .BiiP_content > div {padding: 15px; margin: 0}
+    .BiiP_content:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 490px;
+        background: url(/img/electric-arc.webp) no-repeat 50% 50%;
         background-size: 100%;
-        border-radius:51%;
-        color: #ffffff;
-        transition: 0.32s all;
-        cursor: pointer;
-        opacity: 0.69;
-        z-index: 2147483647 !important;
-        pointer-events: all
+        position: fixed;
+        top: -215px;
+        z-index: 1;
+        mix-blend-mode: lighten;
+        pointer-events: none;
+        opacity: 0.8
     }
-    .BiiP_username:hover {opacity: 1; z-index: 2147483647 !important; }
+    .BiiP_content table {white-space: nowrap}
+    .BiiP_center {top: 35vh !important}
+    biip_message {font-size: 12px}
+    biip_message b, biip_message button {font-size: 14px}
+    BiiP, BiiP .BiiP_svg {width: 46px; height: 46px;}
+    .BiiP_data_visible .BiiP_svg, .BiiP_data_visible .selectedUser {width: 46px; height: 46px; top: 9px; left: 0; right: 0; margin: 0 auto}
+    .BiiP_nav_open .selectedUser, .BiiP_nav_open .BiiP_svg {left: 98px !important; margin: 0 !important}
+    #BiiP_burgers {display: block}
+    .BiiP_burgers_clicked {transform: rotate(90deg)}
+    .BiiP_center {opacity: 1 !important;}
+    .showBiiP_message {top: 0;}
+    .selectedUser {width: 46px; height: 46px; top: 0;}
+    .BiiP_data_visible .selectedUser {box-shadow: 0 0 23px #ffffff;}
+    .BiiP_center .selectedUser, .BiiP_nav_open .selectedUser {box-shadow: 0 0 0 #ffffff;}
+    .nextRowMobile {display: block; line-height: 3}
 
-    .BiiP_username b {margin-bottom: -123px}
+    #BiiP_close_data {top: 20px; right: 23px; left: auto;}
 
-    .BiiP_svg .inner_sphere {animation: rotatecircleReverse 64s infinite linear; transform-origin: center;}
-    .BiiP_svg .sphere {animation: rotatecircle 32s infinite linear; transform-origin: center;}
-    .BiiP_svg .orbitals {animation: rotateShrinkGrow 5s infinite cubic-bezier(0, 0.54, 1, 1); transform-origin: 256px 256px; fill: #db463e90}
+    #accessStatus {display: block; margin: 10px 0 0 10px}
 
-    @keyframes selectUser {
-        50% {transform: translateY(125vh) scale(1)}
-        60% {transform: translateY(125vh);}
-        100% {transform: translateY(125vh) scale(23);}
-    }
+    .m-block {display: block; margin-top: 15px}
 
-    @keyframes bgIn {
-        0% {}
-        100% {background: rgba(0,0,0,.99)}
-    }
+    /* grid system */
+    .grid1by4 {grid-template-rows: repeat(2, 1fr); grid-template-columns: repeat(2, 1fr); gap: 23px}
+    .grid1by3 > * {grid-column: span 3;}
+    .grid2by4, .grid2by1, .grid1by2 > div {display: block}
+    .grid2by4 > div {margin-top: 23px}
+    .grid2by4 > div:first-of-type {margin-top: 0}
+    .grid3by2 > div {grid-column: span 3;}
+}
 
-    @media screen and (max-width: 959px) {
-        .BiiP_center {top: 35vh !important}
-        biip_message {font-size: 12px}
-        biip_message b, biip_message button {font-size: 14px}
-        BiiP, BiiP .BiiP_svg {width: 50px; height: 50px;}
-        .BiiP_center {opacity: 1 !important;}
-        .showBiiP_message {top: 0;}
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    BiiP, BiiP .BiiP_svg {width: 46px; height: 46px}
+    biip_message {line-height: 1}
+    .BiiP_username b {font-size: 12px; margin-bottom: -60px}
+}
 
-        @keyframes selectUser {
-            50% {transform: translateY(122vh) scale(1)}
-            60% {transform: translateY(122vh);}
-            100% {transform: translateY(122vh) scale(23);}
-        }
-    }
 
-    @media screen and (orientation: landscape) and (max-height: 500px) {
-        BiiP, BiiP .BiiP_svg {width: 50px; height: 50px}
-        biip_message {line-height: 1}
-        .BiiP_username b {font-size: 12px; margin-bottom: -60px}
-    }
+/* Chrome, Edge, and Safari */
+.BiiP_content > div::-webkit-scrollbar {
+    width: 9px;
+}
 
-    /* make animation, after selecting an identity, the circle avatar will go to the middle of the screen and then increase zize while fading away, to simulate going towards viewer */
-</style>
-`
+.BiiP_content > div::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.BiiP_content > div::-webkit-scrollbar-thumb {
+    background-color: #323232;
+    border-radius: 9px;
+    border: none;
+}
+.BiiP_content > div:hover::-webkit-scrollbar-thumb {background-color: #555555;}
+.BiiP_content > div::-webkit-scrollbar-thumb:hover {background-color: #969696;}
+
+</style>`;
 
 const msg1 = `
 <biip_message>
-<b>You don't seem to have a BiiP link to ` + window.location.hostname + ` on this computer.</b><br><br>
-Select an identity or create a <button id="create_GRAT">GRAT Account</button> to authenticate.
+    <b style="display: none">You don't seem to have a BiiP link to ` + window.location.hostname + ` on this device.</b><br>
+    <span class="nextRowMobile">Select a user or create a new </span><button id="create_GRAT" class="grat-bg">address</button><span class="nextRowMobile"> to authenticate.</span><br><br>
+    <span class="c-F font10 mobile-hide"><b class="font10">[ TIPS ]</b> Use CTRL + B to toggle the BiiP user interface and Escape to close it.</span>
 </biip_message>
 `;
 
 // dummy content
-const usernames = ['lucian', 'catalina', 'daniel', 'maria'];
+const usernames = [
+    {
+        u: 'lucian',
+        blocked: 0
+    },
+    {
+        u: 'catalina',
+        blocked: 0
+    },
+    {
+        u: 'daniel',
+        blocked: 0
+    },
+    {
+        u: 'maria',
+        blocked: 0
+    }
+];
 
-export const BiiP = function(){
-    BiiP_element.innerHTML += BiiP_svg + BiiP_style + '<div id="BiiP_circle"></div>';
+// let's split things into the 3 main categories, each with it's own template literal
+class allData {
+    // this is the main template literal for the BiiP data of the selected user
+    biip_template = (data) => `
+    <button id="BiiP_burgers" title="Toggle BiiP UI Navigation"></button>
+    <button id="BiiP_close_data" title="Press Escape key"></button>
+    <div class="BiiP_nav rlv">
+        <input type="text" class="transparentInput" value="${data}" maxlength="23" />
+        <button id="update" title="Updates your Biospheric Identity" class="bg-green big-btn textCenter c-F font14 upp bld">Update BiiP</button>
+        <div id="balance" class="textCenter m10 pb10 mt23 font12 c-B9">
+            Tokens of Gratitude:<br>
+            <div class="icon grat mt10 mb23 font18 bld c-F">23,000.<small>000</small></div><br>
+            GRAT address:<br>
+            <input id="address" type="text" title="Click / Touch to copy" class="w100 inputText block mt10 font10 br6" value="0xf16530b6741bCF6F2081Cd8ca9A7A92F4caAcB74" maxlength="42" disabled />
+        </div>
+        <button id="identity" class="BiiP_tab activeTab">Identity</button>
+        <button id="relations" class="BiiP_tab">Relations</button>
+        <button id="finance" class="BiiP_tab">Finance</button><br><br>
+        <a href="#" class="icon manual">BiiP Manual</a><br><br>
+        <span class="c-gray font12">BiiP v1.0 (beta)</span>
+    </div>
+    <div class="BiiP_content lh14">
+    </div>
+    `; // TO DO: copy address to clipboard on click/touch using something like navigator.clipboard.writeText(value) - also display a tooltip showing the message: "Copied to clipboard." - that fades away in 3 seconds
 
-    // show stuff on <BiiP> element click
-    $('.BiiP_svg').addEventListener('click', event => {
-        if (!BiiP_UI) {
-            BiiP_UI = true;
+    identity = (data) => `
+    <div class="pt15 column grid-span2rows c-B9">
+        <h2 class="font23 c-F">Personal Information</h2><br>
+        <div class="grid2by4 gap23 w100">
+            <div>
+                <label for=""><i class="toggler"></i> Name (pronoun):</label>
+                <input type="text" class="w100 mt5 inputText block font14 br6" value="" placeholder="Your name" maxlength="32" />
+            </div>
+            <div>
+                <label for=""><i class="toggler"></i> Family name (Surname):</label>
+                <input type="text" class="w100 mt5 inputText block font14 br6" value="" placeholder="Your family name" maxlength="23" />
+            </div>
+            <div>
+                <label for="" class=""><i class="toggler"></i> Date of birth:</label>
+                <input type="date" placeholder="dd-mm-yyyy" style="color-scheme: dark;" class="w100 mt5 inputText block font14 br6" value="" />
+            </div>
+            <div>
+                <label for=""><i class="toggler"></i> Sex:</label>
+                <select class="w100 mt5 inputText block font14 br6">
+                    <option class="bg23" value="" disabled selected>Select</option>
+                    <option class="bg23" value="f">Female</option>
+                    <option class="bg23" value="m">Male</option>
+                    <option class="bg23" value="o">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for=""><i class="toggler"></i> Email #1:</label>
+                <input type="email" class="w100 mt5 inputText block font14 br6" value="${data}@gratitudetoken.world" placeholder="email" maxlength="42" />
+            </div>
+            <div>
+                <label for="" class=""><i class="toggler"></i> Email #2:</label>
+                <input type="email" class="w100 mt5 inputText block font14 br6" value="${data}@biosphere.media" placeholder="email" maxlength="42" />
+            </div>
+            <div>
+                <label for="" class=""><i class="toggler"></i> Mobile number #1:</label>
+                <input type="tel" class="w100 mt5 inputText block font14 br6" value="0040723692369" max="15" />
+            </div>
+            <div>
+                <label for="" class=""><i class="toggler"></i> Mobile number #2:</label>
+                <input type="tel" class="w100 mt5 inputText block font14 br6" value="" max="15" />
+            </div>
+        </div>
+        <div class="grid3by2 gap23 mt23 w100">
+            <div>
+                <label for="" class=""><i class="toggler"></i> Country of residence:</label>
+                <input type="text" class="w100 mt5 inputText block font14 br6" value="Romania" max="23" />
+            </div>
+            <div>
+                <label for="" class=""><i class="toggler"></i> City of residence:</label>
+                <input type="text" class="w100 mt5 inputText block font14 br6" value="Bucharest" max="23" />
+            </div>
+            <div>
+                <label for="" class=""><i class="toggler"></i> County of residence:</label>
+                <input type="text" class="w100 mt5 inputText block font14 br6" value="Ilfov" max="23" />
+            </div>
+            <div class="grid-span2columns">
+                <label for="" class=""><i class="toggler"></i> Street name:</label>
+                <input type="text" class="w100 mt5 inputText block font14 br6" value="Bulevardul Unirii" max="32" /> 
+            </div>
+            <div>
+                <label for="" class=""><i class="toggler"></i> Post code:</label>
+                <input type="text" class="w100 mt5 inputText block font14 br6" value="369369" max="23" />
+            </div>
+            <div>
+                <label for="" class=""><i class="toggler"></i> Street number:</label>
+                <input type="text" class="w100 mt5 inputText block font14 br6" value="232" max="7" />
+            </div>
+            <div>
+                <label for="" class=""><i class="toggler"></i> Floor:</label>
+                <input type="text" class="w100 mt5 inputText block font14 br6" value="9" max="3" />
+            </div>
+            <div>
+                <label for="" class=""><i class="toggler"></i> Apartment:</label>
+                <input type="text" class="w100 mt5 inputText block font14 br6" value="23" max="7" />
+            </div>
+            <div class="grid-span3columns mt15">
+                <h2 class="font23 c-F">Biospheric Identity stats</h2><br>
+                <div class="lh2">
+                    Allow access: <i class="toggler"></i><br>
+                    Date of Biospheric Identity link creation: <b>09-03-2022</b><br>
+                    Biospheric Identities sharing this GRAT address: <b>4</b><br>
+                    Queries from this keeper (for ${data}): <b>23</b><br>
+                    Queries from everyone (for ${data}): <b>120</b><br>
+                    Queries from this keeper (for all identities): <b>230</b><br>
+                    Queries from everyone (for  all identities): <b>12,000</b><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="colorB9">
+        <div class="grid1by2 gap23 w100">
+            <div class="flex-row grid-span2columns">
+                <div class="avatar rlv ovf br6 w230">
+                    <img class="block br6" src="/img/${data}.jpg">
+                    <div class="editAvatar br6 m-auto pe-none"></div>
+                </div>
+                <div class="f1 ml23 mobile-mt23 mobile-ml0">
+                    <div class="info font12 block-inside lh2 c-B9">
+                        Allow access: <i class="toggler togglerON"></i><br>
+                        Max file size: <b>1 MB</b><br>
+                        Max image dimensions: <b>1000px</b> by <b>1000px</b><br>
+                        Allowed formats: <b>JPG, PNG, GIF, SVG</b><br>
+                        <button class="btn btn100 m10 ml0">Crop image</button> 
+                        <button class="btn btn100 m10 ml0">Download</button><br class="mobile-hide">
+                        <button class="btn btn100 m10 ml0">NFT Avatar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-span2columns c-B9">
+                Biospheric ID: <b class="c-F">${data}.0xf16530b6741bCF6F2081Cd8ca9A7A92F4caAcB74</b><br><br>
+                <label for=""><i class="toggler"></i> Bio:</label>
+                <textarea style="min-height: 230px; max-height: 320px; max-width: 100%" class="w100 mt5 inputText block font14 br6" maxlength="1000" />
+Working heroically on the technology of Gratitude - with the mission to decentralize all the value derived from our biospheric digital selves.
+
+"The body heals with play, the mind heals with laughter and the spirit heals with joy."</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="pt15 c-B9">
+        <div id="keeperBlocking" class="lh2 w100">
+            <h2 class="font23 c-F lh14"><img class="small-icon" src="/svgs/gratitude-token-logo.svg" /> Keeper ${window.location.hostname}</h2>
+            <b id="accessStatus" class="c-lime">[ FULL ACCESS ]</b> <button id="blockAccess" class="btn m10" title="BLOCK / UNBLOCK">Block All</button> <span class="c-gray">access to this Gratitude Token address.</span><br>
+            <h3 class="font16">Quick Permissions:</h3>
+            <div class="ovf-x">
+                <table id="permissions" class="oddBG lh1">
+                    <tr>
+                        <th>Username</th><th>Personal info shared</th><th>Keeper access</th>
+                    </tr>
+                    <tr>
+                        <td>maria</td>
+                        <td>1/20</td>
+                        <td><i id="${data}" class="toggler togglerON"></i></td>
+                    </tr>
+                    <tr>
+                        <td>daniel</td>
+                        <td>1/20</td>
+                        <td><i id="${data}" class="toggler togglerON"></i></td>
+                    </tr>
+                    <tr>
+                        <td>catalina</td>
+                        <td>1/20</td>
+                        <td><i id="${data}" class="toggler togglerON"></i></td>
+                    </tr>
+                    <tr>
+                        <td>lucian</td>
+                        <td>1/20</td>
+                        <td><i id="${data}" class="toggler togglerON"></i></td>
+                    </tr>
+                </table>
+            </div><br>
+        </div>
+    </div>
+    `;
+    relations = (data) => `
+<div class="pt15 grid-span2rows">
+    <div class="grid2by1 gap23 w100 h100">
+        <div>
+            <h2 class="font23 c-F">BiiP News</h2><br>
+            <span class="c-gray">Latest news from the team at <a href="">gratitudetoken.world</a> verified through BiiP.</span><br>
+            <div class="grid3by2 gap10 mt23">
+                <div><a class="newsLink block br6" href=""><img class="w100 h-auto block br6" src="/img/launch.gif"></a></div>
+                <div class="grid-span2columns pl10">
+                    <h2><a href="">GratitudeToken.world launch</a></h2>
+                    <p class="lh2 c-lgray"><b class="font14">#1 Milestone:</b><br>On 9 of March 2022 the first milestone from the roadmap of the GratitudeToken.world initiative was completed successfully.<br>
+                    The team celebrated the event and also my birthday at the same time.<br>
+                    We are all very grateful to be part of this revolution!</p>
+                </div>
+                <div><a class="newsLink block br6" href=""><img class="w100 h-auto block br6" src="/img/milestone-2.webp"></a></div>
+                <div class="grid-span2columns pl10">
+                    <h2><a href="">Gratitude & BiiP UI (User Interface)</a></h2>
+                    <p class="lh2 c-lgray"><b class="font14">#2 Milestone:</b><br>The second milestone was completed early, before the deadline.<br>
+                    The UI is very important for BiiP because it will show just how easy it is to govern your decentralized personal information and finance, on any website or app.<br>
+                    <a href="">Check out the video in the article!</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="w100 mobile-mt32">
+            <h2 class="font23 c-F">Other Keepers for this address</h2><br>
+            <span class="c-gray">Other websites / apps that have partial or full access to your personal information and finances for this address:</span><br>
+            <div class="ovf-x">
+                <table class="oddBG mt10 mb23">
+                    <tr><th>Name</th><th>Access</th><th>Blocked?</th></tr>
+                    <tr><td>biosphere.media</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>facebook.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>twitter.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>linkedin.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>substack.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>reddit.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>kickstarter.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>whatsapp</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>google.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pt15 grid-span2rows">
+    <div class="w100">
+        <h2 class="font23 c-F"><img class="small-icon" src="/svgs/gratitude-token-logo.svg" /> Initial DEX Offering</h2>
+        <div class="c-gray mt15">You will only be able to invest in GRAT tokens during the Initial Offering that will last a minimum of 1 year. Small liquidity pools will be inevitably created on DEXes by other people, but the best price / token will always be here during the Initial Offering.</div><br>
+        <h3>IDO order history:</h3>
+        <div class="ovf-x">
+            <table class="oddBG lh1 mt5">
+                <tr><th>Amount</th><th>Order Number</th><th>Date</th><th>Status</th><th>TX</th></tr>
+                <tr><td class="grat-bg">100.<small>000</small></td><td>#123</td><td>03/06/2023 20:30:00</td><td class="c-lime">Complete</td><td><a href="">Explore</a></td></tr>
+                <tr><td class="grat-bg">22,900.<small>000</small></td><td>#124</td><td>03/07/2023 20:30:00</td><td class="c-lime">Complete</td><td><a href="">Explore</a></td></tr>
+                <tr><td class="grat-bg">10.<small>000</small></td><td>#125</td><td>03/23/2023 20:30:00</td><td class="c-yellow">Pending</td><td>N/A</td></tr>
+            </table>
+        </div><br>
+        <button id="newOrder" class="grat-bg btn btn-buy mr10 mt10" title="Order GRAT Tokens">NEW ORDER</button> <span class="m-block"><b>Need support?</b> Send us an email at <a href="mailto:ido@gratitudetoken.world">ido@gratitudetoken.world</a></span><br><br>
+        <span class="c-gray">Watch the video below for a more in depth explanation about how to invest wisely in the Gratitude Token and what you will be able to use it for.</span><br><br>
+        <div class="rlv crp"><img class="w100 h-auto" src="/img/homepage.jpg"/>
+        <img style="position: absolute; left: 0; right: 0; margin: 23% auto; z-index: 10; width: 64px; height: 64px" src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Youtube-256.png"/></div><br><br>
+
+        <div class="textCenter">[ This content is specific to the Keeper you are currently on ]</div>
+    </div>
+</div>
+`;
+    finance = (data) => `
+<div class="pt15 grid-span2columns">
+    <div class="grid2by1 gap23 w100 h100">
+        <div class="w100">
+            <h2 class="font23 c-F">Financial Governance</h2><br>
+            <div class="grid1by4">
+                <div>
+                    <b>From ${window.location.hostname}</b><br>
+                    <div class="grat-bg grat-bg-left0 mt10 c-lime">23,000.<small>000</small></div>
+                </div>
+                <div>
+                    <b>Spent on ${window.location.hostname}</b><br>
+                    <div class="grat-bg grat-bg-left0 mt10 c-red">0.<small>000</small></div>
+                </div>
+                <div>
+                    <b>Deposited</b><br>
+                    <div class="grat-bg grat-bg-left0 mt10 c-lime">6090.<small>000</small></div>
+                </div>
+                <div>
+                    <b>Withdrawn</b><br>
+                    <div class="grat-bg grat-bg-left0 mt10 c-red">8,250.<small>000</small></div>
+                </div>
+            </div><br><br><br>
+            <h3>Spending amount limits:</h3>
+            <table class="oddBG lh1 mt5">
+                <tr>
+                    <th class="grat-bg">Daily</th><th class="grat-bg">Weekly</th><th class="grat-bg">Monthly</th><th class="grat-bg">Yearly</th>
+                </tr>
+                <tr>
+                    <td><input class="tdInput" type="number" value="10" step="0.001" /></td>
+                    <td><input class="tdInput" type="number" value="23" step="0.001" /></td>
+                    <td><input class="tdInput" type="number" value="230" step="0.001" /></td>
+                    <td><input class="tdInput" type="number" value="2300" step="0.001" /></td>
+                </tr>
+            </table>
+            <br><br>
+            <h3>Spending transaction limits:</h3>
+            <div class="grid1by3">
+                <table class="oddBG lh1 mt5">
+                    <tr>
+                        <th class="grat-bg">Max amount / TX</th><th>TX / day</th>
+                    </tr>
+                    <tr>
+                        <td><input class="tdInput" type="number" value="1" step="0.001" /></td>
+                        <td><input class="tdInput" type="number" value="10" step="1" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pt15 grid-span2columns">
+    <div class="w100">
+        <h2 class="font23 c-F">Transaction History</h2><br>
+        <div class="ovf-x">
+            <table class="oddBG lh1 mt5 w100">
+                <tr>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>TX ID</th>
+                    <th>Initiator</th>
+                    <th>Action</th>
+                    <th>I/O</th>
+                </tr>
+                <tr class="tx-in">
+                    <td class="grat-bg">100.<small>000</small></td>
+                    <td>03/06/2023 20:30:00</td>
+                    <td><a href="" target="_blank">A8EE07F7</a></td>
+                    <td>gratitudetoken.world</td>
+                    <td>IDO investment</td>
+                    <td class="c-lime">In</td>
+                </tr>
+                <tr class="tx-in">
+                    <td class="grat-bg">22,900.<small>000</small></td>
+                    <td>03/06/2023 20:30:00</td>
+                    <td><a href="" target="_blank">A8EE07F7</a></td>
+                    <td>gratitudetoken.world</td>
+                    <td>IDO investment</td>
+                    <td class="c-lime">In</td>
+                </tr>
+                <tr class="tx-in">
+                    <td class="grat-bg">2030.<small>000</small></td>
+                    <td>03/06/2023 20:30:00</td>
+                    <td><a href="" target="_blank">A8EE07F7</a></td>
+                    <td>Other address</td>
+                    <td>Transfer</td>
+                    <td class="c-lime">In</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">2030.<small>000</small></td>
+                    <td>03/06/2023 20:59:00</td>
+                    <td><a href="" target="_blank">B8EE97F9</a></td>
+                    <td>This address</td>
+                    <td>Transfer</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-in">
+                    <td class="grat-bg">2030.<small>000</small></td>
+                    <td>03/06/2023 20:30:00</td>
+                    <td><a href="" target="_blank">A8EE07F7</a></td>
+                    <td>Other address</td>
+                    <td>Transfer</td>
+                    <td class="c-lime">In</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">2030.<small>000</small></td>
+                    <td>03/06/2023 20:59:00</td>
+                    <td><a href="" target="_blank">B8EE97F9</a></td>
+                    <td>This address</td>
+                    <td>Transfer</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-in">
+                    <td class="grat-bg">2030.<small>000</small></td>
+                    <td>03/06/2023 20:30:00</td>
+                    <td><a href="" target="_blank">A8EE07F7</a></td>
+                    <td>Other address</td>
+                    <td>Transfer</td>
+                    <td class="c-lime">In</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">2030.<small>000</small></td>
+                    <td>03/06/2023 20:59:00</td>
+                    <td><a href="" target="_blank">B8EE97F9</a></td>
+                    <td>This address</td>
+                    <td>Transfer</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-in">
+                    <td class="grat-bg">2030.<small>000</small></td>
+                    <td>03/06/2023 20:30:00</td>
+                    <td><a href="" target="_blank">A8EE07F7</a></td>
+                    <td>Other address</td>
+                    <td>Transfer</td>
+                    <td class="c-lime">In</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">2030.<small>000</small></td>
+                    <td>03/06/2023 20:59:00</td>
+                    <td><a href="" target="_blank">B8EE97F9</a></td>
+                    <td>This address</td>
+                    <td>Transfer</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">10.<small>000</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>SHIELD</td>
+                    <td>Staking</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">0.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Reaction</td>
+                    <td class="c-red">Out</td>
+                </tr>
+                <tr class="tx-out">
+                    <td class="grat-bg">1.<small>230</small></td>
+                    <td>03/23/2023 20:59:00</td>
+                    <td><a href="" target="_blank">O8EE97F6</a></td>
+                    <td>biosphere.media</td>
+                    <td>Share</td>
+                    <td class="c-lime">In</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+`;
+}
+
+let addressBlocked = 0;
+
+// short messages system
+let shortMessages = function(el) {
+    el.forEach((el) => {
+        el.addEventListener('click', event => {
+            el.classList.toggle('togglerON');
+            const toggledON = el.classList.contains('togglerON');
+            toggledON ? $('.shortMessage').innerHTML = '<div class="shorty"><div>Enabled</div></div>' : $('.shortMessage').innerHTML = '<div class="shorty"><div>Disabled</div></div>';
+
+            let count = 0;
+            // count toggled switches if contains .togglerON class
+            $$('#permissions .toggler').forEach((item) => {
+                item.classList.contains('togglerON') ? count += 1 : null;
+            });
+            // these conditions are for Relations section (Quick Permissions)
+            if ($('#identity').classList.contains('activeTab')) {
+                // then set addressBlocked variable to correct value
+                if (count === 0) {
+                    addressBlocked = 1;
+                    $('#accessStatus').textContent = '[ ALL BLOCKED ]';
+                    $('#accessStatus').classList.remove('c-orange');
+                    $('#accessStatus').classList.remove('c-lime');
+                    $('#accessStatus').classList.add('c-red');
+
+                    $('#blockAccess').textContent = 'UNBLOCK ALL';
+                    $('#blockAccess').classList.add('btn-green');
+                }
+                if (count === usernames.length) {
+                    addressBlocked = 0;
+                    $('#accessStatus').textContent = '[ FULL ACCESS ]';
+                    $('#accessStatus').classList.remove('c-orange');
+                    $('#accessStatus').classList.remove('c-red');
+                    $('#accessStatus').classList.add('c-lime');
+
+                    $('#blockAccess').textContent = 'BLOCK ALL';
+                    $('#blockAccess').classList.remove('btn-green');
+                } 
+                if (count > 0 && count < usernames.length) {
+                    addressBlocked = 2;
+                    $('#accessStatus').textContent = '[ PARTIALLY BLOCKED ]';
+                    $('#accessStatus').classList.remove('c-lime');
+                    $('#accessStatus').classList.remove('c-red');
+                    $('#accessStatus').classList.add('c-orange');
+
+                    $('#blockAccess').classList.remove('btn-green');
+                    $('#blockAccess').textContent = 'BLOCK ALL';
+                }
+            }
+
+        });
+    });
+}
+
+let blockBTN = function(el) {
+    // block current Keeper's access to all usernames for this address
+    el.addEventListener('click', event => {
+        $('#accessStatus').classList.remove('c-orange');
+
+        // I check to see if any of the users are already blocked or unblocked
+        $$('#permissions .toggler').forEach((item, i) => {
+            addressBlocked === 0 || addressBlocked === 2 ? item.classList.remove('togglerON') : item.classList.add('togglerON');
+        });
+
+        if (addressBlocked === 0 || addressBlocked === 2) {
+            addressBlocked = 1;
+            $('#accessStatus').textContent = '[ ALL BLOCKED ]';
+            el.textContent = 'UNBLOCK ALL';
+            el.classList.add('btn-green'); // make button bg green for unblocking
+            $('#accessStatus').classList.add('c-red');
+            $('#accessStatus').classList.remove('c-green');
+        } else {
+            addressBlocked = 0;
+            $('#accessStatus').textContent = '[ FULL ACCESS ]';
+            el.textContent = 'BLOCK ALL';
+            el.classList.remove('btn-green'); // make bg red (default)
+            $('#accessStatus').classList.add('c-lime');
+            $('#accessStatus').classList.remove('c-red');
+        }
+    });
+}
+
+const hideMobileNav = () => {
+    // hide the mobile BiiP navigation and stuff
+    document.body.classList.remove('BiiP_nav_open');
+    if ($('.BiiP_nav')) {
+        $('.BiiP_nav').classList.remove('BiiP_mobile_nav_open');
+        $('#BiiP_burgers').classList.remove('BiiP_burgers_clicked');
+        $('.BiiP_nav_open') ? $('.BiiP_content').scrollTop = 0 : null;
+    }
+}
+
+
+
+// a function to populate the data from the selected user
+let showData = function() {
+    const callData = new allData;
+    // show the data for this selected user
+    $('.BiiP_data') ? $('.BiiP_data').remove() : null;
+    document.body.style.overflow = 'hidden';
+    let data_div = document.createElement('div');
+    data_div.classList.add('BiiP_data');
+    BiiP_element.classList.add('BiiP_data_visible');
+    data_div.innerHTML = callData.biip_template(selectedUser.u);
+    document.body.appendChild(data_div);
+    $('.BiiP_data').style = 'display: flex';
+    // on first render, we show the identity section
+    $('.BiiP_data .BiiP_content').innerHTML = callData.identity(selectedUser.u);
+
+    // then we need to check what the user clicks on
+    // store the 3 main category buttons
+    let buttons = $$('.BiiP_data .BiiP_nav .BiiP_tab');
+
+    // run this function once on showData, then again on tab switch
+    let AccessBTN = $('#blockAccess');
+    blockBTN(AccessBTN);
+    // add an event listener to see what was clicked
+    buttons.forEach((item, index) => {
+        item.addEventListener('click', event => {
+            // remove .activeTab class from all
+            buttons.forEach((el) => {
+                el.classList.remove('activeTab');
+            });
+
+            // add the .activeTab class on the clicked button
+            item.classList.add('activeTab');
+            $('.BiiP_data .BiiP_content').innerHTML = callData[item.id](selectedUser.u);
+
+            // run shortMessages 
+            shortMessages($$('.toggler'));
+
+            // run the block button method
+            AccessBTN = $('#blockAccess');
+            AccessBTN ? blockBTN(AccessBTN) : null;
+
+            // hide the mobile BiiP navigation and stuff
+            hideMobileNav();
+        });
+    });
+
+    // run shortMessages
+    shortMessages($$('.toggler'));
+
+    // close data when clicking/touching the X
+    $('#BiiP_close_data').addEventListener('click', e => {
+        closeData();
+    });
+
+    //BiiP mobile burgers toggle
+    const BiiP_mobile_toggle = () => {
+        $('.BiiP_nav').classList.toggle('BiiP_mobile_nav_open');
+        document.body.classList.toggle('BiiP_nav_open');
+        $('#BiiP_burgers').classList.toggle('BiiP_burgers_clicked');
+    }
+
+    $('#BiiP_burgers').addEventListener('click', () => {
+        BiiP_mobile_toggle();
+    });
+
+    $('.BiiP_content').addEventListener('click', () => {
+        hideMobileNav();
+    });
+}
+
+const closeData = function() {
+    $('.BiiP_data') ? $('.BiiP_data').remove() : null;
+    BiiP_element.classList.remove('BiiP_data_visible');
+    BiiP_element.style = '';
+    showMainContent();
+    hideMobileNav();
+}
+
+
+BiiP_element.innerHTML += BiiP_svg + '<div class="shortMessage font23"></div><div id="BiiP_circle"></div><audio controls id="biip_sound"><source src="/sounds/biip.mp3" type="audio/mpeg"></audio><audio controls id="select_sound"><source src="/sounds/select.mp3" type="audio/mpeg"></audio><audio controls id="select_reverse"><source src="/sounds/select-reverse.mp3" type="audio/mpeg"></audio>' + BiiP_style;
+
+// what happens when clicking on the BiiP svg
+let BiiP_click = function() {
+    // if the BiiP UI is not visible
+    if (!BiiP_UI_visible) {
+        hideMobileNav();
+        window.addEventListener("wheel", wheelFunction);
+        wrapper.addEventListener("click", clickFunction);
+
+        hideMainContent('none');
+        BiiP_element.classList.remove('BiiP_data_visible');
+        BiiP_element.style = '';
+        // if the BiiP UI is not visible and we have a selected user and there is no BiiP data populated
+        if (selectedUser.u && !$('.BiiP_data')) {
+            showData(selectedUser.u);
+        } else {
+            // if the BiiP UI is not visible and we don't have a selected user and there is BiiP data populated
+            $('#select_reverse').playbackRate = 1.2;
+            $('#select_reverse').play();
+            BiiP_UI_visible = true;
             $('body').style.overflow = 'hidden';
             BiiP_element.classList.add('BiiP_center');
             $('#BiiP_wrapper').style = 'display: flex';
             $('#BiiP_wrapper').innerHTML += msg1;
 
-
-            // after we get the response from the API
+            // an example of a basic message
             setTimeout(function(){
-                $('biip_message').classList.add('showBiiP_message');
+                $('biip_message') ? $('biip_message').classList.add('showBiiP_message') : null;
             }, 900);
 
             setTimeout(function(){
-                let biips = '';
-                let degrees = 90;
-
-                usernames.forEach(item => {
-                    biips += '<div class="BiiP_username" style="transform: rotate('+degrees+'deg) translate(155.5vh) rotate(-'+degrees+'deg); background-image: url(/img/'+item+'.jpg)"><b>'+item+'</b></div>';
-                    degrees += 6;
-                });
-                
-                // create a node with all this and add it to BiiP after, also remove it when closing (on the else below)
-                $('#BiiP_circle').innerHTML += biips;
-                $('#BiiP_circle').style = 'transform: rotate(0)';
-
-                // clicking on a BiiP user:
-                $$('.BiiP_username').forEach(item => {
-                    item.addEventListener('click', event => {
-                        item.classList.add('userCenter');
-                        // here we need to add another value to the seected username in local storage, so that we know it's selected on this machine, add a glow or something to it and maybe fade the others a bit more
-                        setTimeout(function(){
-                            closeBiiP();
-                        }, 750);
-
-                        // TO DO: Maybe it would be better here, to set the SVG W and H to 0 and then remove it, then replace it with the clicked user avatar without username, at the same time, the clicked avatar shrinks down to 50px W and H and moves towards the initial SVG position, then the BiiP wrapper fades away and reveals the website with the new user authenticated (this part can also be used as a loader, depending on the internet connection the animation will be slower or faster and only when the user is fully authenticated and the client page is fully loaded the wrapper overlay fades away so the user can interact with the UI)
+                if (BiiP_UI_visible) {
+                    // calculate the avatars positioning
+                    let biips = '';
+                    
+                    // add HTML for each
+                    usernames.forEach(item => { // here make this css var work with the values: transform: rotate('+degrees+'deg) translate(155.5vh) rotate(-'+degrees+'deg)
+                        biips += '<div class="BiiP_username" style="transform: '+ rotator(degrees) +'; background-image: url(/img/'+item.u+'.jpg)"><b>'+item.u+'</b></div>';
+                        degrees += 6;
                     });
-                });
-            }, 1230);
-        } else {
-            closeBiiP();
+                    
+                    // create a node with all this and add it to BiiP after, also remove it when closing (on the else below)
+                    $('#BiiP_circle').innerHTML += biips;
+                    $('#BiiP_circle').style = 'transform: rotate(0)';
+
+                    // clicking on a BiiP user to select the user
+                    $$('.BiiP_username').forEach((item, index) => {
+                        item.addEventListener('click', event => {
+                            $('.BiiP_svg').classList.add('pe');
+                            let selected = document.createElement('div');
+                            selected.classList.add('selectedUser');
+
+                            setTimeout(function(){
+                                // add the selectedUser div
+                                $('.selectedUser') ? $('.selectedUser').remove() : null;
+                                selected.style = 'background-image: url(/img/'+selectedUser.u+'.jpg)';
+                                BiiP_element.appendChild(selected);
+                                $('#biip_sound').play();
+
+                                showData();
+                                $('.BiiP_svg').classList.remove('pe');
+                            }, 1111);
+                            
+                            // do some stuff after
+                            selectedUser = usernames[index];
+                            item.classList.add('userCenter');
+                            //item.style.transform = 'translate(0, 0) scale(0)';
+
+                            $('biip_message') ? $('biip_message').classList.remove('showBiiP_message') : null;
+                            $('.BiiP_data') ? $('.BiiP_data').style = 'display: none' : null;
+                            closeBiiP();
+                        });
+                    });
+                }
+            }, 900);
         }
-    });
+    } else {
+        showMainContent();
+        closeBiiP();
+        selectedUser.u ? BiiP_element.classList.add('BiiP_data_visible') : null;
+    }
 }
 
 const closeBiiP = function() {
-    BiiP_UI = false;
+    BiiP_UI_visible = false;
+    degrees = 90;
+    window.removeEventListener("wheel", wheelFunction);
+    wrapper.removeEventListener("click", clickFunction);
+    
     $('body').style.overflow = '';
     $('#BiiP_wrapper').style = 'display: none';
     $('biip_message').remove();
-    $('#BiiP_circle').style = 'border: 0 !important';
+    $('#BiiP_circle').style = '';
     $('#BiiP_circle').innerHTML =  '';
     setTimeout(function(){
         BiiP_element.classList.remove('BiiP_center');
     }, 230);
+    $('#select_reverse').currentTime = 0;
+    $('#select_reverse').playbackRate = 1.69;
+    $('#select_reverse').play();
+}
+
+// on BiiP_svg click
+$('.BiiP_svg').addEventListener('click', event => {
+    BiiP_click();
+});
+
+// close data or BiiP when pressing Escape key
+window.addEventListener('keyup', e => {
+    if (e.key === "Escape") {
+        closeData();
+        $('.BiiP_center') ? closeBiiP() : null;
+    }
+    if (e.ctrlKey && e.key === 'b') {
+        BiiP_click();
+    }
+    // TO DO: must select usernames based on CTRL + number key press from 0 to 9 ? or just numbers from 0 to 9
+});
+
+let showMainContent = function() {
+    $('.logo').style = 'display: flex';
+    $('header').style = 'display: block';
+    $('.wrapper') ? $('.wrapper').style = 'display: flex' : null;
+    document.body.style.overflow = null;
+}
+
+let hideMainContent = function(string) {
+    $('.logo').style = 'display: ' + string;
+    $('header').style = 'display: ' + string;
+    $('.wrapper') ? $('.wrapper').style = 'display: ' + string : null;
+}
+
+
+// initial BiiP_circle usernames angle and rotating function
+let degrees = 90;
+let finalAngle = degrees;
+let wMid = window.innerWidth/2;
+let hMid = window.innerHeight/1.4;
+const wrapper = $('#BiiP_wrapper');
+
+
+let rotator = (degrees) => {
+    return `rotate(${degrees}deg) translate(155.5vh) rotate(-${degrees}deg)`;
+}
+
+let wheelFunction = (event) => {
+    if ($('.BiiP_center')) {
+        let y = event.deltaY;
+        $$('.BiiP_username').forEach((item, i) => {
+            y > 0 ? finalAngle += 6 : finalAngle -= 6;
+            item.style.transform = rotator(finalAngle);
+        });
+    }
+}
+
+let clickFunction = (event) => {
+    const X = event.screenX || event.touches[0].screenX;
+    const Y = event.screenY || event.touches[0].screenY;
+    if ($('.BiiP_center') && Y > hMid) {
+        $$('.BiiP_username').forEach((item) => {
+            X < wMid ? finalAngle += 4.7 : finalAngle -= 4.7;
+            item.style.transform = rotator(finalAngle);
+        });
+    }
 }

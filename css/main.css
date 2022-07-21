@@ -63,11 +63,11 @@ h5 {
   display: none;
 }
 
-#translateBody {width: 100%; height: 100%;}
+#translateBody {width: 100%; height: 100%; margin: 0 auto; max-width: 2300px;}
 
 #languageOptions {width: 100%; height: 100%; background: rgba(0,0,0,.95); position: fixed; top: 0; z-index: 99; display: none; justify-content: center; align-items: center; align-content: center; flex-direction: column; line-height: 2; font-size: 200%; color: #eeeeee}
 #languageOptions input {display: none}
-#languageOptions label {cursor: pointer}
+#languageOptions label {cursor: pointer; display: block}
 #languageOptions label:hover {color: #db463e}
 #languageOptions input:checked + label {color: #db463e}
 
@@ -241,7 +241,7 @@ header * {pointer-events: all;}
 }
 
 .join_us, .join_us:visited {
-  color: var(--logoColor);
+  color: var(--white);
   text-align: center;
   font-size: 1vw;
   line-height: 1.4;
@@ -261,7 +261,7 @@ header * {pointer-events: all;}
 #footer_nav a:hover {color: var(--logoColor);}
 
 
-
+.substackIframe {width: 100%; mix-blend-mode: lighten;}
 
 footer {
   background: black;

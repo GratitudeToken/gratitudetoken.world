@@ -1,10 +1,16 @@
 import {$, $$} from '/modules/selector.js';
+import {bigRandom} from '/modules/random.js';
 
 // Audio Visualisation
 export let audioviz = function() {
-    var theSongID = (Math.random() * (1 - 0) + 0).toFixed(0) < 0.5 ? theSongID = 'Gratitude' : theSongID = 'Dictator';
+    // random number for a song ID
+    var r = bigRandom(1, 300);
+    var theSongID = r <= 100 ? theSongID = 'Gratitude' : r <= 200 ? theSongID = 'Dictator' : theSongID = 'Pure_Imagination';
     var audio = $('#'+theSongID);
+    
+
     var audioPlaying = false;
+
     $('.audioviz').addEventListener('click', event => {
 
         if (!audioPlaying) {

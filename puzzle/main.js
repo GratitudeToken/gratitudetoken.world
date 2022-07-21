@@ -212,7 +212,7 @@ var backendCall = function(type) {
     {
         method: "POST",
         headers: {
-            'Accept': 'application/json, text/plain, */*',
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: postJSON

@@ -167,7 +167,7 @@ body::-webkit-scrollbar-thumb:hover {
   height: 150%;
 }
 #section7 {
-  height: 23%;
+  height: 73%;
 }
 #section1,
 #section2,
@@ -177,8 +177,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .section h2,
 .section p {
-  pointer-events: none;
-  user-select: none;
+  user-select: text;
 }
 .section p {
   font-size: 2vmin;
@@ -253,7 +252,7 @@ body::-webkit-scrollbar-thumb:hover {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 2147483647 !important;
+  z-index: 999999999 !important;
   display: inline-block;
   box-shadow: none;
   padding: 15px;
@@ -1166,7 +1165,7 @@ button,
   z-index: 4;
   position: absolute;
   right: calc(-50% + 67px);
-  transform: translateX(-268px);
+  transform: translateX(-536px);
   transition: transform 0.4s ease;
   z-index: 6;
 }
@@ -1319,6 +1318,7 @@ button,
   display: block;
   font-size: 60px;
   font-family: "Dosis", Arial, sans-serif;
+  pointer-events: none;
 }
 .milestone b:last-of-type {
   font-size: 28px;
@@ -1437,9 +1437,6 @@ button,
   text-decoration: none;
   transition: 0.3s all;
 }
-.member:hover {
-  color: #ffffff;
-}
 
 .member:before {
   content: "";
@@ -1449,29 +1446,26 @@ button,
   background: url(https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg)
     no-repeat;
   position: absolute;
-  bottom: 6%;
+  bottom: 3%;
   right: 0;
   left: 0;
   margin: 0 auto;
 }
 
+.member:nth-of-type(5):before {display: none}
+
 .member img {
-  border: 6px solid #0a66c2;
+  border: 6px solid #ffffff;
   border-radius: 100%;
   width: 90%;
   height: auto;
   max-width: 230px;
   max-height: 230px;
   margin: 0 auto 2vh auto;
-  transition: all 0.3s ease;
-}
-.member:hover img {
-  transform: scale(1.2);
-  box-shadow: 0px 0px 23px 12px #ffffff44;
 }
 
 .member strong {
-  font-size: 2vw;
+  font-size: 1.8vw;
   color: #ffffff;
 }
 .member * {
@@ -1788,8 +1782,9 @@ button,
   }
   .milestones {
     right: calc(-50% + 33.5px);
-    transform: translateX(-134px)
+    transform: translateX(-268px)
   }
+
   .milestones > div,
   .milestone,
   .milestone_content {
@@ -1830,7 +1825,7 @@ button,
   }
 
   #section7 {
-    height: 93%;
+    height: 142%;
   }
   #TEAM {
     font-size: 9vmin;

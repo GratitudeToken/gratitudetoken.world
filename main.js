@@ -123,16 +123,22 @@ fetch('/localisation/' + page + '/' + code + '.json')
     } else {
         mToggle();
         shareThis();
+        BiiP_script();
     }
     if (page == "white-paper") {
         const { pages } = await import('/localisation/white-paper/'+code+'.js');
         $('#white-paper').innerHTML += pages;
         whitePaper();
     }
-
-    const { BiiP } = await import('/BiiP.js');
-    BiiP();
 });
+
+const BiiP_script = () =>
+{
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "/BiiP.js"
+    document.body.append(script);
+}
 
 
 const shareThis = () =>

@@ -18,11 +18,11 @@ export const pages = `
 
 
 
-    We hope you'll find the content of this white paper as benevolent, objective and realistic. And we hope you will rezonate with us about the current state of our world and about what we can achieve when we really come together.
+    We hope you'll find the content of this white paper as benevolent, objective and realistic. And we hope you will resonate with us about the current state of our world and about what we can achieve when we really come together.
         </page>
         <page class="page"><h2 class="heading">Why Gratitude?</h2>
-    Greed has ran its course, the caterpillars have ate enough and it's time to transform, for tomorrow... we spread our wings and fly.
-    You are reading this because we are all becoming the agents of change that are transforming the internet from a caterpillar into a butterfly, one human at a time.
+    "Because greed has ran its course, the caterpillars have ate enough and it's time to transform, for tomorrow... we spread our wings and fly."
+    You are reading this because one by one, we are all becoming the agents of change that are transforming the internet from a caterpillar into a butterfly.
     One of my favorite humans once said:
     "<i>There is nothing in a caterpillar that tells you it's going to be a butterfly.</i>" - R. Buckminster Fuller
 <img class="fullWidth" style="margin-top: 0.32em" src="/white-paper/img/Buckminster-Fuller-Tensegrity-Sphere.jpg" loading="lazy" />
@@ -49,44 +49,43 @@ export const pages = `
     You see, the pyramid is a symbol that represents division, as opposed to a biosphere that represents unification or unity. The pyramid is a knife that cuts, it can never be an agent of unification.
     Today, the 🔺 WWW divides the world while the 🌎 Biosphere Web truly spans across the planet and unifies our world, our biosphere.
 
-<h2 class="heading">The Earth is shifting</h2>
-    We all heard this often in the last couple of years, but what does it mean at a societal level and at an online digital level?
-    Among us lives a species named Homo Capensis, they are similar to caterpillars, they are greedy and predictible.
-    They just can't stop eating until the day the leafs don't taste good anymore. When the tree of life is giving them a clear sign, that's when they should recognize that they are done devouring, that's the day they need to make their cuccoon and go to sleep. For Homo Capensis, that day was yesterday.
+<h2 class="heading">The passing of greed</h2>
+    I invite you to imagine a world where greed was replaced by gratitude at a societal level and at an online digital level.
+    "Among us lives a species named <a href="https://duckduckgo.com/?q=homo+capensis&t=h_&iar=images" target="_blank">ホモカペンシス</a>, they are similar to caterpillars, they are greedy and predictible. They are descendants from the pharaohs of Egypt, the ones with the elongated heads you have seen in the egyptian hieroglyphs. Their descendants currently rule the monetary systems of the world."
 
 <h2 class="heading">The problems</h2>
     <b>The adoption of the IP (Internet Protocol) connected the world, but did it unify it?</b>
-    No, because corporations monopolized and centralized the internet, imprisoning us in <a href="https://www.youtube.com/watch?v=B8ofWFx525s" target="_blank">Filter Bubbles</a> while ignorantly killing so much life in their
+    No, because corporations monopolized and centralized the internet, imprisoning us in <a href="https://www.youtube.com/watch?v=B8ofWFx525s" target="_blank">Filter Bubbles</a>, killing so much life in their ignorant race to
         </page>
-        <page class="page">race to plunder the biosphere for precious resources to make "even better" tech gadgets to spy us with, so they can keep exploiting the value humans create.
+        <page class="page">plunder the biosphere, to get precious resources, to make "even better" tech gadgets to spy us with, so they can keep exploiting the value humans create.
     <b>Did the internet free us all from ignorance?</b>
-    No, we are currently facing a global fake news and false information problem that causes cyclical mass psychosis. We are being surveilled 24/7 by paranoid and criminal information agencies and scammed by non profit organizations. False threats from viruses and war are popular recurring themes used to keep us in fear.
+    No, we are currently facing a global fake news and false information problem that causes cyclical mass psychosis. We are being surveilled 24/7 by paranoid, criminal information agencies. We are scammed by non profit organizations. False threats from viruses and war are popular recurring themes used to keep us in fear.
     <b>Did the internet give everyone equal access to modern online digital services?</b>
     No, half of the world population has limited or no access to internet and those who do have access are manipulated and controlled by surveillance capitalism governments and corporations and the value we create online is mostly transfered to the tip of the pyramid.
 
-    <b>Wouldn't you agree that these problems need to be solved yesterday?</b>
-    If you agree, keep reading and find out how we can use technology to serve and celebrate life instead of enslaving and ending it.
-    As Jiddu Krishnamurti, one of the greatest thinkers that India has produced has often said:
+    If you want to find out how we can solve these problems, keep reading and find out how we can use technology to serve and celebrate life instead of enslaving and ending it.
+    As Jiddu Krishnamurti, one of the greatest thinkers that India has produced often said:
 
 <img class="fullWidth stickBottom" src="/white-paper/img/quote-if-we-can-really-understand-the-problem-the-answer-will-come-out-of-it-because-the-answer-jiddu-krishnamurti.jpg" loading="lazy" />
         </page>
-        <page class="page">    We believe technology should serve all humanity, not just a small group of people (a greedy cabal that doesn't care about you and me).
+        <page class="page">    We believe technology should serve all lives, not just a small group of humanoids (a greedy cabal that doesn't care about you and me).
     The projects you are just learning about on <a href="https://gratitudetoken.world">gratitudetoken.world</a> are very ambitious and we need everyone to join forces with the Gratitude community. Together we can shift our world towards better, wiser technological solutions that serve the majority, not just the elite (the 1%). <b>Freedom should be free</b>.
     <a href="https://gratitudetoken.world">gratitudetoken.world</a> is the home of the <b>Biospheric Identity Internet Protocol</b> (BiiP) and a place where we can join the community seeding a Planetary Value Revolution, leaded by the <b>Gratitude Token</b> (GRAT) - a currency of gratitude, created for decentralizing value and finance.
     BiiP & GRAT are meant to become the base for a real second layer Internet Protocol, they're designed to fix the way we use the internet and in consequence, how we distribute the biosphere's energy and resources. We will take back the internet from corporations by creating better alternatives.
     We are focused on unifying technology meant to serve everyone, especially the underserved. BiiP aims to “unbank” the world. It will liberate & empower everyone, not just the 1% (the greedy elite).
-    By implementing <strong>BiiP</strong> world first, we are ushering a new age of decentralized value from: personal information, authentication, and universal finance. BiiP will allow us to own our digital self and to provide safer, friendlier, more reliable decentralized online services.
-    Our projects represent a powerful effort protected by <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">open-source GPL 3.0 license</a>. The main objective is to nurture a revolutionary and expansive self-emerging vision which is unfolding in front of us through “connecting the dots” of 6 non-linear parts. To discover and understand them, keep reading.
-    Currently, on the 2 main indexing and tracking websites for blockhain or crypto projects: <a href="http://coinmarketcap.com" target="_blank">coinmarketcap.com</a> and <a href="http://cryptocompare.com" target="_blank">cryptocompare.com</a> there are over 17.000 projects listed. Disruptive technology is exploited in early years.
-    It is unfortunate that way over 90% of all those projects were created by scammers or people that never really had the intention to use blockchain technology for the benefit of all life on Terra.
+    By implementing <strong>BiiP</strong> world first, we are ushering in a new age of decentralized value derived from: personal information, authentication, and universal finance. BiiP will allow us to own our digital self and to provide safer, friendlier, more reliable decentralized online services.
+    Our projects represent a powerful effort protected by <a href="https://gratitudetoken.world/license-copyright.html" target="_blank">open-source GPL 3.0 license</a>. Their main objective is to nurture a revolutionary and expansive self-emerging vision, comprised of 6 parts:
+    <b>VALUE, DO, GRATITUDE, TECHNOLOGY, GENESIS, SHIELD</b>.
+    Currently, on the 2 main indexing and tracking websites for blockchain projects (<a href="http://coinmarketcap.com" target="_blank">coinmarketcap.com</a> and <a href="http://cryptocompare.com" target="_blank">cryptocompare.com</a>) there are over 19 thousand projects listed. Disruptive technology is exploited in early years.
+    It is unfortunate that way over 90% of all those projects were created by scammers or people that never really had the intention to use blockchain technology for the benefit of the entire biosphere.
         </page>
         <page class="page">    It's also unfortunate that a lot of rich people exploited and keep exploiting the digital tokens or currency markets created by those projects. These people are called "whales" and market makers.
     To add to the heartache, most if not all centralized exchanges are not playing fair and aren't trying to support any real effort towards a better future for life on this planet.
-    Unlike most blockchain technologies or crypto projects that were never created with a benevolent intention in their core, <a href="https://gratitudetoken.world">gratitudetoken.world</a> was envisioned to be the opposable force, a place where the open-source community and true blockchain visionaries can come together and build a better future for our species and in consequence, for all life on this planet, for the future of our entire biosphere.
+    Unlike most blockchain technologies or crypto projects that were never created with a benevolent intention in their core, <a href="https://gratitudetoken.world">gratitudetoken.world</a> was envisioned to be the opposable force. A place where the open-source community and true blockchain visionaries can come together and build a better future for our species and in consequence, for all life on this planet, for the future of our entire biosphere.
 
 <h2 class="heading">Summary</h2>
     <h3 class="heading">VALUE 価値</h3> - This part is about really plunging into the word <strong>value</strong> and discussing it in depth.
-    We will discuss not only the subjective and objective meaning of the word in different contexts but also the relationships between Value, Human Beings and Consciousness.
+    We will discuss not only the subjective and objective meaning of the word in different contexts but also the relationships between Value, Human Beings and Money.
     In this chapter, we talk about the idea of money, go through the history of money, and try to find its place in our current paradigm.
     We try to answer questions like:
     <b>Who is responsible for the system?
@@ -97,7 +96,7 @@ export const pages = `
         </page>
         <page class="page">    <h3 class="heading">DO 贈る</h3> - This part is about our divine ability to act, to manifest our natural desires, to manifest our most elevated lives through coordinated, consensual collective action.
     We elaborate on how the culture most of us grew up in has not prepared us at all for what we need to DO to create our dream life, our dream world. Rather it educated us on how to be individualistic, autonomous, how to become a lifeless cog in a system of endless survival, work, misery, boredom, and suffering.
-    Our parents, the educational system and our entire modern society (the collective) are unfortunately still greatly focused only on working hard for more “money” with the purpose to consume everything we discover. This is the behavior of viruses, not of living beings.
+    Our peers, the educational system and our entire modern society (the collective) are unfortunately still greatly focused only on working hard for more “money” with the purpose to consume everything we discover. This is the behavior of viruses, not of living beings.
     We are indirectly taking profit from the hard work of others, indirectly or unconsciously supporting slavery across the globe, or irreversibly polluting the living Biosphere by adhering to a corrupt monetary system and consumeristic culture. We have no idea about circular production and consumption cycles other than on a superficial level with limited recycling initiatives in a few countries, while the poorest countries (biosphere areas) are transformed into world dumpsters.
     We talk about how we were taught to compete against each other, not to work together and build community; we were not taught to serve others and to elevate ourselves by seeking truth and joy.
     We were taught that Joy comes from materialistic rewards, that superficiality is valuable, that vanity is happiness and that opulence represents power.
@@ -130,7 +129,7 @@ export const pages = `
         </page>
         <page class="page">    <strong>VALUE 価値</strong> - Is a word deeply rooted in our subconscious. As humans, we are constantly redefining the meaning of value, but one truth remains constant: No object and not even our own set of values have any real worth or meaning without other humans involved. We all interpret our meaning of the word value in all areas of life, filtering it through our understanding of all the different experiences and all the knowledge we have accumulated.
     Let's go on a quest to understand the relationships between Value, Human Beings, and Consciousness. On our way, we will deeply understand the idea of money from the past to the present and look forward to the future of money.
-    Of course, when we talk about money or assets, we are talking about a specific type of value or utility. Let's start with 2 main attributes of Value that branches out into 2 main categories:
+    Of course, when we talk about money or assets, we are talking about a specific type of value or utility. Let's start with 2 main attributes of Value that branch out into 2 main categories:
     <strong>1. Subjective Value</strong> - something that has value only to you (one consciousness agent).
     <strong>2. Objective Value</strong> - something that has value for at least 2 consciousness agents (the more people agree on the evaluation, the stronger a consensus is established in a community or a society).
 
@@ -158,7 +157,11 @@ export const pages = `
 
     <img class="fullWidth stickBottom" src="/white-paper/img/leonardo-da-vinci.jpg" alt="leonardo da vinci patterns flower of life source consciousness" loading="lazy"/>
         </page>
-        <page class="page">    Energy, Vibration and Frequency shape our reality, here's an explanation from the great sage & philosophical entertainer <strong>Alan Watts</strong>:
+        <page class="page"><strong>Nikola Tesla</strong>, one of the greatest minds of our species, has informed us:
+
+<i><b>“To find the secrets of the Universe, think in terms of energy, frequency and vibration.”</b></i>
+
+    Energy, Vibration and Frequency shape our reality, here's an explanation from the great sage & philosophical entertainer <strong>Alan Watts</strong>:
 
 <div class="fullWidth"><iframe src="https://www.youtube-nocookie.com/embed/LuZ1SqXjLmw" title="It's Already Happening But People Don't See It - Alan Watts on Duality" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -176,11 +179,9 @@ export const pages = `
 
     Source: <a href="https://www.youtube.com/watch?v=LuZ1SqXjLmw" target="_blank">Alan Watts on Duality</a>
 
-    <strong>Nikola Tesla</strong>, one of the greatest minds of our species, has informed us:
-
-    <i><b>“To find the secrets of the Universe, think in terms of energy, frequency and vibration.”</b></i>
-
-    You see, the new version of you has enough gratitude vibration to access a beautiful abundant life, but only through the lens of gratitude we can see clearly what that life looks like and then we can work towards it. Otherwise, we become ungrateful entitled villains in our own life story who only know to harm others to get what they want. That is how evil is born. That is the path to ruin, the tragic path.
+    You see, the new version of you has enough gratitude vibration to access a beautiful abundant life, but only through the lens of gratitude we can see clearly what that life looks like and then we can work towards it.
+    Otherwise, we become ungrateful entitled villains in our own life story who only know to harm others to get what they want.
+    That is how evil is born. That is the path to ruin, the tragic path.
         </page>
         <page class="page">    Money by itself as a symbol is not evil, people are. And without daily gratitude for what we already have, greed will govern the money system.
     Because of this, the whole system becomes evil and we unconsciously become one with it.
@@ -198,13 +199,12 @@ export const pages = `
     <b>Has it ever occurred to you that we are ignorantly participating in a very old, but now a global size scam?</b> We will talk about this more later on.
     This took the world many decades to process, but more and more people are now aware of this gruesome crime against humanity.
     Those who create the money and regulate the money are outside the scam, they currently have in place a system where they can just create money out of nothing.
-    This is not a joke. The system they created and enforced upon our world is called <a href="https://en.wikipedia.org/wiki/Fiat_money" target="_blank">fiat money</a>.
+    This is not a joke. The system they created and enforced upon our world is called Fractional Reserve Banking, or <a href="https://en.wikipedia.org/wiki/Fiat_money" target="_blank">fiat money</a>.
         </page>
         <page class="page">    In other words, they have unlimited amounts of “money” flowing to them without working for it and we must work our entire lives just to be able to pay for a house to live in, or to feed and clothe ourselves.
 
     <b>Isn't this just slavery, but with extra steps?
     Time to wake up friends!</b>
-    
     As humans we crave to get at least a few hours to live our lives every day, to enjoy life, and maybe some time to think about our life, to put things in perspective, to think about where we are and where we want to be, asking questions, following our curiosity, exploring our reality.
     We should all remember this simple truth: living or enjoying life is the only way for us to thrive, it's what gives us the energy to keep going with our life.
 
@@ -213,7 +213,7 @@ export const pages = `
     It's not possible to live while we are subjugated to this corrupt fiat monetary system. Having to spend our energy and time most of each day on a useless and boring job where in exchange we are rewarded with a form of “money” worth less and less that will never be enough to survive, let alone to thrive.
     We spend our life (our most precious gift, our time & energy) impulsively chasing fiat money.
     Meanwhile, the “players” running the show are playing God with the whole world, ignorantly degrading us and the entire Biosphere in the process.
-    But a better alternative is already here, we called it GRAT (short for Gratitude) and its mission is to replace greed with gratitude.
+    But a better alternative is already here, we called it GRAT (short for Gratitude) and its goal is to replace greed with gratitude (to balance out the 1% vs 99% gap).
     Now, that we've spoken a little bit about human value in a Fiat world, let's go back to the origins of money or currency and try to understand the history of money, otherwise, we are doomed to repeat the past and fall in the same traps in the future.
         </page>
         <page class="page">    <h2 class="heading">A brief history of money</h2>
@@ -224,8 +224,8 @@ export const pages = `
     Back then, humans were limited to the goods that other nearby humans could provide or that travelers could provide.
     There was no consensus to use any small precious objects that would be accepted by a large enough number of humans.
     Goods and services were very limited at that specific time in our history because collective knowledge and technology were very primitive.
-    Even today, in villages and other types of communities, people trade their goods or give them away with no intermediaries or any form of money.
-    On the internet, we can see this still taking place on classified-type websites where people trade their goods and assets.
+    Even today, in villages and other types of communities, people trade their goods or services, sometimes for free, with no intermediaries.
+    On the internet, we can see this still taking place on classified-type websites where people trade their goods, assets, and services.
     As kingdoms, empires, and societies developed and expanded people were looking to adopt a better system to represent the value of goods and services, something that could be universally accepted as a good fit, a logical choice meeting the following characteristics or qualities:
         </page>
         <page class="page">    <i>&bull; precious (due to the level of difficulty in obtaining it from the Earth, so it must be a scarce resource or material).
@@ -286,7 +286,7 @@ export const pages = `
 
 <h2 class="heading">Modern money mechanics</h2>
     So today, according to the manual entitled <a href="https://upload.wikimedia.org/wikipedia/commons/4/4a/Modern_Money_Mechanics.pdf" target="_blank"><b>Modern Money Mechanics</b></a> created by the Federal Reserve, banks can create money out of thin air, they are allowed to offer credits in value of up to 9 times they borrow from the government.
-
+    <b>Where does money come from?</b>
     When the government wanted to print more money to increase the circulating supply, it did not give the money directly to the people, instead, it gave it to the banks to inject into the economy by offering loans to private individuals and companies.
     This system not only created inflation but also a lot of interest - money that will never exist in circulation and that will instead slowly push the entire monetary supply into the wallets of the bankers.
         </page>
@@ -334,7 +334,7 @@ export const pages = `
 
 <h3 class="heading">Being smart</h3>
     So, now that we understand what exchanges are for, let's talk about smart and experienced people that only invest in currencies or assets long term. They are not in the “business” of opening trade positions with leverage (a factor of multiplication for risk/reward).
-    Smart investors are people that will eventually have more value accumulated in their wallets (due to appreciation of the currency/asset over time) than they initially invested. In other words, according to the new market consensus that will exist in a few years, or should I say demand, the currency or asset has now doubled, tripled, or multiplied its worth many times over.
+    Smart investors are people that will eventually have more value from their currency or assets they invested in, due to appreciation of the currency/asset over time. In other words, according to the new market consensus that will exist in a few years, or should I say the new demand, the currency or asset has now doubled, tripled, or multiplied its price many times over.
     This is why we often hear the phrase "Bitcoin is better than gold".
     Leaving your cryptocurrency untouched for a few years in a safe wallet is a typical investment scenario where you HOLD onto your cryptocurrency and only withdraw (exchange it) into another currency to buy/get something for yourself to enjoy (a product, tools, cars, real estate, etc).
     Although you can exchange your cryptocurrency and tokens for fiat money, many sellers nowadays accept the most common cryptocurrencies as valid forms of payment, so exchanging to fiat is not needed in many cases nowadays.
@@ -353,7 +353,7 @@ export const pages = `
     In all these markets, we witness a cyclical process called inflation.
     <b>Why is the economy running on an inflationary model?
     What or who is responsible for this system? Is it natural? Is it man-made?</b>
-    The answer is: It's <b>Homo Capensis</b> made, or at least it was started by them and maintained by their descendants. They are responsible for inflation and the bubbles in all markets. They are responsible for taking away our collective power, for denying our awakening and evolution through a well-organized suppression of our unification and uniformization of human collective energy. But this project is not about them.
+    The answer is: It's <b><a href="https://duckduckgo.com/?q=homo+capensis&t=h_&iar=images" target="_blank">ホモカペンシス</a></b> made, or at least it was started by them and maintained by their descendants. They are responsible for inflation and the bubbles in all markets. They are responsible for taking away our collective power, for denying our awakening and evolution through a well-organized suppression of our unification and uniformization of human collective energy. But this project is not about them.
         </page>
         <page class="page">    Our mission at <a href="https://gratitudetoken.world">gratitudetoken.world</a> is to take back our life, our energy, our progress as a species. We need to get more for our energy spent. We need a fairer model of return of value for energy spent. We need to stop allowing this group to siphon away all our energy.
     <b>We want every being on mother Terra to dread less and DO more, LIVE more.</b> Here's a chart on the evolution of global inflation since 1920:
@@ -503,7 +503,7 @@ export const pages = `
     Virtual networks are just symbolic representations of natural networks and they should not be confused for reality or nature.
     Although representations do require real objects or systems to exist, or should I say, for us to be able to perceive them… in the end any virtual symbol which is a small part of a bigger group of symbols (like currency) is an abstraction of nature, it's not the real physical nature.
         </page>
-        <page class="page"><img class="imgCenter" style="width: 58% !important" src="/white-paper/img/novus-ordo-seclorum.jpg" alt="novus ordo seclorum dollar bill pyramid eye homo capensis" loading="lazy"/>
+        <page class="page"><img class="imgCenter" style="width: 58% !important" src="/white-paper/img/novus-ordo-seclorum.jpg" alt="novus ordo seclorum dollar bill pyramid eye ホモカペンシス" loading="lazy"/>
     <b>We all know where this comes from right?</b>
     It's on the dollar bills, A.K.A. “The world reserve currency”.
     We were born into their pyramid world, into a hierarchy “matrix” where we are obligated to use one specific symbol to manage our transactions (our physical interaction with reality).
@@ -516,12 +516,12 @@ export const pages = `
     This is a tragic attack on our mother Terra and its amazing biosphere. An attack enacted over millennia by these seemingly sociopathic individuals.
     These poor emotionless caterpillars should not be called The Elite for they are completely unaware of what they are doing to the Earth, the source of all life. They should be known for what they are, a species of emotionless beings who need to understand that if they don't give up control of the wheel, they turn into moths instead of butterflies and we are all headed for extinction.
     Whistleblower <b>Karen Hudes</b>, an ex-lawyer of the World Bank is one of the humans recently shedding light on this egomaniacal group and their agenda, you can look her up. She revealed this secret cabal that has been running the monetary systems, and the trade policies of the world for thousands of years.
-    One of the more interesting aspects of her disclosures of which people around the world are not yet aware enough to grasp is that these individuals at the top of the pyramid are not public personas and they are not of the species Homo Sapiens, rather they are descendants of the Pharaohs of Egypt which are in turn descendants of the survivors of the city of Atlantis and although not many know this, their species is called Homo Capensis.
+    One of the more interesting aspects of her disclosures of which people around the world are not yet aware enough to grasp is that these individuals at the top of the pyramid are not public personas and they are not of the species Homo Sapiens, rather they are descendants of the Pharaohs of Egypt which are in turn descendants of the survivors of the city of Atlantis and although not many know this, their species is called <a href="https://duckduckgo.com/?q=homo+capensis&t=h_&iar=images" target="_blank">ホモカペンシス</a>.
     The arrow or pyramid symbol is a negatively polarized model of mind, it represents intellect and intellect can only understand reality by destroying it, by cutting it and slicing it into smaller parts to see how it all works together and then consuming all the parts for assimilation (different than integration).
         </page>
         <page class="page">  Our collective consciousness is in a total sum of vibrations that unfortunately includes greed. Greedy beings are negatively engaged with nature, and they are destroying nature. Greed is a symptom of disconnection from nature, from feelings, from the Source of Consciousness (A.K.A. God).
-    Human beings are not born with this feeling, we learn it by misunderstanding life & death. Homo Capensis made sure to scare us into believing false constructs, they worked hard for the last few centuries to transform the educational system into a tool that makes us more like them, to work only with our intellect and never with our emotions. They want indoctrinated factory workers that use herd logic and trust the Status Quo.
-    Greed, the natural state of Homo Capensis, is a suppressor of higher vibrations, of higher emotions and by its very nature, it can only create more disconnection and division. Greed is a characteristic of beings that have low empathy or no feelings, they are driven purely by intellect and an unquenchable thirst for power over nature, even their own nature.
+    Human beings are not born with this feeling, we learn it by misunderstanding life & death. <a href="https://duckduckgo.com/?q=homo+capensis&t=h_&iar=images" target="_blank">ホモカペンシス</a> made sure to scare us into believing false constructs, they worked hard for the last few centuries to transform the educational system into a tool that makes us more like them, to work only with our intellect and never with our emotions. They want indoctrinated factory workers that use herd logic and trust the Status Quo.
+    Greed, the natural state of <a href="https://duckduckgo.com/?q=homo+capensis&t=h_&iar=images" target="_blank">ホモカペンシス</a>, is a suppressor of higher vibrations, of higher emotions and by its very nature, it can only create more disconnection and division. Greed is a characteristic of beings that have low empathy or no feelings, they are driven purely by intellect and an unquenchable thirst for power over nature, even their own nature.
     Humans are on the path to maturing enough to overcome this programmed <b>Greed Based Model of Thinking</b> and we are close to curing our collective unconscious of parasitic models of thought. But for that, we need to be open to the possibility that we were ignorant, we didn't know that the world is not really run by Homo Sapiens. We need to grow our awareness and understand that some of us are, unfortunately, due to our imbalanced education, strongly controlled by greed and ignorance. I was in that place too. This happened without our choice in the matter, it's the result of our unfortunate indoctrination as kids. Most of us can be often selfish people or even sociopathic in behavior, but in the end, we are human beings, and we will be healed from greed when we won't have any better choice than to follow our hearts, our emotions when greed will no longer serve us in a heartful world of curiosity, love and joy.
     The only way to uniformly share our collective value and creativity in a way that empowers everyone equally is to distribute an open-source, trustless, deflationary, and decentralized token and nurture its mass adoption.
         </page>
@@ -551,7 +551,7 @@ export const pages = `
     Consensus is basically the degree to which people agree on something, the ultimate reality of this agreement is both physical in nature and virtual for our Digital Selves. There are 2 sides, 1 coin.
     Higher consensus creates a more stable and lasting value or reveals a better evidence-based truth or information, it offers stability.
     To know we possess something of value to others gives us security.
-    Ideally, when our basic physical needs are met, we constantly seek valuable things or valuable skills, veritable interests, and hobbies, when they aren't met, we seek comfort or we are in survival mode.
+    Ideally, when our basic physical needs are met, we constantly seek valuable things or valuable skills, veritable interests, and hobbies. When they aren't met, we seek comfort or we are in survival mode.
     In our “modern” societies, we currently regard virtual services as the dominant value store in our life, we rely on our digital networks.
     We cannot eat symbols, yet by constantly trading symbols for things, services, experiences we support and maintain their existence, their network.
     High collective consensus about symbols motivates us to invest in them and in return, the financial efforts of investors get multiplied and the rewards can be amazing, but only if the symbols represent benevolent initiatives.
@@ -559,7 +559,7 @@ export const pages = `
     If people like something, they usually want to sustain its development. The more people like it, the higher the consensus about its value or utility. This is how crowd-funded ideas become real, how modern artists make a living, how emergency situations are resolved and how lives are saved. GRAT is also represented by a fast-growing consensus.
         </page>
         <page class="page">    In the same way, currencies, most assets, contracts, and almost every exchange with another individual are all possible because of this, because we measure our reality constantly and decide whether to accept the value that others created before us.
-    Today the value of fiat currency (Yens, Euros, Pounds, Dollars, etc.) is insured by nothing but a false promise from greedy Homo Capensis. Have you measured the consensus about that lately?
+    Today the value of fiat currency (Yens, Euros, Pounds, Dollars, etc.) is insured by nothing but a false promise from greedy <a href="https://duckduckgo.com/?q=homo+capensis&t=h_&iar=images" target="_blank">ホモカペンシス</a>. Have you measured the consensus about that lately?
     You see, as humans, our hyperactive mind keeps on desiring things or skills valued by others, but deep inside, we seek appreciation from others, we would rather seek love, wonder, and joy instead of greed, vanity, or money.
     <b>Would you agree with the following?:</b>
     <i>A house is more valuable than a car, a car is more valuable than a stove, a stove is more valuable than a knife.
@@ -608,13 +608,13 @@ export const pages = `
     Studies show that over 90% of all the people who won the lottery, in a few years ended up worse than they were before they won.
     <b>Do you understand what this means?</b>
     Having money is not the correct answer to our dream life. Doing what we love for daily joy, being grateful for that opportunity, and for what life has to offer is the only sustainable way to live our desired life.
-    We need to stop thinking about what type of job is highly paid, let's think instead about what is valuable to us in our dream life. What did you enjoy doing as a child? What brings you joy? DO that, get good at it by doing it without thinking of a retirement plan. Serve yourself first, then others.
-    When our energy is spent efficiently by taking the risk of doing mostly what we love every day, the act of creation is perfected and others will appreciate and value the quality of our actions and results, they will show gratitude for our acts.
+    We need to stop thinking about what type of job is highly paid, let's think instead about what is valuable to us in our dream life. What did you enjoy doing as a child? What brings you joy? DO that, get good at it without thinking of a retirement plan. Serve yourself first, then others.
+    When our energy is spent efficiently by living, by taking the risk of doing what we love every day, the act of creation is perfected and others will appreciate and value the quality of our actions, they will feel gratitude. If we unite through the vibration of gratitude, miracles really can happen.
     You see, by natural desire, interest, or curiosity, when people come together and join forces to support the development of an idea, great things appear in our reality, the impossible becomes possible. And we don't all have to be developers, engineers, or scientists, but we all must have a better relationship with value and the representation of it, we must all have a better way of expressing our gratitude for the things or people we love in this world, otherwise, it's very difficult for crowds of people to take the right action.
     We need an open-source decentralized tool to share some of our accumulated value. Let's create things we desire so we can enjoy them in our own life. For one, the idea of crowdfunding and donations should not be mostly represented only in one of a few places like Kickstarter where people go to invest money to support the production of a certain product filtered through a process regulated by a centralized private company that provides the service and which is accepting only methods of payments controlled by the banks.
         </page>
         <page class="page">    Instead, it should be an open-source universal quality built in everywhere, in all apps, websites, and even physical places.
-    It should be a service that is defined by a high benevolent consensus, with the ability to transfer value at the click/touch of a button, a form of value flow without intermediaries.
+    It should be a service that is defined by a highly benevolent consensus, with the ability to transfer value at the click/touch of a button, a form of value flow without intermediaries.
     In this new open-source paradigm, solutions will be demonstrated which will allow us to offer any type of digital service that will not be financed by advertising or banks.
     Ads will no longer be needed to reach potential clients.
     The end of the psychological warfare era called "advertising" will set us free and empower us in ways we cannot even imagine yet.
@@ -651,7 +651,7 @@ export const pages = `
         </page>
         <page class="page">    Remember the <a href="https://en.wikipedia.org/wiki/Cambridge_Analytica" target="_blank">Facebook Cambridge Analytica scandal</a>?
     Most companies can sell your information because you agree to their terms & conditions which you never read. So legally, they are allowed to do it.
-    The terms & conditions of most corporations are the only thing you need to prove they are not concerned for the wellbeing of the users. The internet made it very easy for sociopaths to manipulate us to sign contracts that make us their assets.
+    The terms & conditions of big corporations are the only thing you need to prove they are not concerned for the wellbeing of the users. The internet made it very easy for sociopaths to manipulate us to sign contracts that make us their assets.
     The internet was meant to be a free space where anyone can join and explore, just like in the real world, but in reality, things are very different, maybe even opposite. Companies that demand all your personal information to offer you a malevolent service disguised as a benevolent service do not offer any protection at all, just like in the real world nobody can guarantee that you will eat a meal, have no accidents, or even survive every day.
     These companies are concerned only about profits extracted from information/content we the people possess or create and they obligate us to share our information, our life ... every second of it, in greater and greater detail, so they can better target their advertisement system.
     <b>The madness called advertising must end if we are to evolve as a species.</b>
@@ -675,14 +675,15 @@ export const pages = `
     We, the new generation of the 21'st century prefer to lean toward coming together, sharing, and forming networks instead of isolating ourselves from others to hoard everything, no matter if it's virtual or physical.
     This is an indication that our species is ready to transition from flat or 2D hierarchical networks to 3D biospheric networks.
     Ready or not, we need to make the shift to a Biosphere Consciousness, our continuity as a species depends on it, all life in the biosphere depends on it.
-    If it's sleeping in a hotel, getting a haircut, eating food that others made, an internet subscription, access to information/content, online shopping and delivery, insurance, or anything we can't do, all these services involve you interacting with real physical things and real physical people. At least, that has been the story so far. Things are changing, fast.
+    If it's sleeping in a hotel, getting a haircut, eating food that others made, an internet subscription, access to information/content, online shopping and delivery, insurance, all these services involve you interacting with real physical things and real physical people. At least, that has been the story so far. Things are changing, fast.
         </page>
         <page class="page">    The long-term value we see in things or services comes from their utility. The demand for any service or product disappears when a much better service or product with the same utility but better performance and/or better price is available.
     In general, services imply an exchange with some form of fungible value in order to access them.
     All the above come from human interactions with the “physical reality” (digital or analog) which sometimes includes other humans. Going forward with this fact, nothing we create has any value if there is no human interaction.
 
 <h2 class="heading">Creativity</h2>  
-    Everything we value is an act of creation. Nothing can exist without this act.
+    Everything we value is an act of creation.
+    Nothing can exist without this act.
     The act of creation is always evaluated or measured by others. If you think about it in terms of universal laws and principles, the value of creativity is directly proportional to movement and choices. There are forces at play to create value. A creator uses forces already existing and knowledge (the experience with those forces) to reconfigure his reality.
     From creating a clay pot to creating an entire universe, a creator merely uses what is already here and configures or combines it into something different.
     A creator is a transformer of reality, an alchemist, a shaper of reality. It doesn't mean he/she makes something of nothing. Not literally.
@@ -825,7 +826,7 @@ export const pages = `
     In other words, we are enabling users to quickly register/login on to websites using BiiP (as Google does, without filling out endless forms) while at the same time having a built-in cross-platform token transfer system for investment, payment, and funding, all built into the decentralized protocol. This enables so many possibilities for human digital creativity & interaction.
 
 <h3 class="heading">What are: BiiP and GRAT token?</h3>
-    <b>BiiP</b> - Is a unique method for enabling anyone to implement a very simple decentralized open-source user authentication protocol which enables the ability to request access to specific personal data/information and/or to execute blockchain transactions on behalf of the users, both operations being tied to a single unique crypto address.
+    <b>BiiP</b> - Is a unique decentralized user authentication protocol which enables the ability to request access to specific personal data/information and/or to execute blockchain transactions on behalf of the users, both operations being tied to a single unique crypto address.
     BiiP combines Universal Secure Authentication with a Crypto Currency and in the process unifies Money/Currency and Virtual Identity governing in one Decentralized Solution (a full, user controlled process, different from KYC).
     <b>Gratitude (GRAT) Token</b> - Is a deflationary and feeless token with a total supply of 12 billion tokens and it's the native fuel for all of our open-source projects. GRAT token will demonstrate and sustain revolutionary real use cases for the BiiP and beyond it.
     Along with the protocol and token we are constantly growing the <b>GRATITUDE SHIELD</b> and <b>GRATITUDE GENESIS</b> projects which are key to protecting and nurturing the main mission.
@@ -872,7 +873,7 @@ export const pages = `
 
     <b>TECHNOLOGY 技術</b> - Is nothing but an extension of our own thoughts or thinking processes.
     From a knife to Artificial Intelligence - technology is not good or bad, it's the makers and users of it that determine that distinction.
-    A knife can be used to make food or to kill someone, the knife itself has no qualities like good or bad and just because some people use it as a weapon instead of a tool it does not mean we should forbid the production and use of knives.
+    A knife can be used to make food or to kill someone. The knife itself has no qualities like good or bad and just because some people use it as a weapon instead of a tool it does not mean we should forbid the production and use of knives.
         </page>
         <page class="page">    The technology we call Blockchain is still in its infancy and so far, it mostly benefited the 1%.
     Yes, many other regular people became millionaires, but most people either didn't understand the fundamentals of investing in new technologies or were outright scammed.
@@ -890,9 +891,9 @@ export const pages = `
         <page class="page"><h2 class="heading" style="text-transform: initial;">More technical details about BiiP</h2>
     BiiP (Biospheric Identity Internet Protocol) is firstly an Open-Source API (Application Programming Interface), a revolutionary Online Authentication method using a decentralized identity running on a fast & secure blockchain.
     <b>Let's explain it in more common terms and in chronological order:</b>
-    1.	WhatsApp was the first to use GSM numbers instead of emails to register/authenticate people. But you can be sure that in 10 years, SIM cards will be a thing of the past just as audio cassettes were.
-    2.	Companies like Twitter, Facebook, and Google have copied the original idea of general online authentication and transformed it into corporate OAuth (Online Authentication) which is centralized, private, and sadly, a corrupt version of the original OAuth 1.0 protocol that was conceivably a powerful Open-Source tool for registration and authentication to online services.
-    3.	This year, GRAT will demonstrate a revolutionary protocol named BiiP using an open-source decentralized authentication API that harnesses the power of a fast, feeless crypto token (GRAT), creating a unique and extremely secure authentication method using blockchain address ownership confirmation as the proof of identity.
+    1. WhatsApp was the first to use GSM numbers instead of emails to register/authenticate people. But you can be sure that in 10 years, SIM cards will be a thing of the past just as audio cassettes were.
+    2. Companies like Twitter, Facebook, and Google have copied the original idea of general online authentication and transformed it into corporate OAuth (Online Authentication) which is centralized, private, and sadly, a corrupt version of the original OAuth 1.0 protocol that was conceivably a powerful Open-Source tool for registration and authentication to online services.
+    3. Soon, GRAT will demonstrate a revolutionary protocol named BiiP using an open-source decentralized authentication API that harnesses the power of a fast, feeless crypto token (GRAT), creating a unique and extremely secure authentication method using blockchain address ownership confirmation as the proof of identity.
 
 <b>BiiP & GRAT solve 3 hard 21<sup>st</sup>-century biospheric internet problems:</b>
     1.	<b>Biospheric Secure Authentication</b> - with built-in authorization of 2<sup>nd</sup> and 3<sup>rd</sup> parties' access to personal information and funds, with no need for government managed KYC (Know Your Customer) verification.
@@ -922,7 +923,8 @@ export const pages = `
         <page class="page"><img class="imgCenter" style="width: 55% !important" src="/white-paper/img/id-card.jpg" alt="id card romanian" loading="lazy"/>
     This "Identity" Card represents my Romanian corporate identity, also known as a <b>straw man</b>. It was issued by a government corporation and so it belongs to it, not to me. The national insurance number represents an asset/insurance for the Romanian corporation, not for me as a human.
     The information about my straw man and all other documents like it (starting with the birth certificate) is used by government corporations in different global markets to derive and create value for the leaders of the pyramid structure of the corporation, in my case Romania, so not for me, my family, my friends or my community. They accomplish this by falsely promising to take care of me in return. They promise rights, roads, medical services, etc.
-    BiiP allows you to create a digital blockchain-based future-proof alternative to an identity that you and only you can manage. No corporation will be able to control it. We believe in a Decentralized Identity / Information / Content / Resources - Operational Model which must follow an Inclusive-Open-Source formula, different from the old and exclusive “Patent-based and Profit-based Business Models”.
+    BiiP allows you to create a digital blockchain-based future-proof alternative to the straw man identity.
+    No corporation will be able to control it. We believe in a Decentralized Identity / Information / Content / Resources - Operational Model which must follow an Inclusive-Open-Source formula, different from the old and exclusive “Patent-based and Profit-based Business Models”.
 
 <h2 class="heading">What is a straw man?</h2>
     "Since a straw man is not a real person, they exist only within the environment they were created, such as the state.
@@ -981,7 +983,7 @@ export const pages = `
     For Bitcoin, the code was written to limit the amount of Bitcoins that will ever be emitted to 21 million units of Bitcoin (which can be further divided into 100 million parts or sub-units, just like €1 can be divided into 100 cents or pennies, but way more parts).
     The 21 million total monetary supply limit means that Bitcoin, as a monetary system is a deflationary monetary system. With a monetary system like this, inflation is technically and practically impossible.
     When the last Bitcoin will be mined/emitted (which is estimated to be somewhere around February 2140), the Bitcoin software will no longer emit Bitcoins and people will have to price fight over the total amount of Bitcoin in circulation.
-    The showstopper problem with PoW is that it created sort of a “crypto mining rush” which created an electrical energy and hardware consumption worldwide problem, not to mention the whales that have enough bitcoins to crash the market if they ever sell too much too fast.
+    The showstopper problem with PoW is that it created sort of a "crypto mining rush" which created an electrical energy and hardware consumption worldwide problem, not to mention the whales that have enough bitcoins to crash the market if they ever sell too much too fast.
     If you sum up all the cryptocurrency projects that implemented PoW, their total amount of electrical power consumption would be that of the consumption of many countries combined. The Bitcoin network for example consumes more electrical power than Argentina.
     The <b>PoS</b> (Proof-of-Stake) algorithm is a solution for a more scalable blockchain with higher transaction throughput. The biggest benefit is the elimination of the electrical energy consumption problem.
         </page>
@@ -995,9 +997,9 @@ export const pages = `
 <h2 class="heading">The time for revolution is Now</h2>
     The old centralized and private “ADS EVERYWHERE” profit-based Business Model for digital platforms of any kind must end.
     The new open-source BiiP model is here.
-    Any individual, company, or community developing a digital platform or app can now support BiiP using GRAT tokens as a representation of Digital Monetary Value that can be used better than we ever used fiat money.
+    Any individual, company, or community developing a website or app can now support BiiP using GRAT tokens as a representation of Digital Monetary Value that can be used better than we ever used fiat money.
 
-<h2 class="heading">The old status quo</h2>
+<h2 class="heading">The old Status Quo</h2>
     Nothing is free in a Surveillance Capitalist Society. We keep paying for online services with the most precious resources humanity has: <b>Attention</b>
         </page>
         <page class="page">or if you prefer: Time and Privacy.
@@ -1067,8 +1069,8 @@ export const pages = `
     <b>What sets the GRAT account apart from other similar dapp protocols?</b>
     The GRAT account is not just a way to connect to a wallet or dapp, it's a decentralized encrypted database of personal information attached or associated with an encrypted GRAT address, all stored safely on the blockchain.
     A GRAT protocol account is made from 3 main components:
-    1.	<b>A closed-end token address</b> - This is an encrypted <b>GRAT address + a username</b> stored in a decentralized blockchain file storage system. Only the owner, the GRAT system, and 3<sup>rd</sup> parties authorized by the owner (to some extent but with limitations) can execute transactions for this address. Nobody else can see the GRAT address keys for this address except the owner by signing the operation using his wallet app, the keys are not exposed to any other end.
-    2.	<b>Personal Information</b> like Names, Emails, Addresses, Social Security numbers, and other crypto account addresses. Just like the GRAT address, this information is encrypted and stored on decentralized nodes around the world. Only the GRAT system can with the permission of the account owner share this information (only once on registration) with 3<sup>rd</sup> parties.
+    1. <b>A closed-end token address</b> - This is an encrypted <b>GRAT address + a username</b> stored in a decentralized blockchain file storage system. Only the owner, the GRAT system, and 3<sup>rd</sup> parties authorized by the owner (to some extent but with limitations) can execute transactions for this address. Nobody else can see the GRAT address keys for this address except the owner by signing the operation using his wallet app, the keys are not exposed to any other end.
+    2. <b>Personal Information</b> like Names, Emails, Addresses, Social Security numbers, and other crypto account addresses. Just like the GRAT address, this information is encrypted and stored on decentralized nodes around the world. Only the GRAT system can with the permission of the account owner share this information (only once on registration) with 3<sup>rd</sup> parties.
     The owner of the account can authorize 3<sup>rd</sup> party apps/services upon registration to have access only to the personal information of his choice.
         </page>
         <page class="page">   3. <b>An API</b> (Application Programming Interface) that allows GRAT account owners to authorize and govern access for 3<sup>rd</sup> party website/apps/games to their personal information and finances or funds. In other words, besides the personal information shared on registration, the features in this component allow the account owner to govern 3<sup>rd</sup> party abilities to execute custom GRAT transactions on behalf of him/her for different actions/events triggered on 3<sup>rd</sup> party platforms/apps (actions like transferring, reacting, sharing, investing, funding or donating custom amounts of GRAT tokens).
@@ -1088,9 +1090,9 @@ export const pages = `
     But with GRAT launched, we now have a unique way of registering, with your selected encrypted personal info, associated with your GRAT address, while enjoying a unique way of rewarding interactions on websites and apps and while being able to crowdfund anything, anywhere. All are available to users at the click/touch of a button.
     It's very hard to make technology simpler to use than this.
 
-<h2 class="heading">Monetary Policy</h2>
+<h2 class="heading">Tokenomics</h2>
     The token is deflationary as it was created with a Max Supply of <b>12.000.000.000</b> GRAT tokens with 18 decimal points.
-    There is no built-in ability to burn, block, recall or emit more tokens.
+    There will be no built-in ability to block, recall or emit more tokens.
     <b>11 billion</b> tokens - will be distributed through a years long airdrop campaign, through Genesis signups and referrals.
     <b>900 million</b> tokens - are reserved for Genesis and SHIELD development (<b>800 million</b> tokens for Genesis initiatives and <b>100 million</b> for SHIELD).
     <b>100 million</b> tokens - will be distributed publicly through an IDO.
@@ -1244,7 +1246,7 @@ export const pages = `
     <b>No profit schemes. No monopoly. No pyramid schemes.
     Just Open-Source Freedom</b>
     GRAT stands for a fair participation and interaction model manifested through one single unifying truth, the truth of a 🌏 Biosphere Consciousness where all things are inclusive.
-    Without exploiting our lives for profit, “big players” like bankers, social media corporations, and other types of services will have to change their whole approach or face extinction.
+    Without exploiting our lives for profit, “big players” like bankers, social media corporations, and other types of services will have to join us or face extinction.
         </page>
         <page class="page">    We can transition from a 🔺 Hierarchical Pyramid System centered on Profit and Exclusivity - to a 🌏 Biosphere Consciousness Network centered on contribution and inclusivity.
     This new approach can uniformly distribute the results of the daily creative energy spent by humanity, it will transfer for example the users of social media to a better Biosphere Media, part of the Gratitude Biospheric Internet where apps and websites are run by Gratitude Energy instead of greed, espionage, false information and fake fame.
@@ -1291,7 +1293,7 @@ export const pages = `
         </page>
         <page class="page"><h2 class="heading">How does it work?</h2>
 
-    We do not allow anyone to become a member without first making sure they aren't a robot and that they're well-intended.
+    We do not allow anyone to become a member without first making sure they aren't a bot (software) and that they're well-intended.
     All new members are vetted through SHIELD and members can be voted out if needed, their staked tokens being returned.
 
 <h3 class="heading">Issues and Proposals</h3>
