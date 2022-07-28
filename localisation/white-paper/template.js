@@ -50,26 +50,4 @@ templates['body'] = template({"compiler":[8,">= 4.3.0"],"main":function(containe
     + ((stack1 = ((helper = (helper = lookupProperty(helpers,"copy") || (depth0 != null ? lookupProperty(depth0,"copy") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"copy","hash":{},"data":data,"loc":{"start":{"line":41,"column":12},"end":{"line":41,"column":22}}}) : helper))) != null ? stack1 : "")
     + "\r\n        </footer>\r\n    </div><!-- .content -->\r\n</div><!-- .wrapper -->";
 },"useData":true});
-templates['head'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "<meta name=\"description\" content=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"metaDescription") || (depth0 != null ? lookupProperty(depth0,"metaDescription") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"metaDescription","hash":{},"data":data,"loc":{"start":{"line":1,"column":34},"end":{"line":1,"column":53}}}) : helper)))
-    + "\">\r\n<!-- Open Graph -->\r\n<meta property=\"og:title\" content=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"metaTitle") || (depth0 != null ? lookupProperty(depth0,"metaTitle") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"metaTitle","hash":{},"data":data,"loc":{"start":{"line":3,"column":35},"end":{"line":3,"column":48}}}) : helper)))
-    + "\" />\r\n<meta property=\"og:description\" content=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"metaDescription") || (depth0 != null ? lookupProperty(depth0,"metaDescription") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"metaDescription","hash":{},"data":data,"loc":{"start":{"line":4,"column":41},"end":{"line":4,"column":60}}}) : helper)))
-    + "\" />\r\n<meta property=\"og:image\" content=\"https://gratitudetoken.world/white-paper/img/white-paper.jpg\" />\r\n<meta property=\"og:url\" content=\"https://gratitudetoken.world/white-paper\" />\r\n<meta property=\"og:site_name\" content=\"gratitudetoken.world/white-paper\" />\r\n\r\n<!-- Twitter Cards -->\r\n<meta name=\"twitter:title\" content=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"metaTitle") || (depth0 != null ? lookupProperty(depth0,"metaTitle") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"metaTitle","hash":{},"data":data,"loc":{"start":{"line":10,"column":36},"end":{"line":10,"column":49}}}) : helper)))
-    + "\">\r\n<meta name=\"twitter:description\" content=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"metaDescription") || (depth0 != null ? lookupProperty(depth0,"metaDescription") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"metaDescription","hash":{},"data":data,"loc":{"start":{"line":11,"column":42},"end":{"line":11,"column":61}}}) : helper)))
-    + "\">\r\n<meta name=\"twitter:image\" content=\"https://gratitudetoken.world/white-paper/img/white-paper-twitter.jpg\">\r\n<meta name=\"twitter:site\" content=\"@Gratitude_World\">\r\n<meta name=\"twitter:creator\" content=\"@Lucian_Apetrei\">\r\n\r\n<title>"
-    + alias4(((helper = (helper = lookupProperty(helpers,"whitePaper") || (depth0 != null ? lookupProperty(depth0,"whitePaper") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"whitePaper","hash":{},"data":data,"loc":{"start":{"line":16,"column":7},"end":{"line":16,"column":21}}}) : helper)))
-    + " | GratitudeToken.world</title>";
-},"useData":true});
 })();

@@ -711,6 +711,7 @@ button,
   width: 9vmin;
   height: 9vmin;
   margin: calc(var(--side-length) * 2) auto 1vmax auto;
+  pointer-events: none;
 }
 #cards .active svg {
   fill: #ffffff;
@@ -724,6 +725,7 @@ button,
 #cards li span {
   display: block;
   margin-bottom: 4vmin;
+  pointer-events: none;
 }
 
 #section3 .border {
