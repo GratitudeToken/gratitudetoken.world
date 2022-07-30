@@ -60,7 +60,6 @@ fetch('/localisation/' + page + '/' + code + '.json')
             import('/modules/debounce.js'),
             import('/modules/on_scroll.js'),
             import('/modules/observable_intersections.js'),
-            import('/modules/genesis_cards.js'),
             import('/modules/lightspeed.js'),          
         ];
     
@@ -75,8 +74,7 @@ fetch('/localisation/' + page + '/' + code + '.json')
         const { debounce } = res[6];
         const { onScroll } = res[7];
         const { observeEverything } = res[8];
-        const { cardDimensions } = res[9];
-        const { lightspeed } = res[10];
+        const { lightspeed } = res[9];
     
         // Run them
         slider();
@@ -84,20 +82,17 @@ fetch('/localisation/' + page + '/' + code + '.json')
         setTimeout(sparky, 16000);
     
         window.addEventListener("resize", function () {
-            cardDimensions();
             createStarField();
         });
     
         countdowns();
         preloader();
-        cardDimensions();
         createStarField();
         roadmapMagic();
     
     
         window.addEventListener("scroll", debounce(() => {
             onScroll();
-            cardDimensions();
             calcCanvPosition();
         }, 50));
     

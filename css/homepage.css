@@ -710,7 +710,6 @@ button,
   fill: #ff807a;
   width: 9vmin;
   height: 9vmin;
-  margin: calc(var(--side-length) * 2) auto 1vmax auto;
   pointer-events: none;
 }
 #cards .active svg {
@@ -728,86 +727,12 @@ button,
   pointer-events: none;
 }
 
-#section3 .border {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  pointer-events: none;
-}
-
-.top,
-.right,
-.bot,
-.left {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  position: absolute;
-}
-
-.top {
-  flex-direction: row;
-  top: 0;
-  left: 0;
-  width: calc(100% - var(--side-length));
-  height: var(--side-length);
-}
-.right {
-  flex-direction: column;
-  right: 0;
-  top: 0;
-  width: var(--side-length);
-  height: calc(100% - var(--side-length));
-}
-.bot {
-  flex-direction: row-reverse;
-  bottom: 0;
-  right: 0;
-  width: calc(100% - var(--side-length));
-  height: var(--side-length);
-}
-.left {
-  flex-direction: column-reverse;
-  left: 0;
-  bottom: 0;
-  width: var(--side-length);
-  height: calc(100% - var(--side-length));
-}
-
-#cards .border i {
-  width: var(--side-length);
-  height: var(--side-length);
-  line-height: var(--side-length);
-  font-size: var(--side-length);
-  font-style: normal;
-  text-align: center;
-  font-weight: bold;
-  border: 0;
-  margin: 0;
-  opacity: 0;
-  color: #ffffff;
-}
-
-.binaryFade {
-  animation: binaryFade 1.55s infinite linear;
-}
-
-@keyframes binaryFade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .progress {
   font-size: 1.5vmin;
   font-weight: normal;
-  width: calc(100% - var(--side-length) * 2);
+  width: 100%;
   position: absolute;
-  bottom: var(--side-length);
+  bottom: 0;
   padding: 0.5vmin 0;
   background: #00000050;
   border: 1px solid #ff807a32;
