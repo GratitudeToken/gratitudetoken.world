@@ -1370,9 +1370,10 @@ button,
   display: block;
   width: 100px;
   height: 26px;
-  background: url(https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg)
+  background: url(https://brand.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg)
     no-repeat;
   position: absolute;
+  background-size: contain;
   bottom: 3%;
   right: 0;
   left: 0;
