@@ -467,7 +467,6 @@ button,
 /* SECTION 2 */
 
 #section2 {
-  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -492,7 +491,7 @@ button,
 
 .main-specs div {
   padding: 0 12% 10% 12%;
-  color: transparent;
+  color: #999999 !important;
 }
 
 .main-specs img {
@@ -506,6 +505,7 @@ button,
 .main-specs strong {
   display: block;
   font-size: 3vmin;
+  color: #ffffff !important
 }
 
 .BiiP .word {
@@ -545,7 +545,7 @@ button,
     color: transparent;
   }
   100% {
-    color: #ffffff;
+    color: #999999;
   }
 }
 
@@ -576,6 +576,7 @@ button,
   padding: 2vmin 6vmin 6vmin 6vmin;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
   z-index: 5;
+  color: #999999
 }
 
 .countdown + p {
