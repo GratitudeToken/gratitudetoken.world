@@ -1023,7 +1023,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
 <div class="pt15 grid-span2columns">
     <div class="grid2by1 gap23 w100 h100">
         <div class="w100">
-            <h2 class="font23 c-F">Financial Governance</h2><br>
+            <h2 class="font23 c-F">Delegated Transactions</h2><br>
             <div class="grid1by4">
                 <div>
                     <b>From ${window.location.hostname}</b><br>
@@ -1285,7 +1285,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
 let addressBlocked = 0;
 
 // short messages system
-let shortMessages = function(el) {
+let shortMessages = function (el) {
     el.forEach((el) => {
         el.addEventListener('click', event => {
             el.classList.toggle('togglerON');
@@ -1319,7 +1319,7 @@ let shortMessages = function(el) {
 
                     $('#blockAccess').textContent = 'BLOCK ALL';
                     $('#blockAccess').classList.remove('btn-green');
-                } 
+                }
                 if (count > 0 && count < usernames.length) {
                     addressBlocked = 2;
                     $('#accessStatus').textContent = '[ PARTIALLY BLOCKED ]';
@@ -1336,7 +1336,7 @@ let shortMessages = function(el) {
     });
 }
 
-let blockBTN = function(el) {
+let blockBTN = function (el) {
     // block current Keeper's access to all usernames for this address
     el.addEventListener('click', event => {
         $('#accessStatus').classList.remove('c-orange');
@@ -1377,7 +1377,7 @@ const hideMobileNav = () => {
 
 
 // a function to populate the data from the selected user
-let showData = function() {
+let showData = function () {
     const callData = new allData;
     // show the data for this selected user
     $('.BiiP_data') ? $('.BiiP_data').remove() : null;
@@ -1446,7 +1446,7 @@ let showData = function() {
     });
 }
 
-const closeData = function() {
+const closeData = function () {
     $('.BiiP_data') ? $('.BiiP_data').remove() : null;
     BiiP_element.classList.remove('BiiP_data_visible');
     BiiP_element.style = '';
@@ -1458,7 +1458,7 @@ const closeData = function() {
 BiiP_element.innerHTML += BiiP_svg + '<div class="shortMessage font23"></div><div id="BiiP_circle"></div><audio controls id="biip_sound"><source src="/sounds/biip.mp3" type="audio/mpeg"></audio><audio controls id="select_sound"><source src="/sounds/select.mp3" type="audio/mpeg"></audio><audio controls id="select_reverse"><source src="/sounds/select-reverse.mp3" type="audio/mpeg"></audio>' + BiiP_style;
 
 // what happens when clicking on the BiiP svg
-let BiiP_click = function() {
+let BiiP_click = function () {
     // if the BiiP UI is not visible
     if (!BiiP_UI_visible) {
         hideMobileNav();
@@ -1482,21 +1482,21 @@ let BiiP_click = function() {
             $('#BiiP_wrapper').innerHTML += msg1;
 
             // an example of a basic message
-            setTimeout(function(){
+            setTimeout(function () {
                 $('biip_message') ? $('biip_message').classList.add('showBiiP_message') : null;
             }, 900);
 
-            setTimeout(function(){
+            setTimeout(function () {
                 if (BiiP_UI_visible) {
                     // calculate the avatars positioning
                     let biips = '';
-                    
+
                     // add HTML for each
                     usernames.forEach(item => { // here make this css var work with the values: transform: rotate('+degrees+'deg) translate(155.5vh) rotate(-'+degrees+'deg)
-                        biips += '<div class="BiiP_username" style="transform: '+ rotator(degrees) +'; background-image: url(/img/'+item.u+'.jpg)"><b>'+item.u+'</b></div>';
+                        biips += '<div class="BiiP_username" style="transform: ' + rotator(degrees) + '; background-image: url(/img/' + item.u + '.jpg)"><b>' + item.u + '</b></div>';
                         degrees += 6;
                     });
-                    
+
                     // create a node with all this and add it to BiiP after, also remove it when closing (on the else below)
                     $('#BiiP_circle').innerHTML += biips;
                     $('#BiiP_circle').style = 'transform: rotate(0)';
@@ -1508,17 +1508,17 @@ let BiiP_click = function() {
                             let selected = document.createElement('div');
                             selected.classList.add('selectedUser');
 
-                            setTimeout(function(){
+                            setTimeout(function () {
                                 // add the selectedUser div
                                 $('.selectedUser') ? $('.selectedUser').remove() : null;
-                                selected.style = 'background-image: url(/img/'+selectedUser.u+'.jpg)';
+                                selected.style = 'background-image: url(/img/' + selectedUser.u + '.jpg)';
                                 BiiP_element.appendChild(selected);
                                 $('#biip_sound').play();
 
                                 showData();
                                 $('.BiiP_svg').classList.remove('pe');
                             }, 1111);
-                            
+
                             // do some stuff after
                             selectedUser = usernames[index];
                             item.classList.add('userCenter');
@@ -1539,18 +1539,18 @@ let BiiP_click = function() {
     }
 }
 
-const closeBiiP = function() {
+const closeBiiP = function () {
     BiiP_UI_visible = false;
     degrees = 90;
     window.removeEventListener("wheel", wheelFunction);
     wrapper.removeEventListener("click", clickFunction);
-    
+
     $('body').style.overflow = '';
     $('#BiiP_wrapper').style = 'display: none';
     $('biip_message').remove();
     $('#BiiP_circle').style = '';
-    $('#BiiP_circle').innerHTML =  '';
-    setTimeout(function(){
+    $('#BiiP_circle').innerHTML = '';
+    setTimeout(function () {
         BiiP_element.classList.remove('BiiP_center');
     }, 230);
     $('#select_reverse').currentTime = 0;
@@ -1575,14 +1575,14 @@ window.addEventListener('keyup', e => {
     // TO DO: must select usernames based on CTRL + number key press from 0 to 9 ? or just numbers from 0 to 9
 });
 
-let showMainContent = function() {
+let showMainContent = function () {
     $('.logo').style = 'display: flex';
     $('header').style = 'display: block';
     $('.wrapper') ? $('.wrapper').style = 'display: flex' : null;
     document.body.style.overflow = null;
 }
 
-let hideMainContent = function(string) {
+let hideMainContent = function (string) {
     $('.logo').style = 'display: ' + string;
     $('header').style = 'display: ' + string;
     $('.wrapper') ? $('.wrapper').style = 'display: ' + string : null;
@@ -1592,8 +1592,8 @@ let hideMainContent = function(string) {
 // initial BiiP_circle usernames angle and rotating function
 let degrees = 90;
 let finalAngle = degrees;
-let wMid = window.innerWidth/2;
-let hMid = window.innerHeight/1.4;
+let wMid = window.innerWidth / 2;
+let hMid = window.innerHeight / 1.4;
 const wrapper = $('#BiiP_wrapper');
 
 

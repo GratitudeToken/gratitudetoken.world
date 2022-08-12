@@ -29,106 +29,105 @@ form.addEventListener('click', event => {
 });
 
 fetch('/localisation/' + page + '/' + code + '.json')
-.then(res => res.json())
-.then(async data => {
-    const newBody = Handlebars.templates.body(data);
-    bodyTranslate.innerHTML = newBody;
+    .then(res => res.json())
+    .then(async data => {
+        const newBody = Handlebars.templates.body(data);
+        bodyTranslate.innerHTML = newBody;
 
-    // THE HEAD TRANSLATION below + the headTranslate variable above CAN BE USED AGAIN AFTER IMPLEMENTING NODE.JS or another solution FOR THE ENTIRE WEBSITE
-    // right now, handlebars cannot render elements correctly from the first DOM load and so, a lot of web scrapers and robots cannot read the content
+        // THE HEAD TRANSLATION below + the headTranslate variable above CAN BE USED AGAIN AFTER IMPLEMENTING NODE.JS or another solution FOR THE ENTIRE WEBSITE
+        // right now, handlebars cannot render elements correctly from the first DOM load and so, a lot of web scrapers and robots cannot read the content
 
-    // const extraHead = Handlebars.templates.head(data);
-    // headTranslate.innerHTML += extraHead;
+        // const extraHead = Handlebars.templates.head(data);
+        // headTranslate.innerHTML += extraHead;
 
-    HTML.setAttribute('lang', code);
+        HTML.setAttribute('lang', code);
 
 
-    let selector = $('#languageSelect');
+        let selector = $('#languageSelect');
 
-    selector.addEventListener('click', event => {
-        form.style = 'display: flex';
+        selector.addEventListener('click', event => {
+            form.style = 'display: flex';
+        });
+
+        if (page == "homepage") {
+            const promise = [
+                import('/modules/slider.js'),
+                import('/modules/countdown.js'),
+                import('/modules/preloaders.js'),
+                import('/modules/fire_sparks.js'),
+                import('/modules/roadmap.js'),
+                import('/modules/nodes_supernova.js'),
+                import('/modules/debounce.js'),
+                import('/modules/on_scroll.js'),
+                import('/modules/observable_intersections.js'),
+                import('/modules/lightspeed.js'),
+            ];
+
+            const res = await Promise.all(promise);
+
+            const { slider } = res[0];
+            const { countdowns } = res[1];
+            const { preloader } = res[2];
+            const { sparky } = res[3];
+            const { roadmapMagic } = res[4];
+            const { calcCanvPosition, createStarField } = res[5];
+            const { debounce } = res[6];
+            const { onScroll } = res[7];
+            const { observeEverything } = res[8];
+            const { lightspeed } = res[9];
+
+            // Run them
+            slider();
+            observeEverything();
+            setTimeout(sparky, 16000);
+
+            window.addEventListener("resize", function () {
+                createStarField();
+            });
+
+            countdowns();
+            preloader();
+            createStarField();
+            roadmapMagic();
+
+
+            window.addEventListener("scroll", debounce(() => {
+                onScroll();
+                calcCanvPosition();
+            }, 50));
+
+            let body = $('body');
+            let showNav = $('#showNav');
+            showNav.addEventListener('click', event => {
+                body.classList.add('showUI');
+                showNav.style = 'animation: fadeOut 1s ease forwards, moveCenter 1s ease forwards;';
+                setTimeout(function () { showNav.remove(); }, 1000);
+            });
+
+            setTimeout(function () { body.classList.add('showUI'); showNav.style = 'animation: fadeOut 1s ease forwards, moveCenter 1s ease forwards;' }, 12940);
+            //setTimeout(function() {showNav.remove();}, 13940);
+
+            lightspeed();
+        }
+        const { whitePaper } = await import('/modules/white_paper.js');
+        const { mToggle } = await import('/modules/mobile_menu.js');
+
+        if (page == "puzzle") {
+            puzzleJSON = data;
+            puzzleJS();
+        } else {
+            mToggle();
+            shareThis();
+            BiiP_script();
+        }
+        if (page == "white-paper") {
+            const { pages } = await import('/localisation/white-paper/' + code + '.js');
+            $('#white-paper').innerHTML += pages;
+            whitePaper();
+        }
     });
 
-    if (page == "homepage") {
-        const promise = [
-            import('/modules/slider.js'),
-            import('/modules/countdown.js'),
-            import('/modules/preloaders.js'),
-            import('/modules/fire_sparks.js'),
-            import('/modules/roadmap.js'),
-            import('/modules/nodes_supernova.js'),
-            import('/modules/debounce.js'),
-            import('/modules/on_scroll.js'),
-            import('/modules/observable_intersections.js'),
-            import('/modules/lightspeed.js'),          
-        ];
-    
-        const res = await Promise.all(promise);
-    
-        const { slider } = res[0];
-        const { countdowns } = res[1];
-        const { preloader } = res[2];
-        const { sparky } = res[3];
-        const { roadmapMagic } = res[4];
-        const { calcCanvPosition, createStarField } = res[5];
-        const { debounce } = res[6];
-        const { onScroll } = res[7];
-        const { observeEverything } = res[8];
-        const { lightspeed } = res[9];
-    
-        // Run them
-        slider();
-        observeEverything();
-        setTimeout(sparky, 16000);
-    
-        window.addEventListener("resize", function () {
-            createStarField();
-        });
-    
-        countdowns();
-        preloader();
-        createStarField();
-        roadmapMagic();
-    
-    
-        window.addEventListener("scroll", debounce(() => {
-            onScroll();
-            calcCanvPosition();
-        }, 50));
-    
-        let body = $('body');
-        let showNav = $('#showNav');
-        showNav.addEventListener('click', event => {
-            body.classList.add('showUI');
-            showNav.style = 'animation: fadeOut 1s ease forwards, moveCenter 1s ease forwards;';
-            setTimeout(function () { showNav.remove(); }, 1000);
-        });
-    
-        setTimeout(function () { body.classList.add('showUI'); showNav.style = 'animation: fadeOut 1s ease forwards, moveCenter 1s ease forwards;' }, 12940);
-        //setTimeout(function() {showNav.remove();}, 13940);
-    
-        lightspeed();
-    }
-    const { whitePaper } = await import('/modules/white_paper.js');
-    const { mToggle } = await import('/modules/mobile_menu.js');
-
-    if (page == "puzzle") {
-        puzzleJSON = data;
-        puzzleJS();
-    } else {
-        mToggle();
-        shareThis();
-        BiiP_script();
-    }
-    if (page == "white-paper") {
-        const { pages } = await import('/localisation/white-paper/'+code+'.js');
-        $('#white-paper').innerHTML += pages;
-        whitePaper();
-    }
-});
-
-const BiiP_script = () =>
-{
+const BiiP_script = () => {
     const script = document.createElement("script");
     script.async = true;
     script.src = "/BiiP.js"
@@ -136,18 +135,63 @@ const BiiP_script = () =>
 }
 
 
-const shareThis = () =>
-{
+const shareThis = () => {
     const script = document.createElement("script");
     script.async = true;
     script.src = "https://platform-api.sharethis.com/js/sharethis.js#property=6220b91b94b169001b48536f&product=inline-share-buttons"
     document.body.append(script);
 }
 
-const puzzleJS = () =>
-{
+const puzzleJS = () => {
     const script = document.createElement("script");
     script.async = true;
     script.src = "/puzzle/main.js"
     document.body.append(script);
 }
+
+// Youtube functionality
+
+
+// Youtube player
+
+
+$('#youtubeVideo').addEventListener('click', () => {
+
+    const ytIframe = $('#youtubeIframe');
+
+    $('#youtubeOverlay').classList.remove('none');
+    // This code loads the IFrame Player API code asynchronously.
+    let tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    let firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // This function creates an <iframe> (and YouTube player)
+    // after the API code downloads.
+    let player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('youtubeIframe', {
+        videoId: 'y-mpLMX-bDo',
+        playerVars: { 'autoplay': 1 },
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange,
+            'onError': onPlayerError
+        }
+        });
+    }
+
+    // The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+        event.target.playVideo();
+        // this shit doesn't work because youtube has disabled autoplay and you can use it only with muting the video
+    }
+
+    $('#youtubeOverlay').addEventListener('click', () => {
+        $('#youtubeOverlay').classList.add('none');
+        // a workaround to stop the video
+        ytIframe.src = ytIframe.src;
+    });
+});
