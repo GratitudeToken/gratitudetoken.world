@@ -154,12 +154,14 @@ const puzzleJS = () => {
 
 // Youtube player
 
+const yv = $('#youtubeVideo');
 
-$('#youtubeVideo').addEventListener('click', () => {
+yv ? yv.addEventListener('click', () => {
 
     const ytIframe = $('#youtubeIframe');
+    const yo = $('#youtubeOverlay');
+    yo.classList.remove('none');
 
-    $('#youtubeOverlay').classList.remove('none');
     // This code loads the IFrame Player API code asynchronously.
     let tag = document.createElement('script');
 
@@ -173,13 +175,13 @@ $('#youtubeVideo').addEventListener('click', () => {
 
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('youtubeIframe', {
-        videoId: 'y-mpLMX-bDo',
-        playerVars: { 'autoplay': 1 },
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange,
-            'onError': onPlayerError
-        }
+            videoId: 'y-mpLMX-bDo',
+            playerVars: { 'autoplay': 1 },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange,
+                'onError': onPlayerError
+            }
         });
     }
 
@@ -189,9 +191,9 @@ $('#youtubeVideo').addEventListener('click', () => {
         // this shit doesn't work because youtube has disabled autoplay and you can use it only with muting the video
     }
 
-    $('#youtubeOverlay').addEventListener('click', () => {
-        $('#youtubeOverlay').classList.add('none');
+    yo.addEventListener('click', () => {
+        yo.classList.add('none');
         // a workaround to stop the video
         ytIframe.src = ytIframe.src;
     });
-});
+}) : null;

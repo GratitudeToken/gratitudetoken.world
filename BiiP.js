@@ -479,7 +479,7 @@ biip_message b {font-size: 16px; color: #ffffff}
 
 .showBiiP_message {top: 23px;}
 
-biip_message button {background-color: #db463e32; cursor: pointer; border: 1px solid #db463e69; border-radius: 10px; color: #db463e; font-size: 16px; font-weight: bold; padding: 6px 12px; margin: 3px 10px; display: inline-block; transition: all 0.32s; min-width: 110px;}
+biip_message button {background-color: #db463e32; cursor: pointer; border: 1px solid #db463e69; border-radius: 10px; color: #db463e; font-size: 16px; font-weight: bold; padding: 6px 12px; margin: 3px 10px; display: inline-block; transition: all 0.32s;}
 biip_message button:hover {background-color: #ffffff23; color: #ffffff;
     background-size: 72px;
     background-position: 50% 0;
@@ -501,7 +501,7 @@ biip_message button:hover {background-color: #ffffff23; color: #ffffff;
 }
 .BiiP_center #BiiP_circle {border: 1px solid #ffffff32}
 
-.BiiP_username {
+.BiiP_user {
     position:absolute;
     display: flex;
     justify-content: center;
@@ -523,9 +523,9 @@ biip_message button:hover {background-color: #ffffff23; color: #ffffff;
     z-index: 999999999 !important;
     pointer-events: all
 }
-.BiiP_username:hover {z-index: 1 !important; box-shadow: 0 0 100px #ffffff69}
+.BiiP_user:hover {z-index: 1 !important; box-shadow: 0 0 100px #ffffff69}
 
-.BiiP_username b {margin-bottom: -123px}
+.BiiP_user b {margin-bottom: -123px}
 
 .userCenter b {display: none}
 
@@ -617,8 +617,8 @@ biip_message button:hover {background-color: #ffffff23; color: #ffffff;
 
 #identity, #relations, #finance {background-repeat: no-repeat; background-position: 10px 50%; background-size: 23px 23px}
 
-#address:disabled {cursor: pointer}
-#address:hover {color: #ffffff}
+#account:disabled {cursor: pointer}
+#account:hover {color: #ffffff}
 
 #BiiP_close_data,
 #BiiP_burgers {
@@ -724,7 +724,7 @@ biip_message button:hover {background-color: #ffffff23; color: #ffffff;
 @media screen and (orientation: landscape) and (max-height: 500px) {
     BiiP, BiiP .BiiP_svg {width: 46px; height: 46px}
     biip_message {line-height: 1}
-    .BiiP_username b {font-size: 12px; margin-bottom: -60px}
+    .BiiP_user b {font-size: 12px; margin-bottom: -60px}
 }
 
 
@@ -750,13 +750,13 @@ biip_message button:hover {background-color: #ffffff23; color: #ffffff;
 const msg1 = `
 <biip_message>
     <b style="display: none">You don't seem to have a BiiP link to ` + window.location.hostname + ` on this device.</b><br>
-    <span class="nextRowMobile">Select a user or create a new </span><button id="create_GRAT" class="grat-bg">address</button><span class="nextRowMobile"> to authenticate.</span><br><br>
+    <span class="nextRowMobile">Select a user or create a new </span><button id="create_GRAT" class="grat-bg">user</button><span class="nextRowMobile"> to authenticate.</span><br><br>
     <span class="c-F font10 mobile-hide"><b class="font10">[ TIPS ]</b> Use CTRL + B to toggle the BiiP user interface and Escape to close it.</span>
 </biip_message>
 `;
 
 // dummy content
-const usernames = [
+const users = [
     {
         u: 'lucian',
         blocked: 0
@@ -782,13 +782,11 @@ class allData {
     <button id="BiiP_burgers" title="Toggle BiiP UI Navigation"></button>
     <button id="BiiP_close_data" title="Press Escape key"></button>
     <div class="BiiP_nav rlv">
-        <input type="text" class="transparentInput" value="${data}" maxlength="23" />
+        <span class="font12">Biospheric ID: <b class="c-F">${data}</b></span><br><br>
         <button id="update" title="Updates your Biospheric Identity" class="bg-green big-btn textCenter c-F font14 upp bld">Update BiiP</button>
         <div id="balance" class="textCenter m10 pb10 mt23 font12 c-B9">
             Tokens of Gratitude:<br>
             <div class="icon grat mt10 mb23 font18 bld c-F">23,000.<small>000</small></div><br>
-            GRAT address:<br>
-            <input id="address" type="text" title="Click / Touch to copy" class="w100 inputText block mt10 font10 br6" value="0xf16530b6741bCF6F2081Cd8ca9A7A92F4caAcB74" maxlength="42" disabled />
         </div>
         <button id="identity" class="BiiP_tab activeTab">Identity</button>
         <button id="relations" class="BiiP_tab">Relations</button>
@@ -798,7 +796,7 @@ class allData {
     </div>
     <div class="BiiP_content lh14">
     </div>
-    `; // TO DO: copy address to clipboard on click/touch using something like navigator.clipboard.writeText(value) - also display a tooltip showing the message: "Copied to clipboard." - that fades away in 3 seconds
+    `; // TO DO: copy account to clipboard on click/touch using something like navigator.clipboard.writeText(value) - also display a tooltip showing the message: "Copied to clipboard." - that fades away in 3 seconds
 
     identity = (data) => `
     <div class="pt15 column grid-span2rows c-B9">
@@ -876,15 +874,13 @@ class allData {
                 <input type="text" class="w100 mt5 inputText block font14 br6" value="23" max="7" />
             </div>
             <div class="grid-span3columns mt15">
-                <h2 class="font23 c-F">Biospheric Identity stats</h2><br>
+                <h2 class="font23 c-F"><i class="mb5 toggler"></i> Identity stats</h2><br>
                 <div class="lh2">
-                    Allow access: <i class="toggler"></i><br>
-                    Date of Biospheric Identity link creation: <b>09-03-2022</b><br>
-                    Biospheric Identities sharing this GRAT address: <b>4</b><br>
-                    Queries from this keeper (for ${data}): <b>23</b><br>
-                    Queries from everyone (for ${data}): <b>120</b><br>
-                    Queries from this keeper (for all identities): <b>230</b><br>
-                    Queries from everyone (for  all identities): <b>12,000</b><br>
+                    Creation date: <b>09-03-2022</b><br>
+                    Queries from this keeper: <b>230</b><br>
+                    Queries from everyone: <b>12,000</b><br>
+                    Enabled: <b>Avatar</b><br>
+                    Disabled: <b>Name</b>, <b>Surname</b>, <b>DOB</b>, <b>Sex</b>, <b>Email #1</b>, <b>Email #2</b>, <b>Mobile number #1</b>, <b>Mobile number #2</b>, <b>Country</b>, <b>City</b>, <b>County</b>, <b>Street</b>, <b>Post code</b>, <b>Street number</b>, <b>Floor</b>, <b>Apartment</b>, <b>Stats</b>
                 </div>
             </div>
         </div>
@@ -909,7 +905,6 @@ class allData {
                 </div>
             </div>
             <div class="grid-span2columns c-B9">
-                Biospheric ID: <b class="c-F">${data}.0xf16530b6741bCF6F2081Cd8ca9A7A92F4caAcB74</b><br><br>
                 <label for=""><i class="toggler"></i> Bio:</label>
                 <textarea style="min-height: 230px; max-height: 320px; max-width: 100%" class="w100 mt5 inputText block font14 br6" maxlength="1000" />
 Working heroically on the technology of Gratitude - with the mission to decentralize all the value derived from our biospheric digital selves.
@@ -920,31 +915,31 @@ Working heroically on the technology of Gratitude - with the mission to decentra
     </div>
     <div class="pt15 c-B9">
         <div id="keeperBlocking" class="lh2 w100">
-            <h2 class="font23 c-F lh14"><img class="small-icon" src="/svgs/gratitude-token-logo.svg" /> Keeper ${window.location.hostname}</h2>
-            <b id="accessStatus" class="c-lime">[ FULL ACCESS ]</b> <button id="blockAccess" class="btn m10" title="BLOCK / UNBLOCK">Block All</button> <span class="c-gray">access to this Gratitude Token address.</span><br>
+            <h2 class="font23 c-F lh14">KEEPERS ACCESS</h2>
+            <b id="accessStatus" class="c-lime">[ FULL ACCESS ]</b> <button id="blockAccess" class="btn m10" title="BLOCK / UNBLOCK">Block All</button> <span class="c-gray">access to this Gratitude Token account.</span><br>
             <h3 class="font16">Quick Permissions:</h3>
             <div class="ovf-x">
                 <table id="permissions" class="oddBG lh1">
                     <tr>
-                        <th>Username</th><th>Personal info shared</th><th>Keeper access</th>
+                        <th>Keeper</th><th>Personal info shared</th><th>Access</th>
                     </tr>
                     <tr>
-                        <td>maria</td>
+                        <td>gratitudetoken.world</td>
                         <td>1/20</td>
                         <td><i id="${data}" class="toggler togglerON"></i></td>
                     </tr>
                     <tr>
-                        <td>daniel</td>
+                        <td>biosphere.media</td>
                         <td>1/20</td>
                         <td><i id="${data}" class="toggler togglerON"></i></td>
                     </tr>
                     <tr>
-                        <td>catalina</td>
+                        <td>facebook.com</td>
                         <td>1/20</td>
                         <td><i id="${data}" class="toggler togglerON"></i></td>
                     </tr>
                     <tr>
-                        <td>lucian</td>
+                        <td>google.com</td>
                         <td>1/20</td>
                         <td><i id="${data}" class="toggler togglerON"></i></td>
                     </tr>
@@ -978,20 +973,17 @@ Working heroically on the technology of Gratitude - with the mission to decentra
             </div>
         </div>
         <div class="w100 mobile-mt32">
-            <h2 class="font23 c-F">Other Keepers for this address</h2><br>
-            <span class="c-gray">Other websites / apps that have partial or full access to your personal information and finances for this address:</span><br>
+            <h2 class="font23 c-F">Other Keepers for this account</h2><br>
+            <span class="c-gray">Other websites / apps that have partial or full access to your personal information and finances for this account:</span><br>
             <div class="ovf-x">
                 <table class="oddBG mt10 mb23">
-                    <tr><th>Name</th><th>Access</th><th>Blocked?</th></tr>
-                    <tr><td>biosphere.media</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
-                    <tr><td>facebook.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
-                    <tr><td>twitter.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
-                    <tr><td>linkedin.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
-                    <tr><td>substack.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
-                    <tr><td>reddit.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
-                    <tr><td>kickstarter.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
-                    <tr><td>whatsapp</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
-                    <tr><td>google.com</td><td>Partial Access</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><th>Keeper</th><th>Type of access</th><th>Blocked?</th></tr>
+                    <tr><td>twitter.com</td><td>Partial</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>linkedin.com</td><td>Full</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>substack.com</td><td>Partial</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>reddit.com</td><td>Partial</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>kickstarter.com</td><td>Partial</td><td><i class="toggler"></i> No</td></tr>
+                    <tr><td>whatsapp</td><td>Partial</td><td><i class="toggler"></i> No</td></tr>
                 </table>
             </div>
         </div>
@@ -1023,7 +1015,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
 <div class="pt15 grid-span2columns">
     <div class="grid2by1 gap23 w100 h100">
         <div class="w100">
-            <h2 class="font23 c-F">Delegated Transactions</h2><br>
+            <h2 class="font23 c-F"><i class="mb5 toggler"></i> Delegated Transactions</h2><br>
             <div class="grid1by4">
                 <div>
                     <b>From ${window.location.hostname}</b><br>
@@ -1103,7 +1095,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
                     <td class="grat-bg">2030.<small>000</small></td>
                     <td>03/06/2023 20:30:00</td>
                     <td><a href="" target="_blank">A8EE07F7</a></td>
-                    <td>Other address</td>
+                    <td>Other account</td>
                     <td>Transfer</td>
                     <td class="c-lime">In</td>
                 </tr>
@@ -1111,7 +1103,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
                     <td class="grat-bg">2030.<small>000</small></td>
                     <td>03/06/2023 20:59:00</td>
                     <td><a href="" target="_blank">B8EE97F9</a></td>
-                    <td>This address</td>
+                    <td>This account</td>
                     <td>Transfer</td>
                     <td class="c-red">Out</td>
                 </tr>
@@ -1119,7 +1111,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
                     <td class="grat-bg">2030.<small>000</small></td>
                     <td>03/06/2023 20:30:00</td>
                     <td><a href="" target="_blank">A8EE07F7</a></td>
-                    <td>Other address</td>
+                    <td>Other account</td>
                     <td>Transfer</td>
                     <td class="c-lime">In</td>
                 </tr>
@@ -1127,7 +1119,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
                     <td class="grat-bg">2030.<small>000</small></td>
                     <td>03/06/2023 20:59:00</td>
                     <td><a href="" target="_blank">B8EE97F9</a></td>
-                    <td>This address</td>
+                    <td>This account</td>
                     <td>Transfer</td>
                     <td class="c-red">Out</td>
                 </tr>
@@ -1135,7 +1127,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
                     <td class="grat-bg">2030.<small>000</small></td>
                     <td>03/06/2023 20:30:00</td>
                     <td><a href="" target="_blank">A8EE07F7</a></td>
-                    <td>Other address</td>
+                    <td>Other account</td>
                     <td>Transfer</td>
                     <td class="c-lime">In</td>
                 </tr>
@@ -1143,7 +1135,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
                     <td class="grat-bg">2030.<small>000</small></td>
                     <td>03/06/2023 20:59:00</td>
                     <td><a href="" target="_blank">B8EE97F9</a></td>
-                    <td>This address</td>
+                    <td>This account</td>
                     <td>Transfer</td>
                     <td class="c-red">Out</td>
                 </tr>
@@ -1151,7 +1143,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
                     <td class="grat-bg">2030.<small>000</small></td>
                     <td>03/06/2023 20:30:00</td>
                     <td><a href="" target="_blank">A8EE07F7</a></td>
-                    <td>Other address</td>
+                    <td>Other account</td>
                     <td>Transfer</td>
                     <td class="c-lime">In</td>
                 </tr>
@@ -1159,7 +1151,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
                     <td class="grat-bg">2030.<small>000</small></td>
                     <td>03/06/2023 20:59:00</td>
                     <td><a href="" target="_blank">B8EE97F9</a></td>
-                    <td>This address</td>
+                    <td>This account</td>
                     <td>Transfer</td>
                     <td class="c-red">Out</td>
                 </tr>
@@ -1282,7 +1274,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
 `;
 }
 
-let addressBlocked = 0;
+let accountBlocked = 0;
 
 // short messages system
 let shortMessages = function (el) {
@@ -1299,9 +1291,9 @@ let shortMessages = function (el) {
             });
             // these conditions are for Relations section (Quick Permissions)
             if ($('#identity').classList.contains('activeTab')) {
-                // then set addressBlocked variable to correct value
+                // then set accountBlocked variable to correct value
                 if (count === 0) {
-                    addressBlocked = 1;
+                    accountBlocked = 1;
                     $('#accessStatus').textContent = '[ ALL BLOCKED ]';
                     $('#accessStatus').classList.remove('c-orange');
                     $('#accessStatus').classList.remove('c-lime');
@@ -1310,8 +1302,8 @@ let shortMessages = function (el) {
                     $('#blockAccess').textContent = 'UNBLOCK ALL';
                     $('#blockAccess').classList.add('btn-green');
                 }
-                if (count === usernames.length) {
-                    addressBlocked = 0;
+                if (count === users.length) {
+                    accountBlocked = 0;
                     $('#accessStatus').textContent = '[ FULL ACCESS ]';
                     $('#accessStatus').classList.remove('c-orange');
                     $('#accessStatus').classList.remove('c-red');
@@ -1320,8 +1312,8 @@ let shortMessages = function (el) {
                     $('#blockAccess').textContent = 'BLOCK ALL';
                     $('#blockAccess').classList.remove('btn-green');
                 }
-                if (count > 0 && count < usernames.length) {
-                    addressBlocked = 2;
+                if (count > 0 && count < users.length) {
+                    accountBlocked = 2;
                     $('#accessStatus').textContent = '[ PARTIALLY BLOCKED ]';
                     $('#accessStatus').classList.remove('c-lime');
                     $('#accessStatus').classList.remove('c-red');
@@ -1337,24 +1329,24 @@ let shortMessages = function (el) {
 }
 
 let blockBTN = function (el) {
-    // block current Keeper's access to all usernames for this address
+    // block current Keeper's access to all users for this account
     el.addEventListener('click', event => {
         $('#accessStatus').classList.remove('c-orange');
 
         // I check to see if any of the users are already blocked or unblocked
         $$('#permissions .toggler').forEach((item, i) => {
-            addressBlocked === 0 || addressBlocked === 2 ? item.classList.remove('togglerON') : item.classList.add('togglerON');
+            accountBlocked === 0 || accountBlocked === 2 ? item.classList.remove('togglerON') : item.classList.add('togglerON');
         });
 
-        if (addressBlocked === 0 || addressBlocked === 2) {
-            addressBlocked = 1;
+        if (accountBlocked === 0 || accountBlocked === 2) {
+            accountBlocked = 1;
             $('#accessStatus').textContent = '[ ALL BLOCKED ]';
             el.textContent = 'UNBLOCK ALL';
             el.classList.add('btn-green'); // make button bg green for unblocking
             $('#accessStatus').classList.add('c-red');
             $('#accessStatus').classList.remove('c-green');
         } else {
-            addressBlocked = 0;
+            accountBlocked = 0;
             $('#accessStatus').textContent = '[ FULL ACCESS ]';
             el.textContent = 'BLOCK ALL';
             el.classList.remove('btn-green'); // make bg red (default)
@@ -1492,8 +1484,8 @@ let BiiP_click = function () {
                     let biips = '';
 
                     // add HTML for each
-                    usernames.forEach(item => { // here make this css var work with the values: transform: rotate('+degrees+'deg) translate(155.5vh) rotate(-'+degrees+'deg)
-                        biips += '<div class="BiiP_username" style="transform: ' + rotator(degrees) + '; background-image: url(/img/' + item.u + '.jpg)"><b>' + item.u + '</b></div>';
+                    users.forEach(item => { // here make this css var work with the values: transform: rotate('+degrees+'deg) translate(155.5vh) rotate(-'+degrees+'deg)
+                        biips += '<div class="BiiP_user" style="transform: ' + rotator(degrees) + '; background-image: url(/img/' + item.u + '.jpg)"><b>' + item.u + '</b></div>';
                         degrees += 6;
                     });
 
@@ -1502,7 +1494,7 @@ let BiiP_click = function () {
                     $('#BiiP_circle').style = 'transform: rotate(0)';
 
                     // clicking on a BiiP user to select the user
-                    $$('.BiiP_username').forEach((item, index) => {
+                    $$('.BiiP_user').forEach((item, index) => {
                         item.addEventListener('click', event => {
                             $('.BiiP_svg').classList.add('pe');
                             let selected = document.createElement('div');
@@ -1520,7 +1512,7 @@ let BiiP_click = function () {
                             }, 1111);
 
                             // do some stuff after
-                            selectedUser = usernames[index];
+                            selectedUser = users[index];
                             item.classList.add('userCenter');
                             //item.style.transform = 'translate(0, 0) scale(0)';
 
@@ -1572,7 +1564,7 @@ window.addEventListener('keyup', e => {
     if (e.ctrlKey && e.key === 'b') {
         BiiP_click();
     }
-    // TO DO: must select usernames based on CTRL + number key press from 0 to 9 ? or just numbers from 0 to 9
+    // TO DO: must select users based on CTRL + number key press from 0 to 9 ? or just numbers from 0 to 9
 });
 
 let showMainContent = function () {
@@ -1589,7 +1581,7 @@ let hideMainContent = function (string) {
 }
 
 
-// initial BiiP_circle usernames angle and rotating function
+// initial BiiP_circle users angle and rotating function
 let degrees = 90;
 let finalAngle = degrees;
 let wMid = window.innerWidth / 2;
@@ -1604,7 +1596,7 @@ let rotator = (degrees) => {
 let wheelFunction = (event) => {
     if ($('.BiiP_center')) {
         let y = event.deltaY;
-        $$('.BiiP_username').forEach((item, i) => {
+        $$('.BiiP_user').forEach((item, i) => {
             y > 0 ? finalAngle += 6 : finalAngle -= 6;
             item.style.transform = rotator(finalAngle);
         });
@@ -1615,7 +1607,7 @@ let clickFunction = (event) => {
     const X = event.screenX || event.touches[0].screenX;
     const Y = event.screenY || event.touches[0].screenY;
     if ($('.BiiP_center') && Y > hMid) {
-        $$('.BiiP_username').forEach((item) => {
+        $$('.BiiP_user').forEach((item) => {
             X < wMid ? finalAngle += 4.7 : finalAngle -= 4.7;
             item.style.transform = rotator(finalAngle);
         });

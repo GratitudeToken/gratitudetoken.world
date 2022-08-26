@@ -21,9 +21,11 @@ body::-webkit-scrollbar-thumb {
   border-radius: 9px;
   border: none;
 }
+
 body:hover::-webkit-scrollbar-thumb {
   background-color: #323232;
 }
+
 body::-webkit-scrollbar-thumb:hover {
   background-color: #696969;
 }
@@ -44,9 +46,11 @@ body::-webkit-scrollbar-thumb:hover {
   0% {
     background-color: #000000;
   }
+
   50% {
     background-color: #ffffff;
   }
+
   100% {
     background-color: #51738f;
   }
@@ -57,10 +61,12 @@ body::-webkit-scrollbar-thumb:hover {
     opacity: 0;
     transform: scale(0);
   }
+
   99% {
     opacity: 1;
     transform: scale(1);
   }
+
   100% {
     opacity: 0;
     transform: scale(1);
@@ -72,6 +78,7 @@ body::-webkit-scrollbar-thumb:hover {
     opacity: 0;
     transform: scale(0.23);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -82,13 +89,16 @@ body::-webkit-scrollbar-thumb:hover {
   0% {
     opacity: 0;
   }
+
   20% {
     opacity: 0.5;
   }
+
   60% {
     opacity: 1;
     transform: scale(1);
   }
+
   100% {
     opacity: 0;
     transform: scale(0);
@@ -99,9 +109,11 @@ body::-webkit-scrollbar-thumb:hover {
   0% {
     opacity: 0;
   }
+
   20% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 1;
   }
@@ -111,6 +123,7 @@ body::-webkit-scrollbar-thumb:hover {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -139,11 +152,13 @@ body::-webkit-scrollbar-thumb:hover {
   background: #000000;
   overflow: hidden;
 }
+
 #section3 {
   display: flex;
   justify-content: center;
   box-sizing: content-box;
 }
+
 #section4,
 #section5 {
   display: flex;
@@ -153,10 +168,12 @@ body::-webkit-scrollbar-thumb:hover {
   flex-direction: column;
   overflow: hidden;
 }
+
 #section5 {
   height: 90%;
   background-color: #050f26;
 }
+
 #section6 {
   display: flex;
   justify-content: flex-start;
@@ -166,9 +183,11 @@ body::-webkit-scrollbar-thumb:hover {
   overflow: hidden;
   height: 150%;
 }
+
 #section7 {
   height: 73%;
 }
+
 #section1,
 #section2,
 #section7 {
@@ -179,6 +198,7 @@ body::-webkit-scrollbar-thumb:hover {
 .section p {
   user-select: text;
 }
+
 .section p {
   font-size: 2vmin;
 }
@@ -196,6 +216,7 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 5;
   top: 0;
 }
+
 .fade-top,
 .fade-top-23 {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
@@ -210,10 +231,6 @@ body::-webkit-scrollbar-thumb:hover {
 .fade-bottom-23 {
   top: auto;
   bottom: 0;
-}
-
-#section1 .button {
-  margin-top: 4vh;
 }
 
 #scrollIndicator {
@@ -236,9 +253,11 @@ body::-webkit-scrollbar-thumb:hover {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-33px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -309,6 +328,7 @@ body::-webkit-scrollbar-thumb:hover {
     opacity: 0;
     filter: blur(3vw);
   }
+
   100% {
     opacity: 1;
     filter: blur(0);
@@ -344,7 +364,8 @@ body::-webkit-scrollbar-thumb:hover {
 #slides .small_p .mission {
   color: #fff1dd;
   font-family: "Dosis", Helvetica, Arial, sans-serif;
-  font-size: 2.3vmin
+  font-size: 2.3vmin;
+  margin: 0 auto;
 }
 
 #slides .smallText {
@@ -368,6 +389,7 @@ body::-webkit-scrollbar-thumb:hover {
   0% {
     color: #ffd6d600;
   }
+
   100% {
     color: #ffd6d6;
     padding: 0 0.23vw;
@@ -388,7 +410,8 @@ button,
 .newsletter {
   display: inline-block;
   border-radius: 10px;
-  padding: max(17px, 0.8vw) max(23px, 1.5vw) max(15px, 0.8vw) max(23px, 1vw);
+  padding: 15px 23px 12px 23px;
+  line-height: 1;
   color: #ffffff;
   font-size: 3vh;
   text-decoration: none;
@@ -405,16 +428,13 @@ button,
   font-size: 23px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  transition: opacity 2s;
 }
 
 #slides button:hover,
 #slides .button:hover {
   background: #db463e;
-  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  perspective: 1000px;
 }
+
 .newsletter {
   font-size: 2vh;
   text-align: center;
@@ -427,6 +447,7 @@ button,
   min-width: 360px;
   max-width: 420px;
 }
+
 .newsletter:hover,
 .newsletter:focus,
 .newsletter:active {
@@ -434,11 +455,13 @@ button,
   border-color: #f15d5550;
   outline: 0 none;
 }
+
 .newsletter::placeholder {
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
   transition: color 0.6s;
 }
+
 .newsletter:hover::placeholder,
 .newsletter:focus::placeholder,
 .newsletter:active::placeholder {
@@ -446,17 +469,21 @@ button,
 }
 
 #slides .countdown,
-#slides .countdown + p {
+#slides .countdown+p
+
+/*,#slides .button */
+  {
   opacity: 0;
   animation-name: fadeIn;
   animation-duration: 2s;
   animation-fill-mode: forwards;
-  animation-delay: 12.94s; /* 7s after we launch with Subscribe button */
+  animation-delay: 12.94s;
+  /* 7s after we launch with Subscribe button */
   font-family: "Dosis", Helvetica, Arial, sans-serif;
 }
 
 #slides .countdown,
-#slides .countdown + p {
+#slides .countdown+p {
   animation-name: fadeInBlue;
 }
 
@@ -517,6 +544,7 @@ button,
     opacity: 0;
     transform: scale(6);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -527,13 +555,16 @@ button,
   0% {
     transform: scale(0.2);
   }
+
   23% {
     transform: scale(1.23);
     opacity: 1;
   }
+
   35% {
     transform: scale(1);
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -544,6 +575,7 @@ button,
   0% {
     color: transparent;
   }
+
   100% {
     color: #999999;
   }
@@ -562,6 +594,7 @@ button,
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(1);
   }
@@ -572,6 +605,7 @@ button,
   font-size: 5vmin;
   z-index: 5;
 }
+
 #section2 p {
   padding: 2vmin 6vmin 6vmin 6vmin;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
@@ -579,7 +613,7 @@ button,
   color: #999999
 }
 
-.countdown + p {
+.countdown+p {
   width: 100%;
   display: block;
   font-size: 2vmin;
@@ -628,21 +662,24 @@ button,
     transform: scale(0) rotate(0deg);
     opacity: 0;
   }
+
   20% {
     transform: scale(1) rotate(3600deg);
     opacity: 1;
   }
+
   90% {
     transform: scale(1) rotate(3600deg);
     opacity: 1;
   }
+
   100% {
     transform: scale(0);
     opacity: 0;
   }
 }
 
-.GENESIS + p {
+.GENESIS+p {
   margin-top: 8vmin;
   padding: 6vmin;
   z-index: 6;
@@ -687,9 +724,11 @@ button,
   0% {
     border-color: #ff807a32;
   }
+
   50% {
     border-color: #ff807a00;
   }
+
   100% {
     border-color: #ff807a32;
   }
@@ -713,6 +752,7 @@ button,
   height: 9vmin;
   pointer-events: none;
 }
+
 #cards .active svg {
   fill: #ffffff;
 }
@@ -726,6 +766,7 @@ button,
   display: block;
   margin-bottom: 4vmin;
   pointer-events: none;
+  margin-top: 15px
 }
 
 .progress {
@@ -748,10 +789,12 @@ button,
     border-color: #ff807a32;
     color: #ff807a;
   }
+
   50% {
     border-color: #ff807a00;
     color: #ff807a00;
   }
+
   100% {
     border-color: #ff807a32;
     color: #ff807a;
@@ -791,6 +834,7 @@ button,
 .word7 {
   opacity: 1 !important;
 }
+
 .word7 img,
 .word7 #letters i {
   opacity: 0.23;
@@ -800,17 +844,21 @@ button,
   0% {
     transform: scale(0.2);
   }
+
   23% {
     transform: scale(1.23);
     opacity: 1;
   }
+
   35% {
     transform: scale(1);
   }
+
   80% {
     transform: scale(1);
     opacity: 1;
   }
+
   100% {
     transform: scale(6);
     opacity: 0;
@@ -827,12 +875,13 @@ button,
 .SHIELD span {
   display: block;
 }
+
 .SHIELD span i {
   display: inline-block;
   font-style: normal;
 }
 
-.SHIELD + p {
+.SHIELD+p {
   width: 100%;
   display: block;
   padding: 6vmin;
@@ -852,6 +901,7 @@ button,
   mix-blend-mode: luminosity;
   animation: rotatecircle 60s infinite linear;
 }
+
 .Stargate img {
   width: 100%;
   height: 100%;
@@ -863,6 +913,7 @@ button,
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -913,9 +964,11 @@ button,
   0% {
     opacity: 0.23;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0.23;
   }
@@ -928,6 +981,7 @@ button,
   padding: 0 30px;
   margin: 0;
 }
+
 .cube p strong {
   font-size: 2.3vmin;
 }
@@ -936,6 +990,7 @@ button,
   padding: 2vmin 0;
   font-size: 1.4vmin;
 }
+
 .side ul {
   list-style: none;
   width: 100%;
@@ -950,6 +1005,7 @@ button,
 .padding_top {
   padding-top: 2vmin !important;
 }
+
 .margin_top {
   margin-top: 1vmin;
   display: block;
@@ -961,7 +1017,8 @@ button,
   margin: 2vmin 0 0 0;
   font-family: "Dosis", Arial, sans-serif;
 }
-.cube .countdown + .side_title {
+
+.cube .countdown+.side_title {
   font-weight: normal;
   font-size: 1.23vmin;
   padding: 1vmin 0;
@@ -979,6 +1036,7 @@ button,
   padding: 1vmin;
   font-size: 1.3vmin;
 }
+
 .cube table th {
   background: #ffffff23;
 }
@@ -986,12 +1044,15 @@ button,
 .top_left_radius {
   border-top-left-radius: 1vmin;
 }
+
 .top_right_radius {
   border-top-right-radius: 1vmin;
 }
+
 .bottom_left_radius {
   border-bottom-left-radius: 1vmin;
 }
+
 .bottom_right_radius {
   border-bottom-right-radius: 1vmin;
 }
@@ -1030,7 +1091,7 @@ button,
   transform-style: preserve-3d;
 }
 
-.cube > div {
+.cube>div {
   position: absolute;
   width: 60vmin;
   height: 60vmin;
@@ -1066,12 +1127,15 @@ button,
   transform-origin: top right;
 }
 
-.cube .right-pane li:nth-of-type(2) {line-height: 1.5}
+.cube .right-pane li:nth-of-type(2) {
+  line-height: 1.5
+}
 
 /* ROADMAP */
 #roadmap {
   top: 0;
 }
+
 .shadow {
   position: absolute;
   z-index: 6;
@@ -1126,23 +1190,28 @@ button,
   align-items: center;
   z-index: 1;
 }
+
 .milestoneBG img {
   mix-blend-mode: screen;
   position: absolute;
   width: 512px;
   height: 512px;
 }
+
 .milestoneBG .img0 {
   opacity: 0.32;
   transform: scale(0.5);
   border-radius: 100%;
 }
+
 .milestoneBG .img1 {
   animation: rotatecircle 60s linear infinite;
 }
+
 .milestoneBG .img2 {
   animation: rotatecircle 2.3s ease infinite;
 }
+
 .milestoneBG .img3 {
   animation: rotatecircle 6s ease infinite;
   animation-direction: reverse;
@@ -1153,19 +1222,22 @@ button,
     opacity: 0.32;
     transform: scale(0.5);
   }
+
   50% {
     transform: scale(0.8);
   }
+
   90% {
     opacity: 0.8;
   }
+
   100% {
     opacity: 0.32;
     transform: scale(0.5);
   }
 }
 
-.milestones > div {
+.milestones>div {
   width: 134px;
   height: 134px;
   margin-right: 134px;
@@ -1203,6 +1275,7 @@ button,
   cursor: pointer;
   transition: all 0.3s;
 }
+
 .milestone_content:hover {
   box-shadow: 0 0 30px 15px rgba(255, 255, 255, 0.15),
     inset 0 0 3vmin 1vmin rgba(255, 255, 255, 0.12);
@@ -1221,6 +1294,7 @@ button,
   mix-blend-mode: overlay;
   opacity: 0;
 }
+
 .milestone_content:after {
   width: 1px;
   height: 100%;
@@ -1237,6 +1311,7 @@ button,
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 0.9;
   }
@@ -1248,6 +1323,7 @@ button,
   font-family: "Dosis", Arial, sans-serif;
   pointer-events: none;
 }
+
 .milestone b:last-of-type {
   font-size: 28px;
   font-weight: normal;
@@ -1266,6 +1342,7 @@ button,
   transform-origin: bottom right;
   opacity: 0;
 }
+
 /* #middle .milestone_text {animation: stretchy 0.3s linear forwards} */
 
 #middle .milestone_text b {
@@ -1278,12 +1355,14 @@ button,
   border-radius: 10px;
   padding: 6px 12px;
 }
+
 #middle .milestone_text p {
   white-space: nowrap;
   font-weight: normal;
   font-size: 1.8vmin;
   opacity: 0;
 }
+
 #middle .milestone_text p span {
   display: block;
   font-size: 1.5vmin;
@@ -1301,31 +1380,37 @@ button,
 .red:after {
   background-color: #be381d99;
 }
+
 .orange,
 .orange:before,
 .orange:after {
   background-color: #be5d1d99;
 }
+
 .yellow,
 .yellow:before,
 .yellow:after {
   background-color: #cfbb0199;
 }
+
 .green,
 .green:before,
 .green:after {
   background-color: #0b831199;
 }
+
 .blue,
 .blue:before,
 .blue:after {
   background-color: #21487999;
 }
+
 .indigo,
 .indigo:before,
 .indigo:after {
   background-color: #21277999;
 }
+
 .violet,
 .violet:before,
 .violet:after {
@@ -1371,8 +1456,7 @@ button,
   display: block;
   width: 100px;
   height: 26px;
-  background: url(https://brand.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg)
-    no-repeat;
+  background: url(https://brand.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg) no-repeat;
   position: absolute;
   background-size: contain;
   bottom: 3%;
@@ -1381,7 +1465,9 @@ button,
   margin: 0 auto;
 }
 
-.member:nth-of-type(5):before {display: none}
+.member:nth-of-type(5):before {
+  display: none
+}
 
 .member img {
   border: 6px solid #ffffff;
@@ -1397,6 +1483,7 @@ button,
   font-size: 1.8vw;
   color: #ffffff;
 }
+
 .member * {
   text-align: center;
   display: block;
@@ -1406,10 +1493,12 @@ button,
   margin: 0 0 23px 0;
   text-align: center;
 }
+
 .sharethis-inline-share-buttons {
   margin-bottom: 32px;
 }
-.sharethis-inline-share-buttons > div {
+
+.sharethis-inline-share-buttons>div {
   display: inline-block !important;
   margin-bottom: 9px;
 }
@@ -1429,7 +1518,10 @@ button,
     font-size: 5vmax;
     text-shadow: 0 0 12px #00000060;
   }
-  html[lang="EN"] #slides .theTitle {font-size: 7vmax}
+
+  html[lang="EN"] #slides .theTitle {
+    font-size: 7vmax
+  }
 
   #slides .small_p {
     font-size: 4vmin;
@@ -1458,19 +1550,22 @@ button,
     width: 26px;
     height: 26px;
   }
+
   #slides .newsletter {
     width: 90vw;
     margin-bottom: 2vh;
   }
+
   .countdown {
     font-size: 6vh;
   }
-  .countdown + p {
+
+  .countdown+p {
     font-size: 4vmin;
     margin: 2vmin 0 0 0;
   }
 
-  #slides .countdown + p {
+  #slides .countdown+p {
     margin-top: 4vmin;
   }
 
@@ -1488,6 +1583,7 @@ button,
     padding: 6vmin 3vmin 0vmin 3vmin;
     font-size: 3vmin;
   }
+
   .main-specs div strong {
     font-size: 4vmin;
   }
@@ -1515,12 +1611,13 @@ button,
   .GENESIS {
     font-size: 12vmin;
   }
+
   .GENESIS_logo {
     width: 23vmin;
     height: 23vmin;
   }
 
-  .GENESIS + p {
+  .GENESIS+p {
     margin-top: 16vmin;
     padding: 6vmin;
     max-width: 100vw;
@@ -1563,7 +1660,7 @@ button,
     max-height: 32vmin;
   }
 
-  .SHIELD + p {
+  .SHIELD+p {
     top: 80vmin;
   }
 
@@ -1584,16 +1681,18 @@ button,
     font-size: 2.6vmin;
     line-height: 3.2vmin;
   }
+
   .cube_BG {
     perspective: 1vmin;
   }
 
   .cube,
-  .cube > div {
+  .cube>div {
     width: 90vmin;
     height: 90vmin;
   }
-  .cube > div {
+
+  .cube>div {
     background: rgba(0, 0, 0, 0.9);
   }
 
@@ -1609,7 +1708,9 @@ button,
     padding: 0.88vmin 0.88vmin 0.44vmin 0.88vmin;
   }
 
-  html[lang="RO"] .side li {padding: 1.5vmin 0.88vmin 0.44vmin 0.88vmin;}
+  html[lang="RO"] .side li {
+    padding: 1.5vmin 0.88vmin 0.44vmin 0.88vmin;
+  }
 
   .cube .front-pane {
     transform: translateZ(45vmin);
@@ -1644,34 +1745,46 @@ button,
     font-size: 2.3vmin;
     padding: 0.5vmin;
   }
+
   .cube p {
     font-size: 2.6vmin;
     padding: 0 2vmin;
   }
+
   .cube .countdown {
     font-size: 5vmin;
     margin-top: 2vmin;
   }
-  .cube .countdown + .side_title {
+
+  .cube .countdown+.side_title {
     font-size: 2.3vmin;
     display: block;
   }
-  .cube .front-pane p {line-height: 4.2vmin; font-size: 2.8vmin}
+
+  .cube .front-pane p {
+    line-height: 4.2vmin;
+    font-size: 2.8vmin
+  }
+
   .cube .back-pane p {
     font-size: 3vmin;
     line-height: 3vmin;
   }
+
   .cube .back-pane .countdown {
     margin-top: 4vmin;
   }
+
   .cube .left-pane p {
     font-size: 2.8vmin;
     line-height: 3.4vmin;
   }
+
   #cubeRange {
     height: 106vmin;
     top: 30vmin;
   }
+
   #cubeRange::-webkit-slider-thumb {
     width: 9vmax;
     height: 3vmax;
@@ -1682,9 +1795,11 @@ button,
   #slides .newsletter {
     min-width: 300px;
   }
+
   #slides .theTitle {
     letter-spacing: 2vmin;
   }
+
   #slides .smallText {
     font-size: 5vmin;
   }
@@ -1694,13 +1809,16 @@ button,
     background-size: contain;
     background-position: 50% 32%;
   }
+
   .slide0 {
     animation: slide0mobile 12s ease forwards;
   }
+
   .slide1 {
     animation: slide1mobile 8s ease forwards;
     background-color: #51738f;
   }
+
   #slides {
     animation: none;
   }
@@ -1709,20 +1827,23 @@ button,
     height: 80%;
     padding-top: 50%;
   }
+
   .milestones {
     right: calc(-50% + 33.5px);
     transform: translateX(-268px)
   }
 
-  .milestones > div,
+  .milestones>div,
   .milestone,
   .milestone_content {
     width: 67px;
     height: 67px;
   }
-  .milestones > div {
+
+  .milestones>div {
     margin-right: 67px;
   }
+
   .milestoneBG,
   .milestoneBG img {
     width: 256px;
@@ -1732,22 +1853,28 @@ button,
   .milestone b {
     font-size: 24px;
   }
+
   .milestone b:last-of-type {
     font-size: 12px;
     font-weight: normal;
   }
+
   #middle .milestone_text {
     bottom: 350%;
   }
+
   #middle .milestone_text b {
     font-size: 2.3vmax;
   }
+
   #middle .milestone_text p {
     font-size: 1.8vmax;
   }
+
   #middle .milestone_text p span {
     font-size: 1.5vmax;
   }
+
   #roadmap {
     top: 18vmin;
     font-size: 9vmin;
@@ -1756,30 +1883,37 @@ button,
   #section7 {
     height: 142%;
   }
+
   #TEAM {
     font-size: 9vmin;
     top: -9vh;
   }
+
   #team_members {
     top: 0;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
   }
+
   .member {
     padding: 10px;
     margin-bottom: 23px;
   }
+
   .member p {
     margin-top: 5px;
   }
+
   .member strong {
     font-size: 4vmin;
   }
+
   .member:before {
     width: 70px;
     height: 23px;
     bottom: -5px;
   }
+
   .member:hover:before {
     right: 0;
   }
@@ -1789,15 +1923,18 @@ button,
   #slides .newsletter {
     font-size: 14px;
   }
+
   #slides .theTitle {
     font-size: 12vmin;
     margin-top: 0;
   }
+
   #slides .smallText {
     margin-top: 12vmin;
     margin-bottom: 1vmin;
     font-size: 5vmin;
   }
+
   #slides .small_p {
     font-size: 3.2vmin;
     padding: 0 2vmin;
@@ -1807,24 +1944,29 @@ button,
   #slides .small_p .smallTitle {
     font-size: 3vmin;
   }
+
   #slides .small_p .mission {
     font-size: 3vmin;
     padding: 2vmin 0;
     max-width: 32vmax;
   }
+
   .countdown {
     font-size: 9vmin;
     margin-top: 3vmin;
     z-index: 5;
   }
-  .countdown + p {
+
+  .countdown+p {
     font-size: 4vmin;
     margin: 0;
     z-index: 5;
   }
-  #slides .countdown + p {
+
+  #slides .countdown+p {
     margin-top: 0.5vmin;
   }
+
   #slides .button {
     font-size: 14px;
     z-index: 5;
@@ -1847,6 +1989,7 @@ button,
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
   }
+
   .main-specs div {
     padding: 0 0.5vmin 5vmin 0.5vmin;
     font-size: 3.2vmin;
@@ -1867,7 +2010,7 @@ button,
     padding-top: 0;
   }
 
-  .GENESIS + p {
+  .GENESIS+p {
     padding: 6vmin 16vmin;
   }
 
@@ -1895,12 +2038,15 @@ button,
   .SHIELD {
     font-size: 9vmin;
   }
+
   .SHIELD img {
     max-height: 32vmin;
   }
-  .SHIELD + p {
+
+  .SHIELD+p {
     top: 82vmin;
   }
+
   #section5 {
     height: 150%;
   }
@@ -1908,28 +2054,36 @@ button,
   #roadmap {
     font-size: 9vmin;
   }
+
   .milestones {
     z-index: 8;
     top: 46%;
   }
+
   .milestoneBG {
     top: 46%;
   }
+
   .milestone_content:before {
     bottom: 169%;
   }
+
   .milestone_content:after {
     height: 69%;
   }
+
   #middle .milestone_text {
     bottom: 230%;
   }
+
   #section5 .milestone_text b {
     font-size: 5vmin;
   }
+
   #section5 .milestone_text p {
     font-size: 3vmin;
   }
+
   #section5 .milestone_text p span {
     font-size: 2.5vmin;
   }
@@ -1937,25 +2091,31 @@ button,
   #section6 {
     height: 150%;
   }
+
   #section7 {
     height: 100%;
   }
+
   #TEAM {
     font-size: 9vmin;
     top: 0;
   }
+
   #team_members {
     top: 10%;
   }
+
   .member,
   .member:visited {
     padding: 3vmax 1vmax;
   }
+
   .member:before {
     width: 84px;
     height: 20px;
     bottom: 0;
   }
+
   .join_us {
     margin-top: 5%;
   }
@@ -1975,6 +2135,7 @@ button,
   pointer-events: none;
   z-index: 4;
 }
+
 .spark {
   width: 6px;
   height: 6px;
@@ -1992,6 +2153,7 @@ button,
   cursor: pointer;
   z-index: 8;
 }
+
 .spark_inner {
   width: 100%;
   height: 100%;
@@ -2011,9 +2173,12 @@ button,
   position: fixed;
   z-index: 8;
 }
+
 .audioviz:hover {
   animation: chosenSparkGlow 2s linear infinite;
-} /* In case I want to make the spark go to the center of the planet this is the right diameter: width: 71.23vh; height: 71.23vh */
+}
+
+/* In case I want to make the spark go to the center of the planet this is the right diameter: width: 71.23vh; height: 71.23vh */
 
 .circles,
 .circle {
@@ -2032,6 +2197,7 @@ button,
   left: 0;
   position: absolute;
 }
+
 .audioviz:hover .circle {
   box-shadow: 0 0 2px 2px #db463e90;
 }
@@ -2040,9 +2206,11 @@ button,
   0% {
     box-shadow: 0 0 50px 25px #ffffff06;
   }
+
   50% {
     box-shadow: 0 0 50px 25px #ffffff60;
   }
+
   100% {
     box-shadow: 0 0 50px 25px #ffffff06;
   }
@@ -2054,9 +2222,11 @@ button,
   0% {
     transform: scale3d(0.4, 0.4, 1);
   }
+
   50% {
     transform: scale3d(1.4, 1.4, 1);
   }
+
   100% {
     transform: scale3d(0.4, 0.4, 1);
   }
@@ -2067,6 +2237,7 @@ button,
     opacity: 0;
     color: #51738f;
   }
+
   100% {
     opacity: 1;
     color: #ffffff;
@@ -2074,10 +2245,12 @@ button,
 }
 
 @keyframes shake {
+
   10%,
   90% {
     transform: translate3d(-1px, 0, 0);
   }
+
   20%,
   80% {
     transform: translate3d(2px, 0, 0);
@@ -2088,6 +2261,7 @@ button,
   70% {
     transform: translate3d(-2px, 0, 0);
   }
+
   40%,
   60% {
     transform: translate3d(2px, 0, 0);

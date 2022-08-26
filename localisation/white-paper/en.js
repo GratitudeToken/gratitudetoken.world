@@ -258,7 +258,7 @@ export const pages = `
         <page class="page"><img src="/white-paper/img/federal-reserve-flag.jpg" alt="steagul rezervei federale" loading="lazy"/>
             <strong class="centered">1913</strong>    The year that killed <a href="https://en.wikipedia.org/wiki/Representative_money" target="_blank">representative currency</a> and implemented <a href="https://en.wikipedia.org/wiki/Fiat_money" target="_blank">fiat money</a> as "the new game in town", starting with the U.S.
     With time, the banking elite's parasitic inflationary fiat system was silently enforced everywhere, replacing deflationary systems around the world.
-    “The United States had been on a "de facto" gold standard since the 1830s and "de jure" gold standard since 1900. In 1913 the gold standard was built into the framework of the Federal Reserve which is a private company. The law required the Federal Reserve to hold gold equal to 40 percent of the value of the currency it issued (technically termed the Federal Reserve Note but colloquially called the dollar) and to convert those dollars into gold at a fixed price of €20.67 per ounce of pure gold.”
+    “The United States had been on a "de facto" gold standard since the 1830s and "de jure" gold standard since 1900. In 1913 the gold standard was built into the framework of the Federal Reserve which is a private company. The law required the Federal Reserve to hold gold equal to 40 percent of the value of the currency it issued (technically termed the Federal Reserve Note but colloquially called the dollar) and to convert those dollars into gold at a fixed price of $20.67 per ounce of pure gold.”
     After this, the Federal Reserve was authorized by the government to be the sole printer of U.S dollars and whenever the U.S would need more cash in circulation it would borrow printed dollars from the Federal Reserve and had to pay them back with interest (mind-blowing, I know).
         </page>
         <page class="page">    This shows the power these bankers have, such that they managed to “convince” a country like the U.S to give control of the money supply to them. The Federal Reserve is a private company.
@@ -319,7 +319,7 @@ export const pages = `
     Now, online exchanges or brokers are all about serving us technological tools that enable us to gamble or bet easier on the movement of markets (tools for “speculation”).
     But those movements are not based on reality, they're artificial.
     They are not directly correlated to the demand for any real physical resource, asset, or service.
-    Crypto exchanges are just writing software services that tax people's ignorance and aversion to taking unnecessary risks. They cannot be trusted for trading or storing large amounts of currency long term, we have wallet apps that can do that safely now, or simply writing your crypto address and keys with a pen on paper will do.
+    Crypto exchanges are just writing software services that tax people's ignorance and aversion to taking unnecessary risks. They cannot be trusted for trading or storing large amounts of currency long term, we have wallet apps that can do that safely now, or simply writing your crypto account and secret key with a pen on paper will do.
 
 <h3 class="heading">Being unexperienced</h3>
     99% of all players lose all their money eventually by trading them on brokers or exchanges.
@@ -341,8 +341,8 @@ export const pages = `
     You simply transfer your crypto from your wallet to theirs using simple mobile crypto wallet apps.
         </page>
         <page class="page">    I cannot underline this enough. Exchanges should not be used for gambling, they should be used for what they were created, for currency exchange.
-    You should only need an exchange when you want to convert your assets from one currency to another and then you need to store that currency or asset long-term in your own wallet where you control the keys to the account/address.
-    You should not keep your money in the exchange wallet/address just as you don't keep your paper money in any physical exchange location after you've made an exchange (like with any street Fiat Currency Exchange).
+    You should only need an exchange when you want to convert your assets from one currency to another and then you need to store that currency or asset long-term in your own wallet where you control the secret key to the account, not the exchange.
+    You should not keep your money in the exchange wallet/account just as you don't keep your paper money in any physical exchange location after you've made an exchange (like with any street Fiat Currency Exchange).
     Exchanging/swapping currencies can be well used for informed investments (storing of value in a deflationary system with at least one proven revolutionary utility or characteristic) or for charity, as non-profit organizations or initiatives don't have to account for that money and don't have to pay taxes that only sustain a corrupt system.
     Exchanging currencies should be done for:
     •	Payment of services, products, or information.
@@ -451,7 +451,7 @@ export const pages = `
         </page>
         <page class="page">    In such a system, the code is publicly maintained and developed by volunteering developers.
     We are talking about a totally different type of database, a way of storing information in a network that cannot be turned off due to its decentralized nature (like torrents) and in a way such that the records or information of any account can never be manipulated by anyone, ever.
-    In this system, you are the only one with the keys to your account and if you lose those keys, nobody will ever be able to access your account and do transactions with it, period.
+    In this system, you are the only one with the key to your account and if you lose that key, nobody will ever be able to access your account and do transactions with it, period.
     The system emits units of currency by rewarding all the people supporting the hardware infrastructure which validates all the transactions between the accounts.
     These people are called “miners” and the activity of miners is called mining. The process of mining is defined by a PoW (Proof of Work) protocol, basically an Adaptive Method of Stable Currency Emission.
     In other words, instead of giving power to bankers to unfairly distribute money into circulation by creating infinite amounts of money out of nothing and forcing us to work years of our lives to pay back the debt, we can see an alternative was demonstrated through this PoW system where the money is distributed directly to those who participate in the support of its infrastructure (hardware and software).
@@ -826,7 +826,7 @@ export const pages = `
     In other words, we are enabling users to quickly register/login on to websites using BiiP (as Google does, without filling out endless forms) while at the same time having a built-in cross-platform token transfer system for investment, payment, and funding, all built into the decentralized protocol. This enables so many possibilities for human digital creativity & interaction.
 
 <h3 class="heading">What are: BiiP and GRAT token?</h3>
-    <b>BiiP</b> - Is a unique decentralized user authentication protocol which enables the ability to request access to specific personal data/information and/or to execute blockchain transactions on behalf of the users, both operations being tied to a single unique crypto address.
+    <b>BiiP</b> - Is a unique decentralized user authentication protocol which enables the ability to request access to specific personal data/information and/or to execute blockchain transactions on behalf of the users, both operations being tied to a single unique crypto account.
     BiiP combines Universal Secure Authentication with a Crypto Currency and in the process unifies Money/Currency and Virtual Identity governing in one Decentralized Solution (a full, user controlled process, different from KYC).
     <b>Gratitude (GRAT) Token</b> - Is a deflationary and feeless token with a total supply of 12 billion tokens and it's the native fuel for all of our open-source projects. GRAT token will demonstrate and sustain revolutionary real use cases for the BiiP and beyond it.
     Along with the protocol and token we are constantly growing the <b>GRATITUDE SHIELD</b> and <b>GRATITUDE GENESIS</b> projects which are key to protecting and nurturing the main mission.
@@ -888,17 +888,18 @@ export const pages = `
     The great promise of blockchain technology is yet to be delivered.
     GRAT is here to speed up the process and show everyone what is possible from now on.        
         </page>
-        <page class="page"><h2 class="heading" style="text-transform: initial;">More technical details about BiiP</h2>
+        <page class="page smaller2"><h2 class="heading" style="text-transform: initial;">More technical details about BiiP</h2>
     BiiP (Biospheric Identity Internet Protocol) is firstly an Open-Source API (Application Programming Interface), a revolutionary Online Authentication method using a decentralized identity running on a fast & secure blockchain.
+
     <b>Let's explain it in more common terms and in chronological order:</b>
     1. WhatsApp was the first to use GSM numbers instead of emails to register/authenticate people. But you can be sure that in 10 years, SIM cards will be a thing of the past just as audio cassettes were.
     2. Companies like Twitter, Facebook, and Google have copied the original idea of general online authentication and transformed it into corporate OAuth (Online Authentication) which is centralized, private, and sadly, a corrupt version of the original OAuth 1.0 protocol that was conceivably a powerful Open-Source tool for registration and authentication to online services.
-    3. Soon, GRAT will demonstrate a revolutionary protocol named BiiP using an open-source decentralized authentication API that harnesses the power of a fast, feeless crypto token (GRAT), creating a unique and extremely secure authentication method using blockchain address ownership confirmation as the proof of identity.
+    3. Soon, GRAT will demonstrate a revolutionary protocol named BiiP using an open-source decentralized authentication API that harnesses the power of a fast, feeless crypto token (GRAT), creating a unique and extremely secure authentication method using blockchain account ownership confirmation as the proof of identity.
 
-<b>BiiP & GRAT solve 3 hard 21<sup>st</sup>-century biospheric internet problems:</b>
+<b>BiiP & GRAT solve 3 hard 21<sup>st</sup>-century internet problems:</b>
     1.	<b>Biospheric Secure Authentication</b> - with built-in authorization of 2<sup>nd</sup> and 3<sup>rd</sup> parties' access to personal information and funds, with no need for government managed KYC (Know Your Customer) verification.
-    2.	<b>Biospheric Value Transfer System</b> - The token used for authentication is a GRAT address that together with BiiP allows you to authorize 3<sup>rd</sup> parties to make small transfers on your behalf for specific actions/events triggered by you and controlled by you. In essence, you become your own bank.
-    3.	<b>Biospheric Exposure Services</b> - BiiP and GRAT token together can eliminate the need for advertising by providing a unique, platform-native, delegated 3<sup>rd</sup> party value transfer and instant crowdfunding ability to users.
+    2.	<b>Biospheric Value Transfer System</b> - the GRAT account used for authentication together with BiiP allows you to authorize 3<sup>rd</sup> parties to make small transfers on your behalf for specific actions/events, all configured by you. In essence, you become your own bank and payment services provider.
+    3.	<b>Biospheric Exposure Services</b> - BiiP and GRAT token together can eliminate the need for advertising by providing a unique value transfer system, through which the delegation of transfers towards 3<sup>rd</sup> parties is possible, thus offering an instant platform-native universal crowdfunding ability.
         </page>
         <page class="page">  BiiP & GRAT enables and empowers better and universal exposure and funding/payment alternatives for important digital services like:
     Education, Health, Science, Crowdfunding, Finance, History and Data Banks, Search Engines, Apps, Ideas, Art, or Information in general.
@@ -913,7 +914,7 @@ export const pages = `
 
     <b>BiiP is a step in the right direction, the first of its kind just like Bitcoin was 14 years ago, it's a benevolent, virtual grassroots movement.</b>
 
-    Similar to the way the IP (Internet Protocol) is basically a physical address or an address for a physical device/machine, BiiP basically represents a virtual address for a Biospheric Internet Identity that is created by a human, not a corporate entity.
+    IP (Internet Protocol) is basically a physical address or an address for a physical device/machine. Similarly, BiiP represents a virtual address for a Biospheric Internet Identity that is created by a human, not a corporate entity.
     The BiiP biosphere network is built on top of the global IP network, this is why it's called a “second layer technology”.
 
     Our BiiP implementation aims to transform the way we access digital services and understand their relationship with our physical reality.
@@ -940,25 +941,26 @@ export const pages = `
         </page>
         <page class="page">  BiiP and GRAT token can be used to remove barriers for Human-to-Human Interaction and redefine digital processes for everyone adhering to the new Biospheric Internet. Governmental or private corporations all use one tool to convince us of anything they desire, it's called <b>Advertising</b>.
     <b>Advertising is an obsolete method of Evaluation, Distribution, and Exposure, all based on emotional manipulation and psychological warfare.</b>
-
 <h2 class="heading">Defining the BiiP standard</h2>
-    Any project that will use the original BiiP or a custom BiiP fork for its objectives will have to meet the following requirements to be able to claim a valid implementation of BiiP:<span style="font-size: 90%">
-    1.	A decentralized, secure API that ties all the following features together.
-    2.	A decentralized, secure, fast, feeless, Non-PoW blockchain, for using the blockchain address as a unique user identifier.
-    3.	An encrypted, decentralized, biospheric identity storage system managed through a native cryptocurrency/token address association. This means that as a user, I can create a blockchain-based account where I am the only one that can store, modify and govern my personal information (like name, sex, age, email, IM IDs, mobile numbers, current address, other personal documents), funds and other settings that I want, by authenticating with the correct cryptocurrency/token address and/or secret key.
-    4.	The solution must allow anyone to implement its custom BiiP API on any website/app, allowing relevant visitors/users to easily register or log in using a project-specific and native crypto address and/or secret key.
-    5.	The ability for all account holders to govern 3<sup>rd</sup> party access to their personal information and to their funds.
-    6.	The ability for all account holders to authorize 3<sup>rd</sup> parties (websites and apps) to execute small or custom transactions on their behalf (obeying user-configured rules).
-    7.	Protection against public exposure of the token address or any other personal info.</span>
-        </page>
-        <page class="page"><span style="font-size: 90%">    8.	A solution for browsers/apps to remember users that registered or logged in.
+    Technically speaking, BiiP is an API defined by:<span style="font-size: 90%">
+    1.	A decentralized, fast, feeless, Non-PoW blockchain using the account username or crypto address as a unique user identifier.
+    2.	An encrypted, decentralized, identity storage system managed through account association. This means that as a human, I can create a blockchain-based unique username allowing me to store, modify and govern my personal information on the bllockchain (info like name, sex, age, email, IM IDs, mobile numbers, current address, personal documents, funds and other settings).
+    3.	A way for a keeper of information, meaning websites or apps that implement BiiP, to request information or transaction delegation, thus having access to user management and an advanced payment system.
+    4.	The solution must allow anyone to implement its custom BiiP API on any website/app, allowing humans to easily register or log in by authenticating with their smartphone or secret key.
+    5.	The ability for all account owners to govern 3<sup>rd</sup> party access to their personal information and to their funds.
+    6.	The ability for all account owners to authorize 3<sup>rd</sup> parties (websites and apps) to execute small or custom transactions on their behalf (obeying owner-configured rules).
+    7.	Protection against public exposure for any personal info unauthorized by the owner.
+    8.	A solution for browsers/apps to remember users that registered or logged in.
     9.	A SHIELD type platform where members can vote or vet on raised issues and proposals in the interest of the project's mission and objectives.</span>
-
-<h2 class="heading">Gratitude (GRAT) token</h2>
+        </page>
+        <page class="page"><h2 class="heading">Gratitude (GRAT) token</h2>
     The first cryptocurrency to use BiiP is the GRATITUDE Token, a deflationary fast, secure, and feeless token.
     The Purpose of GRAT token is to facilitate better biosphere online services, it represents the fuel for the new bleeding-edge alternatives to all the important Internet Layer Applications which are currently defining most of what we call The Internet, thus transforming how the human species communicates, evaluates and interacts.
     Some of the GRAT tokens are reserved for promoting the projects that will create Real Use Cases to create demand, thus increasing the network's self-worth or the network's universal real-world value and utility.
-    <b>GRATITUDE TOKEN will harness the power of Blockchain Technology to decentralize the financial/monetary value created, shared, and invested by users of any digital network. We are working on decentralizing the Value derived from our Digital Selves.</b>
+
+    <b>GRATITUDE TOKEN will harness the power of Blockchain Technology to decentralize the financial/monetary value created, shared, and invested by users of any digital network.
+
+    We are working on decentralizing the Value derived from our Digital Selves. There are 3 main actions that we need to take:</b>
     <b>create</b> – bring (something) into existence.
     <b>ascribe</b> - regard a text, quotation, or work of art as being produced by or belonging to (a particular person or period).
     <b>invest</b> - provide or endow someone or something with (a particular quality or attribute).
@@ -980,7 +982,7 @@ export const pages = `
         <page class="page">    However, the creator of Bitcoin did not anticipate that people will try to exploit this PoW algorithm for profit. This entire greed-based activity or “mining” for cryptocurrency, in general, is wasting hardware and network infrastructure that could be used for good.
     Miners are simply the human part of a crude method for emitting units of cryptocurrency into circulation. The amount of cryptocurrency units that miners receive in their wallet address is the newly emitted coins.
     Miners can hold onto the currency long-term or sell it on exchanges, and so the coins sold on exchanges are new coins put into circulation.
-    For Bitcoin, the code was written to limit the amount of Bitcoins that will ever be emitted to 21 million units of Bitcoin (which can be further divided into 100 million parts or sub-units, just like €1 can be divided into 100 cents or pennies, but way more parts).
+    For Bitcoin, the code was written to limit the amount of Bitcoins that will ever be emitted to 21 million units of Bitcoin (which can be further divided into 100 million parts or sub-units, just like $1 can be divided into 100 cents or pennies, but way more parts).
     The 21 million total monetary supply limit means that Bitcoin, as a monetary system is a deflationary monetary system. With a monetary system like this, inflation is technically and practically impossible.
     When the last Bitcoin will be mined/emitted (which is estimated to be somewhere around February 2140), the Bitcoin software will no longer emit Bitcoins and people will have to price fight over the total amount of Bitcoin in circulation.
     The showstopper problem with PoW is that it created sort of a "crypto mining rush" which created an electrical energy and hardware consumption worldwide problem, not to mention the whales that have enough bitcoins to crash the market if they ever sell too much too fast.
@@ -1067,27 +1069,27 @@ export const pages = `
 
 <h2 class="heading">The Gratitude account</h2>
     <b>What sets the GRAT account apart from other similar dapp protocols?</b>
-    The GRAT account is not just a way to connect to a wallet or dapp, it's a decentralized encrypted database of personal information attached or associated with an encrypted GRAT address, all stored safely on the blockchain.
-    A GRAT protocol account is made from 3 main components:
-    1. <b>A closed-end token address</b> - This is an encrypted <b>GRAT address + a username</b> stored in a decentralized blockchain file storage system. Only the owner, the GRAT system, and 3<sup>rd</sup> parties authorized by the owner (to some extent but with limitations) can execute transactions for this address. Nobody else can see the GRAT address keys for this address except the owner by signing the operation using his wallet app, the keys are not exposed to any other end.
-    2. <b>Personal Information</b> like Names, Emails, Addresses, Social Security numbers, and other crypto account addresses. Just like the GRAT address, this information is encrypted and stored on decentralized nodes around the world. Only the GRAT system can with the permission of the account owner share this information (only once on registration) with 3<sup>rd</sup> parties.
+    The GRAT account is not just a way to connect to a wallet or dapp, it's a decentralized encrypted database of personal information attached or associated with an encrypted GRAT username, all stored safely on an advanced blockchain.
+    A GRAT account is made from 3 main components:
+    1. <b>A username</b> - Forever stored in a decentralized blockchain file storage system. Only the owner, BiiP, and 3<sup>rd</sup> parties authorized by the owner (to some extent but with limitations) can execute transactions for this account. Nobody else can see the account secret key for this username except the owner by signing the operation using his wallet app, the secret key is never exposed to any human other than the owner of the account (the username).
+    2. <b>Personal Information</b> like Names, Emails, Addresses, Social Security numbers, and other crypto accounts. Just like the username, this information is encrypted and stored on decentralized nodes around the world. Only the BiiP system can with the permission of the account owner share this information with 3<sup>rd</sup> parties.
     The owner of the account can authorize 3<sup>rd</sup> party apps/services upon registration to have access only to the personal information of his choice.
         </page>
-        <page class="page">   3. <b>An API</b> (Application Programming Interface) that allows GRAT account owners to authorize and govern access for 3<sup>rd</sup> party website/apps/games to their personal information and finances or funds. In other words, besides the personal information shared on registration, the features in this component allow the account owner to govern 3<sup>rd</sup> party abilities to execute custom GRAT transactions on behalf of him/her for different actions/events triggered on 3<sup>rd</sup> party platforms/apps (actions like transferring, reacting, sharing, investing, funding or donating custom amounts of GRAT tokens).
-    <b>You (the account owner) are the only one able to govern your information. The GRAT team can only see the information you authorize it to see. For example, this could be just a simple username, that's it.</b>
+        <page class="page">   3. <b>An API</b> (Application Programming Interface) that allows GRAT account owners to authorize and govern access for 3<sup>rd</sup> party websites/apps/games to their personal information and finances or funds. In other words, besides the personal information shared on registration, the features in this component allow the account owner to govern 3<sup>rd</sup> party abilities to execute custom GRAT transactions on behalf of him/her for different actions/events triggered on 3<sup>rd</sup> party platforms/apps (actions like transferring, reacting, sharing, investing, funding or donating custom amounts of GRAT tokens).
+    <b>You (the account owner) are the only one able to govern your information. The GRAT team can only see the information you authorize it to see. For example, this could be just your username, that's it.</b>
     Nobody except the owner and 3<sup>rd</sup> party websites/apps authorized by the owner can run operations on the GRAT account and the settings for authorized 3<sup>rd</sup> parties can be changed at any time in the GRAT account.
-    <b>Only the owner of the account can ever access these settings, so it is crucial that the keys to the account are stored safely by its owner.</b>
-    BiiP does not have a way to expose the keys directly to any other party.
-    The GRAT account owner is the only human that can see the address keys by signing the operation from his crypto wallet.
+    <b>Only the owner of the account can ever access these settings, so it is crucial that the secret key to the account is stored safely by its owner.</b>
+    BiiP does not have a way to expose the secret key directly to any other party.
+    The GRAT account owner is the only human that can see the account secret key.
     Once authenticated in the GRAT account (on <a href="https://gratitudetoken.world">gratitudetoken.world</a>), you now have the ability to update any field containing your personal information and customize transaction amounts and limits for different actions for all the authorized 3<sup>rd</sup> parties.
-    All the critical information (GRAT address keys and Personal Information) is highly encrypted and stored on a file storage blockchain - on computers and servers around the world that don't know each other.
-    Nobody except you has access to this information and you are the only one who can change it by using your wallet app to confirm you are the owner of the GRAT address.
+    All the critical information (secret key and personal information) is highly encrypted and stored on a file storage blockchain - on computers and servers around the world that don't know each other.
+    Nobody except you has access to this information and you are the only one who can change it by using your wallet app to confirm you are the owner of the GRAT account.
         </page>
-        <page class="page">   None of the Personal Information fields are “Required” to pass validation of any GRAT account update and you may update the information at any time you like by authenticating to the decentralized GRAT account with your GRAT address.
+        <page class="page">   None of the Personal Information fields are “Required” to pass validation of any GRAT account update and you may update the information at any time you like by authenticating to the decentralized GRAT account with your username.
     Now, let's take a minute to consider a very big difference between other online authentication methods like OAuth for example, and GRAT protocol (our BiiP implementation):
     Any time you want to register to a website or app that implemented the GRAT authentication method, you can choose precisely each piece of information that you want to share with that website.
     This is different than OAuth and other authentication protocols where the website or app is the one that specifies or requests personal information from you and the only option you have is to accept or the registration process will fail. Crazy I know.
-    But with GRAT launched, we now have a unique way of registering, with your selected encrypted personal info, associated with your GRAT address, while enjoying a unique way of rewarding interactions on websites and apps and while being able to crowdfund anything, anywhere. All are available to users at the click/touch of a button.
+    But with GRAT launched, we now have a unique way of registering, with your selected encrypted personal info, associated with your GRAT account, while enjoying a unique way of rewarding interactions on websites and apps and while being able to crowdfund anything, anywhere. All are available to users at the click/touch of a button.
     It's very hard to make technology simpler to use than this.
 
 <h2 class="heading">Tokenomics</h2>
@@ -1097,8 +1099,8 @@ export const pages = `
     <b>900 million</b> tokens - are reserved for Genesis and SHIELD development (<b>800 million</b> tokens for Genesis initiatives and <b>100 million</b> for SHIELD).
     <b>100 million</b> tokens - will be distributed publicly through an IDO.
         </page>
-        <page class="page">    These first IDO tokens offered will be at the price of 1€ / token over the course of at least 12 months.
-    The funds raised from the IDO will be used as critical insurance for everyone, we will create liquidity pools, setting a base price for GRAT tokens. The IDO tokens will be distributed over time through at least one DEX (Decentralized Exchange), preventing the price to go lower than 1€ / GRAT token during the critical early months of market activity.
+        <page class="page">    These first IDO tokens offered will be at the price of 1$ / token over the course of at least 12 months.
+    The funds raised from the IDO will be used as critical insurance for everyone, we will create liquidity pools, setting a base price for GRAT tokens. The IDO tokens will be distributed over time through at least one DEX (Decentralized Exchange), preventing the price to go lower than $1 / GRAT token during the critical early months of market activity.
     Other exchanges may be targeted for listing after that to increase the demand for GRAT so that we can slowly offer the tokens reserved for research and creating awareness, to pay for recruiting Top Global Talent, and of course to develop all initiatives further.
     Our ambitious projects require a lot of resources, and volunteers, but also paid developers, all working on different projects and initiatives that are a huge challenge on their own and they all need support from the community of early adopters that will raise funds over time through the IDO.
 
@@ -1106,7 +1108,7 @@ export const pages = `
     Each month 8.333.333 tokens from the 100 million tokens IDO fund will be transferred into the DEX liquidity pools.
     For any month with reports (tokens that were not acquired by investors), the reported tokens will be carried to the next month where we will only add a difference up to 8.333.333 tokens. This ensures a uniform distribution across time.
     This means that the IDO supply will not increase more than 8.333.333 GRAT tokens per month until all 100 million tokens are consumed by investors.
-    This semi-automatic emission method is as adaptive as PoW (Proof of Work), but with the major difference, or should we say extra benefit that you don't have to invest in mining hardware/rent / power to issue new tokens. We don't want to harm the Biosphere when you can just invest or register to a Genesis project to get and hold GRAT tokens.
+    This semi-automatic emission method is as adaptive as PoW (Proof of Work), but with the major difference, or should we say extra benefit that you don't have to invest in mining hardware / rent / power to issue new tokens. We don't want to harm the Biosphere when you can just invest or register to a Genesis project to get and hold GRAT tokens.
         </page>
         <page class="page">  Our simple yet effective strategy is enough to avoid allowing "whales" to gobble up most of the IDO supply and to avoid contributing to the already critical biosphere pollution problems. It's very important that we avoid chemical emissions that would have happened with a mining algorithm for minting/emitting the tokens.
     The GRAT token price will appreciate organically over time, especially due to the demand that Genesis projects will create for the tokens.
@@ -1177,15 +1179,15 @@ export const pages = `
     <b>All Together, we are waking up to this transition and we need you!</b>
     This is one of the most important Genesis initiative out of the 8 and it's already in development. We are talking about a Decentralized Biosphere Consciousness Media platform. It's the next generation of human media that does not use advertising for revenue.
     It's built by you, me, everyone and it is hosted on many computers and servers around the biosphere belonging to people that don't know each other. Blockchain allows us to do this now. We live in incredible times, let's be aware of this and not lose any more time in echo chambers, in information prisons!
-    <b>How do you become a user?</b> All you need to do is create a GRAT account on <a href="/">gratitudetoken.world</a>, it's very fast. Then, with just your new GRAT address and a chosen username you can create or extend a BiiP link for <b>biosphere.media</b>. You can do this on any website / app / device that uses BiiP technology.
+    <b>How do you become a user?</b> All you need to do is create a GRAT account on <a href="/">gratitudetoken.world</a>, it's very fast. Then, with just your new GRAT account (a chosen username) you can create or extend a BiiP link for <b>biosphere.media</b>. You can do this on any website / app / device that uses BiiP technology.
     <b>That's it! No SMS, No Email, No KYC (corporate identity verification), simple and for everyone.</b>
         </page>
         <page class="page">  <h2 class="heading">The fun begins</h2>
     Now, as a user here, you can do all the important stuff you can do now on social media, without government identity verification or fiat payment services and without advertising.
     As a user here, you will never see an ad. All users are equal and there are no special pages or statuses, we are all equal and it doesn't matter if we are individuals or companies.
-    As a user here, imagine you are just scrolling or swiping like usually through your feed, then you stop at a post you like, and you click on share. Because of this, you receive an instant transfer of GRAT tokens worth ~ €1 or even ~ 5€ because you have around 5000 active friends that can bring exposure to the author.
+    As a user here, imagine you are just scrolling or swiping like usually through your feed, then you stop at a post you like, and you click on share. Because of this, you receive an instant transfer of GRAT tokens worth ~ $1 or even ~ 5$ because you have around 5000 active friends that can bring exposure to the author.
     The post author is conscious of this mechanism as he/she set the amount himself/herself, to show appreciation or gratitude to the person who brings them exposure/attention to their content (the amounts mentioned are just hypothetical examples).
-    Or, as a user here, you arrive at a post you like, and of course, you feel the need to react by pressing a reaction button. In the background, an automatic instant transfer of GRAT tokens worth ~ €1 from your wallet to the original author of the post is executed.
+    Or, as a user here, you arrive at a post you like, and of course, you feel the need to react by pressing a reaction button. In the background, an automatic instant transfer of GRAT tokens worth ~ $1 from your wallet to the original author of the post is executed.
     You are conscious of this mechanism as you set the amount yourself to show your appreciation or gratitude by donating it to the author of the post (the amounts mentioned are just hypothetical examples).
 
     <b>All this is done at the click/touch of a button. That's it!
@@ -1207,7 +1209,7 @@ export const pages = `
         <page class="page">  So, you are appreciating the value of GRAT versus other forms of currencies/assets and you are motivating people and companies to engage with GRAT for the development of digital markets like websites and apps or become their users.
     In this way, people can enter the Gratitude Biosphere Consciousness Network transition where we all thrive together.
     After you've accumulated some GRAT tokens, you can swap them into any other currency and spend them on anything you want in the digital or real world, but we don't recommend being impatient and panic-sell before its value has appreciated over the months or years.
-    As we discussed, on a media platform using the GRAT protocol and token, if your simple 👍 Like – would represent an instant value transfer in GRAT tokens that is estimated somewhere around the equivalent of €1, would you give it away to just any post? Of course not. This creates a more honest and valuable interaction between users.
+    As we discussed, on a media platform using the GRAT protocol and token, if your simple 👍 Like – would represent an instant value transfer in GRAT tokens that is estimated somewhere around the equivalent of $1, would you give it away to just any post? Of course not. This creates a more honest and valuable interaction between users.
     Together, we can create a digital, open-source, free-to-use, transparent, deflationary, decentralized, inclusive, biosphere media - where all its users prosper from interacting with each other using better human participation and human interaction models.
     Our attention should not be invested in a corrupt medium, a censored form of communication for our digital avatars locked inside echo chambers created by algorithms.
     These tech giants siphon away your time and hard work for almost nothing given in return.
@@ -1265,8 +1267,8 @@ export const pages = `
     In other words, your reactions can send GRAT tokens to authors, and sharing posts can send you GRAT tokens from the author.
     Of course, for sharing of content, criteria like the number of friends and their level of activity in the last month are measured, also if users have actually seen the post shared.  The user who shares something is the one receiving GRAT tokens from the source (original author of the post).
     As with any exposure we seek, we must compensate those who do the exposure for us, so as an author we should share some of the benefits we get from our exposure, we can give back to the community that grows naturally, without any need for psychological warfare (ads) which are costly manipulative designs using <a href="https://en.wikipedia.org/wiki/Clickbait" target="_blank"><b>click bait</b></a> or <a href="https://www.darkpatterns.org/" target="_blank"><b>dark pattern design</b></a> to trick you.
-    For Reaction and Share actions, GRAT tokens will be consumed automatically from your GRAT Protocol address as users interact with each other's posts.
-    If you run out of GRAT tokens you just need to share more content for others to get some or exchange some fiat currency for GRAT tokens and then transfer them to your GRAT Protocol address.
+    For Reaction and Share actions, GRAT tokens will be consumed automatically from your account as users interact with each other's posts.
+    If you run out of GRAT tokens you just need to share more content for others to get some or exchange other currency for GRAT tokens and then transfer them to your GRAT Protocol account.
     And, if you don't have a required minimum amount for each of the 2 actions (Reaction or Sharing), the action will still be successful, but the system will change the visibility of the post automatically so that it'll have a lower priority over other posts.
         </page>
         <page class="page">    We also believe there is no point in gathering and analyzing huge amounts of personal information from users to get exposure only for certain users that matched certain keywords.
