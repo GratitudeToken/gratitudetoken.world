@@ -159,7 +159,8 @@ h5 {
 
 #languageOptions label {
   cursor: pointer;
-  display: block
+  display: block;
+  margin: 23px
 }
 
 #languageOptions label:hover {

@@ -31,7 +31,7 @@ export let countdowns = function() {
           countdownContainer[i].innerHTML = days + ":" + hours + ":" + minutes + ":" + seconds;
           // If the count down is finished, write some text
           if (distance < 0) {
-            countdownContainer[i].innerHTML = "IDO is live!";
+            countdownContainer[i].innerHTML = "Public Presale is Live";
           }
         }
 

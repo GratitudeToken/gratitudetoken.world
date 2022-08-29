@@ -3,7 +3,7 @@
 html, body {overflow: hidden}
 
 
-.wrapper {
+.wrapper, .wrapper-wide {
     margin: 76px 0 0 0;
     border-top: 1px solid var(--white23);
     border-bottom: 1px solid var(--white23);
@@ -20,6 +20,8 @@ html, body {overflow: hidden}
     position: relative;
 }
 
+.wrapper-wide {display: block}
+
 .wrapper nav {
     width: 230px;
     min-height: 69vh;
@@ -32,7 +34,7 @@ html, body {overflow: hidden}
     align-items: flex-start;
     z-index: 8;
 }
-.content {
+.content, .content-wide {
     padding: 43px 15px 15px 15px;
     height: 100%;
     overflow-y: scroll;
@@ -44,32 +46,41 @@ html, body {overflow: hidden}
     background-size: 1px 1px
 }
 
+.content-wide {width: 100%; padding: 15px;}
+
+.grid-1-2, .grid-1-3 {display: grid; gap: 30px; grid-template-rows: repeat(1, 1fr); grid-template-columns: repeat(2, 1fr);}
+.grid-1-3 {grid-template-columns: repeat(3, 1fr);}
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
-.content {
+.content, .content-wide {
     scrollbar-width: thin;
     scrollbar-color: transparent;
 }
 
 /* Chrome, Edge, and Safari */
-.content::-webkit-scrollbar {
+.content::-webkit-scrollbar,
+.content-wide::-webkit-scrollbar {
     width: 18px;
 }
 #index::-webkit-scrollbar {
     width: 9px;
 }
 
-.content::-webkit-scrollbar-track, #index::-webkit-scrollbar-track {
+.content::-webkit-scrollbar-track,
+.content-wide::-webkit-scrollbar-track,
+#index::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-.content::-webkit-scrollbar-thumb, #index::-webkit-scrollbar-thumb {
+.content::-webkit-scrollbar-thumb,
+.content-wide::-webkit-scrollbar-thumb,
+#index::-webkit-scrollbar-thumb {
     background-color: #121212;
     border-radius: 9px;
     border: none;
 }
-.content:hover::-webkit-scrollbar-thumb, #index:hover::-webkit-scrollbar-thumb {background-color: #323232;}
-.content::-webkit-scrollbar-thumb:hover, #index::-webkit-scrollbar-thumb:hover {background-color: #696969;}
+.content:hover::-webkit-scrollbar-thumb, .content-wide:hover::-webkit-scrollbar-thumb, #index:hover::-webkit-scrollbar-thumb {background-color: #323232;}
+.content::-webkit-scrollbar-thumb:hover, .content-wide::-webkit-scrollbar-thumb:hover, #index::-webkit-scrollbar-thumb:hover {background-color: #696969;}
 
 a, a:visited {color: var(--white)}
 p {color: var(--brighterColor)}

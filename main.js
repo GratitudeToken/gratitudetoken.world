@@ -120,10 +120,17 @@ fetch('/localisation/' + page + '/' + code + '.json')
             shareThis();
             BiiP_script();
         }
+
         if (page == "white-paper") {
             const { pages } = await import('/localisation/white-paper/' + code + '.js');
             $('#white-paper').innerHTML += pages;
             whitePaper();
+        }
+        if (page == "tokenomics") {
+            const { tokenomics } = await import('/modules/tokenomics.js');
+            const { countdowns } = await import('/modules/countdown.js');
+            tokenomics();
+            countdowns();
         }
     });
 
