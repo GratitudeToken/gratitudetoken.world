@@ -13,7 +13,8 @@
     </svg>
     <nav id="nav">
         <a href="/"><img src="/svgs/home.svg" loading="lazy" alt="Homepage"/>{{home}}</a>
-        <a href="/tokenomics"><img src="/svgs/gratitude-token-logo.svg" loading="lazy" alt="Tokenomics"/>{{buy}}</a>
+        <a href="/presale"><img src="/svgs/gratitude-token-logo.svg" loading="lazy" alt="Public Presale"/>{{presale}}</a>
+        <a href="/tokenomics"><img src="/svgs/tokenomics.svg" loading="lazy" alt="Tokenomics"/>{{tokenomics}}</a>
         <a href="/white-paper"><img src="/svgs/pdf-icon.svg" loading="lazy" alt="White Paper"/>{{whitePaper}}</a>
         <a id="languageSelect"><i>{{lang-code}}</i>{{language}}</a>
     </nav>
@@ -31,11 +32,8 @@
             <span class="smallTitle makeLetters">{{missionTitle}}</span><br>
             <span class="mission makeLetters">{{mission}}</span>
         </p>
-        <input class="newsletter" type="email" placeholder="your email">
-        <button id="invest" type="submit" class="button"><svg>
-                <use href="#grat-logo" xlink:href="#grat-logo" />
-            </svg> {{btn_text}}</button>
-        <div class="countdown IDODeadline" data-deadline="Sept 09, 2022 23:23:23"></div>
+        <a id="invest" href="/presale" type="submit" class="button">{{btn_text}}</a>
+        <div class="countdown IDODeadline" data-deadline="Dec 02, 2022 23:59:00"></div>
         <p>{{IDO_deadline}}</p>
     </div>
     <div id="fire_sparks"></div>
@@ -293,7 +291,7 @@
     </div>
     <canvas style="position: absolute; top: 0; width: 100%; height: 100%" id="nodes_supernova"></canvas>
 </div>
-<div class="section" id="section3" data-bg="section3.jpg">
+<div class="section" id="section3" data-bg="bg-1.jpg">
     <div class="fade-top-23"></div>
     <div class="fade-bottom-23"></div>
     <h2 class="GENESIS observableElement" data-callback="2">
@@ -394,7 +392,7 @@
                 </div>
             </div>
         </div>
-        <div id="middle" class="milestone">
+        <div class="milestone" style="border: 3px solid #5bff5b; color: #5bff5b">
             <div class="milestone_content yellow">
                 <b>09</b><b>2022</b>
                 <div class="milestone_text">
@@ -403,7 +401,7 @@
                 </div>
             </div>
         </div>
-        <div class="milestone">
+        <div id="middle" class="milestone">
             <div class="milestone_content green">
                 <b>12</b><b>2022</b>
                 <div class="milestone_text">
@@ -454,14 +452,14 @@
                     {{{front_pane_2}}}
                     <strong class="side_title">{{front_pane_3}}</strong>
                     {{{front_pane_4}}}
-                    <div class="countdown IDODeadline" data-deadline="Sept 09, 2022 23:23:23"></div>
+                    <div class="countdown IDODeadline" data-deadline="Dec 02, 2022 23:59:00"></div>
                     <strong class="side_title">{{IDO_deadline}}</strong>
                 </div>
             </div>
             <div class="back-pane side">
                 <strong class="side_title margin_top">{{back_pane_1}}</strong>
                 {{{back_pane_2}}}
-                <div class="countdown IDODeadline" data-deadline="Sept 09, 2022 23:23:23"></div>
+                <div class="countdown IDODeadline" data-deadline="Dec 02, 2022 23:59:00"></div>
                 <strong class="side_title">{{IDO_deadline}}</strong>
             </div>
             <div class="top-pane side"></div>

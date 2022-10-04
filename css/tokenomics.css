@@ -1,60 +1,35 @@
-img {width: initial; height: initial}
-.content-wide .img1 {
-    width: 100%; height: auto; max-width: 726px; margin: 23px auto; display: block
+header #nav {padding-right: 10px;}
+
+.content-wide {max-width: 1280px; margin: 0 auto}
+
+.content-wide .distribution {
+    width: 100%; height: auto; max-width: 726px; margin: 23px auto; display: block; mix-blend-mode: difference;
 }
 
-.content-wide p {font-size: 14px}
+/* ===== Scrollbar CSS ===== */
 
-.content-wide .countdown {font-size: 69px; font-weight: bold; text-align: center;}
-.main-color {color: var(--logoColor)}
-.color-white {color: #ffffff}
-.color-gray {color: gray}
-.content-wide .font10 {font-size: 12px}
-
-.progress-bar {height: 32px; position: relative; border: 1px solid #db463e; border-radius: 6px; overflow: hidden}
-.progress-bar:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 32px;
-    background: #db463e;
-    border-radius: 6px;
-    position: absolute;
-    top: 0; left: -100%;
-}
-.progress-bar span {display: block; width: 100%; height: 32px; position: absolute; top: 0; left: 0; right: 0; margin: 6px auto; z-index: 1; color: #ffffff; text-align: center;}
-
-.content-wide table {
-    width: 100%;
+body {
+    scrollbar-width: thin;
+    scrollbar-color: transparent;
+    overflow-y: auto
 }
 
-.content-wide th, .content-wide td {padding: 6px; border: 0; color: #7c7c7c;}
-.content-wide th {color: #ffffff; background: #7c7c7c23}
-.content-wide tr:nth-of-type(odd) {background: #7c7c7c23}
-
-.mini-icon {width: 16px; height: 16px; vertical-align: text-bottom; margin-left: 6px;}
-
-.content-wide input, .content-wide textarea {
-    width: 100%;
-    background: #ffffff12;
-    border: 1px solid #ffffff23;
-    padding: 6px 12px;
-    outline: 0;
-    color: #ffffff69;
-    border-radius: 6px;
-    margin-top: 6px
+body::-webkit-scrollbar {
+    width: 9px;
 }
 
-.content-wide input:hover, .content-wide textarea:hover {border-color: #ffffff69;}
-.content-wide textarea {min-height: 150px;}
-.content-wide input[type=submit] {width: auto; float: right; cursor: pointer; background: #db463e; border-color: #db463e; color: #000000; margin-top: 0; font-size: 16px}
-.content-wide input[type=checkbox] {width: initial;}
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
 
-.scrollz {overflow: hidden; overflow-y: auto; height: 180px}
+body::-webkit-scrollbar-thumb {
+    background-color: #121212;
+    border-radius: 9px;
+    border: none;
+}
+body:hover::-webkit-scrollbar-thumb{background-color: #323232;}
+body::-webkit-scrollbar-thumb:hover {background-color: #696969;}
 
-@media screen and (max-width: 1280px) {
-    .grid-1-2 div {
-        grid-column: span 2;
-    }
-    .grid-1-3 div {grid-column: span 3;}
+@media screen and (max-width: 959px) {
+    header #nav {padding-right: 0;}
 }

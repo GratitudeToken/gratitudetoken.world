@@ -1,0 +1,203 @@
+<a class="logo" href="/tokenomics">{{presale}}</a>
+<svg class="hamburger">
+    <path
+        d="M4 10h24a2 2 0 0 0 0-4H4a2 2 0 0 0 0 4zm24 4H4a2 2 0 0 0 0 4h24a2 2 0 0 0 0-4zm0 8H4a2 2 0 0 0 0 4h24a2 2 0 0 0 0-4z" />
+</svg>
+<BiiP></BiiP>
+<header>
+    <svg class="close" viewBox="0 0 128 128">
+        <path d="M64 0a64 64 0 1 0 64 64A64.07 64.07 0 0 0 64 0Zm0 122a58 58 0 1 1 58-58 58.07 58.07 0 0 1-58 58Z" />
+        <path
+            d="M92.12 35.79a3 3 0 0 0-4.24 0L64 59.75l-23.87-24A3 3 0 0 0 35.88 40l23.88 24-23.88 24a3 3 0 0 0 4.25 4.24L64 68.25l23.88 24A3 3 0 0 0 92.13 88L68.24 64l23.89-24a3 3 0 0 0-.01-4.21Z" />
+    </svg>
+    <nav id="nav">
+        <a href="/"><img src="/svgs/home.svg" loading="lazy" alt="Homepage" />{{home}}</a>
+        <a href="/presale"><img src="/svgs/gratitude-token-logo.svg" loading="lazy"
+                alt="Public Presale" />{{presale}}</a>
+        <a href="/tokenomics"><img src="/svgs/tokenomics.svg" loading="lazy" alt="Tokenomics" />{{tokenomics}}</a>
+        <a href="/white-paper"><img src="/svgs/pdf-icon.svg" loading="lazy" alt="White Paper" />{{whitePaper}}</a>
+        <a id="languageSelect"><i>{{lang-code}}</i>{{language}}</a>
+    </nav>
+</header>
+
+<div class="wrapper-wide">
+    <div class="content-wide">
+        <h1 style="text-align: center">{{presale_title}}</h1>
+        <br>
+        <p id="top-price" style="text-align: center">
+            <b class="top-price current-week-color"></b>
+            <del style="font-weight: normal; font-size: 21px; margin-left: 6px">$1.00</del> / {{token}}<br><br>
+            <b id="top-discount"><i></i></b>
+            <strong class="color-white" style="font-size: 60px; filter: drop-shadow(0 0 5px rgb(0 0 0 / 0.9));">+<b
+                    id="top-extra"></b>
+                <i class="coin-container"><b class="coin"></b></i>
+            </strong><br>
+            <img style="width: 23px; height: 23px; vertical-align: bottom; margin-right: 5px"
+                src="/svgs/exclamation.svg" /> {{every_week}}<br>
+            {{{from_to}}}<br><br>
+            <span style="font-size: 16px">📅</span> <a href="/tokenomics" target="_blank"
+                style="font-size: 16px; color: #0084ce; margin-left: 6px">{{schedule}}</a>
+    </div>
+    </p>
+    <div style="text-align: center; margin: 23px 0">{{starts_in}}</div>
+    <div class="countdown IDODeadline current-week-color" data-deadline="Sept 09, 2022 23:23:23"></div>
+    <div class="countdown-details current-week-color">{{countdown_details}}</div>
+    <p class="font18" style="text-align: center"><img class="mini-icon" src="/svgs/gratitude-token-logo.svg" /> <b
+            id="tokens-sold">0</b>/4.000.000 {{grat_sold}}</p>
+    <div class="progress-bar current-week-color"><span></span><b></b></div><br><br><br><br>
+
+    <div id="orders-stats">
+        <div><img src="/svgs/account.svg" /><b id='investors'></b> {{investors}}</div>
+        <div><img src="/svgs/order2.svg" /><img
+                style="width: 16px; height: 16px; margin-left: 2px; margin-right: 5px; display: inline-block; vertical-align: text-top"
+                src="/svgs/gratitude-token-logo.svg" /><b class='tokens-pending'>0</b> {{pending}}</div>
+        <div><img src="/svgs/shopping-bag.svg" />$<b id='confirmed'></b> {{confirmed}}</div>
+    </div>
+    <div class="scrollz">
+        <table id="current-orders"></table>
+    </div>
+    <div class="spacer"></div>
+    <button id="order-terms-show" style="display: none">{{new_order}}</button>
+    {{{first_video}}}
+    <div id="scroll1">&nbsp;</div>
+    <div id="presale-terms" class="hideIfPending" style="display: none">{{{presale_terms}}}</div>
+    <button id="order-form-show" class="hideIfPending" style="display: none; margin: 0 auto">{{next}}</button>
+
+    <div id="scroll2">&nbsp;</div>
+    <form id="order-form" class="hideIfPending" style="display: none" method="POST" action="/presale">
+        <h2>{{{title2}}}</h2><br>
+        <img class="mini-icon" src="/svgs/account.svg" /><b class="user-provided"
+            style="font-size: 23px"></b><br><br><br>
+        <p style="margin: 0">{{select_currency}}</p>
+        <div class="currencies">
+            <div>
+                <input id="USDC-ERC20" type="radio" name="order-currency" value="USDC-ERC20" required />
+                <label for="USDC-ERC20"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png" /><b
+                        style="font-size: 16px">USD Coin</b>
+                    <br>USDC (ERC20 Ethereum network)</label>
+            </div>
+            <div>
+                <input id="USDC-TRC20" type="radio" name="order-currency" value="USDC-TRC20" required />
+                <label for="USDC-TRC20"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png" /><b
+                        style="font-size: 16px">USD Coin</b>
+                    <br>USDC (TRX20 Tron network)</label>
+            </div>
+            <div>
+                <input id="USDT-ERC20" type="radio" name="order-currency" value="USDT-ERC20" />
+                <label for="USDT-ERC20"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" /><b
+                        style="font-size: 16px">Tether USDT</b>
+                    <br>(ERC20 Ethereum network)</label>
+            </div>
+            <div>
+                <input id="USDT-TRC20" type="radio" name="order-currency" value="USDT-TRC20" />
+                <label for="USDT-TRC20"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" /><b
+                        style="font-size: 16px">Tether USDT</b>
+                    <br>(TRC20 Tron network)</label>
+            </div>
+            <div>
+                <input id="DAI-ERC20" type="radio" name="order-currency" value="DAI-ERC20" />
+                <label for="DAI-ERC20"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/4943.png" /><b
+                        style="font-size: 16px">Dai</b>
+                    <br>(ERC20 Ethereum network)</label>
+            </div>
+            <div>
+                <input id="BUSD-BEP20" type="radio" name="order-currency" value="BUSD-BEP20" />
+                <label for="BUSD-BEP20"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/4687.png" /><b
+                        style="font-size: 16px">Binance USD</b>
+                    <br>(BEP20 Binance Smart Chain network)</label>
+            </div>
+            <div>
+                <input id="BUSD-ERC20" type="radio" name="order-currency" value="BUSD-ERC20" />
+                <label for="BUSD-ERC20"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/4687.png" /><b
+                        style="font-size: 16px">Binance USD</b>
+                    <br>(ERC20 Ethereum network)</label>
+            </div>
+            <div>
+                <input id="USDP-ERC20" type="radio" name="order-currency" value="USDP-ERC20" />
+                <label for="USDP-ERC20"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/3330.png" /><b
+                        style="font-size: 16px">Pax Dollar</b>
+                    <br>(ERC20 Ethereum network)</label>
+            </div>
+            <div>
+                <input id="TUSD-ERC20" type="radio" name="order-currency" value="TUSD-ERC20" />
+                <label for="TUSD-ERC20"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/2563.png" /><b
+                        style="font-size: 16px">TrueUSD</b>
+                    <br>(ERC20 Ethereum network)</label>
+            </div>
+            <div>
+                <input id="TUSD-TRC20" type="radio" name="order-currency" value="TUSD-TRC20" />
+                <label for="TUSD-TRC20"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/2563.png" /><b
+                        style="font-size: 16px">TrueUSD</b>
+                    <br>(TRC20 Tron network)</label>
+            </div>
+            <div>
+                <input id="XUSDC" type="radio" name="order-currency" value="XUSDC" />
+                <label for="XUSDC"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png" /><b
+                        style="font-size: 16px">XUSDC</b>
+                    <br>(Proton Chain)</label>
+            </div>
+            <div>
+                <input id="XUSDT" type="radio" name="order-currency" value="XUSDT" />
+                <label for="XUSDT"><img class="medium-icon"
+                        src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" /><b
+                        style="font-size: 16px">XUSDT</b>
+                    <br>(Proton chain)</label>
+            </div>
+        </div>
+        <br>
+        <div style="text-align: center">
+            <label for="order-email"><span style='font-size: 23px'>* Email</span><br><span class="color-gray"
+                    style="font-size: 12px">{{email_label}}</span></label><br>
+            <input id="order-email" type="email" maxlength="32" value="" required /><br><br><br>
+            <label for="order-tokens">{{{tokens_amount}}}</label><br>
+            <input id="order-tokens" type="number" min="10" placeholder="10" value="10" required />
+        </div><br><br>
+        <div id="currency-error" class="w11">{{currency_error}}</div>
+        <input id="order-submit" class="hideIfPending" type="submit" value="{{payment}}" />
+    </form>
+    <div id="scroll3">&nbsp;</div>
+    <div id="final-step" style="display: none">
+        <h2>{{{title3}}}</h2><br><br>
+        {{order_id}} <b id="order-id"></b><br><br>
+        {{order_size}} <b id="order-size"></b> GRAT +<b class="discount" style="margin-left: 2px"></b> <img
+            class="mini-icon" style="width: 20px; height: 20px; margin-left: 2px" src="/svgs/gratitude-token-logo.svg">
+        bonus<br><br>
+        {{total_due}} <b id="total-due"></b> &#40;<b class="discount"></b>% discount&#41;.<br><br>
+        <div id="qrcode"></div><br><br>
+        {{!-- WE NEED TO COMPARE DATES HERE, learn to compare dates with current date and that will set the discount
+        rate.
+        The variables for each discount will come from the presale.js in modules, just like the addresses as well.
+        --}}
+        {{{send_to}}}<br><input type="text" id="address" value="" /><br><br>
+        <div id="clipboardMessageOverlay"></div>
+        <div class="payment-info">
+            {{{payment_info}}}
+        </div>
+    </div>
+    <br><br>
+    <div style="text-align: center">
+        <h2 class="color-lime">{{need_help}}</h2>
+        <p class="responsive-font">{{{contact_us}}}</p>
+    </div>
+
+    {{{recruitment}}}
+    <div class='shareThis'>{{{share}}}</div>
+    <div class='sharethis-inline-share-buttons'></div>
+    {{{footer_nav}}}
+    <footer>
+        {{{footer}}}
+        {{{copy}}}
+    </footer>
+</div>
+</div>

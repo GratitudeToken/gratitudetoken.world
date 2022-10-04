@@ -1,0 +1,57 @@
+<a class="logo" href="/wallets">{{wallets}}</a>
+<svg class="hamburger">
+    <path
+        d="M4 10h24a2 2 0 0 0 0-4H4a2 2 0 0 0 0 4zm24 4H4a2 2 0 0 0 0 4h24a2 2 0 0 0 0-4zm0 8H4a2 2 0 0 0 0 4h24a2 2 0 0 0 0-4z" />
+</svg>
+<BiiP></BiiP>
+<header>
+    <svg class="close" viewBox="0 0 128 128">
+        <path d="M64 0a64 64 0 1 0 64 64A64.07 64.07 0 0 0 64 0Zm0 122a58 58 0 1 1 58-58 58.07 58.07 0 0 1-58 58Z" />
+        <path
+            d="M92.12 35.79a3 3 0 0 0-4.24 0L64 59.75l-23.87-24A3 3 0 0 0 35.88 40l23.88 24-23.88 24a3 3 0 0 0 4.25 4.24L64 68.25l23.88 24A3 3 0 0 0 92.13 88L68.24 64l23.89-24a3 3 0 0 0-.01-4.21Z" />
+    </svg>
+    <nav id="nav">
+        <a href="/"><img src="/svgs/home.svg" loading="lazy" alt="Homepage" />{{home}}</a>
+        <a href="/presale"><img src="/svgs/gratitude-token-logo.svg" loading="lazy"
+                alt="Public Presale" />{{presale}}</a>
+        <a href="/tokenomics"><img src="/svgs/tokenomics.svg" loading="lazy" alt="Tokenomics" />{{tokenomics}}</a>
+        <a href="/white-paper"><img src="/svgs/pdf-icon.svg" loading="lazy" alt="White Paper" />{{whitePaper}}</a>
+        <a id="languageSelect"><i>{{lang-code}}</i>{{language}}</a>
+    </nav>
+</header>
+
+<div class="wrapper-wide" style="background: none">
+    <div class="content-wide" style="text-align: center; background: none">
+        <h1 style="text-align: center"><img style="width: 32px; height: 32px; vertical-align: bottom" src="/svgs/wallet.svg" alt="wallet" /> {{wallets}}</h1>
+        <br>
+        <p style="display: block; font-size: 14px">{{{phrase1}}}<br><br>
+        <b style="color: var(--logoColor)">{{{phrase2}}}</b></p><br>
+        <div class="grid-1-2">
+            <div>
+                <h2><img style="width: 100px; height: 100px; display: block; margin: 23px auto" src="/wallets/img/proton-xpr-logo.svg"/>WebAuth</h2>
+                <p><span style="color: #999999; font-size: 12px">WebAuth {{available}}</span><br>
+                <img style="width: 120px; height: 40px" src="https://www.logo.wine/a/logo/Google_Play/Google_Play-Logo.wine.svg"/> <img style="width: 40px; height: 40px" src="https://www.logo.wine/a/logo/Apple_Inc./Apple_Inc.-White-Logo.wine.svg"/>
+                <br>
+                <a href="https://play.google.com/store/apps/details?id=com.metallicus.webauth" target="_blank" class="color-blue">Android</a> | <a href="https://apps.apple.com/us/app/webauth/id1594500069" target="_blank" class="color-blue">iOS</a> | <a href="https://webauth.com/start" target="_blank" class="color-blue">Web</a>
+                </p>
+            </div>
+
+            <div>
+                <h2><img style="width: 100px; height: 100px; display: block; margin: 23px auto" src="/wallets/img/anchor-wallet.png"/>Anchor</h2>
+                <p><span style="color: #999999; font-size: 12px">Anchor {{available}}</span><br>
+                Windows | macOS | Linux | iOS | Android
+                <br><br>
+                <a href="https://greymass.com/en/anchor/download" target="_blank" class="color-blue">Greymass.com</a> {{anchor_title}}
+                </p>
+            </div>
+        </div>
+        {{{recruitment}}}
+        <div class='shareThis'>{{{share}}}</div>
+        <div class='sharethis-inline-share-buttons'></div>
+        {{{footer_nav}}}
+        <footer>
+            {{{footer}}}
+            {{{copy}}}
+        </footer>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { $ } from '/modules/selector.js';
 
 const langString = window.location.search;
 const urlSearch = new URLSearchParams(langString);
+export let translationData = new Object();
 
 // on first ever page hit with no lang parameter attached to the URL, we set the language variable to EN (default)
 // first we check if the local storage variable is already set
@@ -31,6 +32,7 @@ form.addEventListener('click', event => {
 fetch('/localisation/' + page + '/' + code + '.json')
     .then(res => res.json())
     .then(async data => {
+        translationData = data;
         const newBody = Handlebars.templates.body(data);
         bodyTranslate.innerHTML = newBody;
 
@@ -118,6 +120,8 @@ fetch('/localisation/' + page + '/' + code + '.json')
         } else {
             mToggle();
             shareThis();
+            substackAPI();
+            substackAPIconfig();
             BiiP_script();
         }
 
@@ -126,11 +130,11 @@ fetch('/localisation/' + page + '/' + code + '.json')
             $('#white-paper').innerHTML += pages;
             whitePaper();
         }
-        if (page == "tokenomics") {
-            const { tokenomics } = await import('/modules/tokenomics.js');
+        if (page == "presale") {
             const { countdowns } = await import('/modules/countdown.js');
-            tokenomics();
+            const { presale } = await import('/modules/presale.js');
             countdowns();
+            presale();
         }
     });
 
@@ -155,6 +159,34 @@ const puzzleJS = () => {
     script.src = "/puzzle/main.js"
     document.body.append(script);
 }
+
+const substackAPI = () => {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://substackapi.com/widget.js"
+    document.body.append(script);
+}
+
+const substackAPIconfig = () => {
+    let script = document.createElement("script");
+    script.innerHTML = `
+    window.CustomSubstackWidget = {
+        substackUrl: "gratitudetoken.substack.com",
+        placeholder: "example@gmail.com",
+        buttonText: "Subscribe",
+        theme: "custom",
+        colors: {
+          primary: "#FFFFFF",
+          input: "#000000",
+          email: "#FFFFFF",
+          text: "#000000",
+        }
+      };
+    `;
+    script.async = true;
+    document.body.append(script);
+}
+
 
 // Youtube functionality
 
@@ -182,7 +214,7 @@ yv ? yv.addEventListener('click', () => {
 
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('youtubeIframe', {
-            videoId: 'y-mpLMX-bDo',
+            videoId: 'SQv8VUzxtQ',
             playerVars: { 'autoplay': 1 },
             events: {
                 'onReady': onPlayerReady,

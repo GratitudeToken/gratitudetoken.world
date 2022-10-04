@@ -1093,7 +1093,7 @@ export const pages = `
     It's very hard to make technology simpler to use than this.
 
 <h2 class="heading">Tokenomics</h2>
-    The token is deflationary as it was created with a Max Supply of <b>12.000.000.000</b> GRAT tokens with 18 decimal points.
+    The token is deflationary as it was created with a Max Supply of <b>12.000.000.000</b> GRAT tokens with 8 digits after the decimal separator.
     There will be no built-in ability to block, recall or emit more tokens.
     <b>11 billion</b> tokens - will be distributed through a years long airdrop campaign, through Genesis signups and referrals.
     <b>900 million</b> tokens - are reserved for Genesis and SHIELD development (<b>800 million</b> tokens for Genesis initiatives and <b>100 million</b> for SHIELD).
@@ -1281,7 +1281,7 @@ export const pages = `
 
 <img class="fullWidth stickBottom" src="/white-paper/img/shield.jpg" alt="SHIELD logo" loading="lazy" />
         </page>
-        <page class="page">  <b>SHIELD 盾</b> - Represents protection through the wisdom of the crowds, the more shield members, the better decisions can be taken for any mission, any cause, and overall for any important project objectives.
+        <page class="page">  <b>SHIELD 盾</b> - Stands for <b>Sustainable Holistic Intelligent Enterprise & Leaderless Development</b>. It represents protection through the wisdom of the crowds, the more shield members, the better decisions can be taken for any mission, any cause, and overall for any important project objectives.
     To understand why SHIELD is powerful, I recommend one of my favorite books of all time: <b>The wisdom of crowds</b> by James Surowiecki.
 
     SHIELD serves as a powerful open-source NPPoS (Non-Profit Proof of Stake) vetting and voting tool. It's currently being developed as web-based software.

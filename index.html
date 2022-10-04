@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="icon" href="/svgs/gratitude-token-logo.svg" type="image/svg+xml">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="manifest" href="/favicon/site.webmanifest">
   <!-- Custom WebSafe Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,9 +44,34 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/homepage.css">
   <link rel="canonical" href="https://gratitudetoken.world" />
+
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '763274341398334');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=763274341398334&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 
 <body>
+  <script type="text/javascript">
+    document.getElementById('invest').addEventListener('click', function() {
+      fbq('track', 'HomepageInvestClick', {
+        test_event_code: 'TEST60066'
+      });
+    }, false);
+  </script>
   <!-- << Shared HTML: Start >> -->
   <div id="BiiP_wrapper" style="display: none"></div>
   <form id="languageOptions">
@@ -63,7 +88,7 @@
   <!-- << Shared HTML: End >> -->
 
   <img id="youtubeVideo" src="svgs/youtube.svg" />
-  <div id="youtubeOverlay" class="none"><iframe id="youtubeIframe" src="https://www.youtube.com/embed/y-mpLMX-bDo?cc_load_policy=1" title="YouTube video player"
+  <div id="youtubeOverlay" class="none"><iframe id="youtubeIframe" src="https://www.youtube.com/embed/-SQv8VUzxtQ?cc_load_policy=1" title="YouTube video player"
       frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen></iframe></div>
 

@@ -1032,7 +1032,7 @@ Călătoriile lui Marco Polo în regiunea asiatică au inspirat ideea banilor de
     Este foarte greu să faci o tehnologie mai simplu de utilizat de atât.
 
 <h2 class="heading">Tokenomics (Politica Monetară)</h2>
-    Tokenul este deflaționist, deoarece a fost creat cu o rezervă maximă de <b>12.000.000.000.000</b> tokenuri GRAT cu 18 puncte zecimale după virgulă.
+    Tokenul este deflaționist, deoarece a fost creat cu o rezervă maximă de <b>12.000.000.000.000</b> tokenuri GRAT cu 8 cifre după virgulă.
     Nu există nicio abilitate încorporată de a bloca, rechema sau emite mai multe tokenuri.
     <b>11 miliarde</b> de tokenuri - vor fi distribuite printr-o campanie de airdrop de ani de zile, prin înscrieri Genesis și recomandări.
     <b>900 milioane</b> de tokenuri - sunt rezervate pentru dezvoltarea Genesis și SHIELD (<b>800 milioane</b> de tokenuri pentru inițiativele Genesis și <b>100 milioane</b> pentru SHIELD).
@@ -1219,7 +1219,7 @@ Călătoriile lui Marco Polo în regiunea asiatică au inspirat ideea banilor de
 
 <img class="fullWidth stickBottom" src="/white-paper/img/shield.jpg" alt="SHIELD logo" loading="lazy" />
         </page>
-        <page class="page">  <b>SHIELD 盾</b> - Reprezintă protecția prin înțelepciunea mulțimii, cu cât sunt mai mulți membri ai scutului, cu atât mai bine se pot lua decizii pentru orice misiune, orice cauză și, în general, pentru orice obiectiv important al unui proiect.
+        <page class="page">  <b>SHIELD 盾</b> - Vine de la <b>Sustainable Holistic Intelligent Enterprise & Leaderless Development</b>. Reprezintă protecția prin înțelepciunea mulțimii, cu cât sunt mai mulți membri ai scutului, cu atât mai bine se pot lua decizii pentru orice misiune, orice cauză și, în general, pentru orice obiectiv important al unui proiect.
     Pentru a înțelege de ce SHIELD este puternic, vă recomand una dintre cărțile mele preferate din toate timpurile: <b>Înțelepciunea mulțimilor</b> de James Surowiecki. SHIELD servește ca un puternic instrument de verificare și vot NPPoS (Non-Profit Proof of Stake) cu sursă deschisă. În prezent, este dezvoltat ca software web.
     <b>GRATITUDE SHIELD</b> este alimentat de Gratitude Token (GRAT).
     <a href="/">gratitudetoken.world</a> este protejat de SHIELD, o democrație puternică cu sursă deschisă care se bazează pe Adevăr și Valoare.

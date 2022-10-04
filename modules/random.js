@@ -12,5 +12,5 @@ var smallRandom = function(min, max) {
 }
 
 var bigRandom = function(min, max){
-return (Math.random() * (max - min) + min).toFixed(0);
+    return (Math.random() * (max - min) + min).toFixed(0);
 }

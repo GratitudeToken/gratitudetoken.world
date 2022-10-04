@@ -1,0 +1,42 @@
+header #nav {padding-right: 10px;}
+
+@media screen and (max-width: 1280px) {
+    .grid-1-2 div {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    header #nav {padding-right: 0;}
+}
+
+.color-blue, .color-blue:visited {
+    color: #418dff
+}
+
+h1 {text-transform: uppercase;}
+
+
+/* ===== Scrollbar CSS ===== */
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: transparent;
+    overflow-y: auto
+}
+
+body::-webkit-scrollbar {
+    width: 9px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #121212;
+    border-radius: 9px;
+    border: none;
+}
+body:hover::-webkit-scrollbar-thumb{background-color: #323232;}
+body::-webkit-scrollbar-thumb:hover {background-color: #696969;}

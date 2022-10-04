@@ -750,7 +750,7 @@ biip_message button:hover {background-color: #ffffff23; color: #ffffff;
 const msg1 = `
 <biip_message>
     <b style="display: none">You don't seem to have a BiiP link to ` + window.location.hostname + ` on this device.</b><br>
-    <span class="nextRowMobile">Select a user or create a new </span><button id="create_GRAT" class="grat-bg">user</button><span class="nextRowMobile"> to authenticate.</span><br><br>
+    <span class="nextRowMobile">Select a user or create a new </span><button id="create_GRAT" class="grat-bg">account</button><span class="nextRowMobile"> to authenticate.</span><br><br>
     <span class="c-F font10 mobile-hide"><b class="font10">[ TIPS ]</b> Use CTRL + B to toggle the BiiP user interface and Escape to close it.</span>
 </biip_message>
 `;
@@ -778,7 +778,7 @@ const users = [
 // let's split things into the 3 main categories, each with it's own template literal
 class allData {
     // this is the main template literal for the BiiP data of the selected user
-    biip_template = (data) => `
+    biip_template(data){ return `
     <button id="BiiP_burgers" title="Toggle BiiP UI Navigation"></button>
     <button id="BiiP_close_data" title="Press Escape key"></button>
     <div class="BiiP_nav rlv">
@@ -796,9 +796,9 @@ class allData {
     </div>
     <div class="BiiP_content lh14">
     </div>
-    `; // TO DO: copy account to clipboard on click/touch using something like navigator.clipboard.writeText(value) - also display a tooltip showing the message: "Copied to clipboard." - that fades away in 3 seconds
+    `}; // TO DO: copy account to clipboard on click/touch using something like navigator.clipboard.writeText(value) - also display a tooltip showing the message: "Copied to clipboard." - that fades away in 3 seconds
 
-    identity = (data) => `
+    identity(data) { return `
     <div class="pt15 column grid-span2rows c-B9">
         <h2 class="font23 c-F">Personal Information</h2><br>
         <div class="grid2by4 gap23 w100">
@@ -947,8 +947,8 @@ Working heroically on the technology of Gratitude - with the mission to decentra
             </div><br>
         </div>
     </div>
-    `;
-    relations = (data) => `
+    `};
+    relations(data) { return `
 <div class="pt15 grid-span2rows">
     <div class="grid2by1 gap23 w100 h100">
         <div>
@@ -1010,8 +1010,8 @@ Working heroically on the technology of Gratitude - with the mission to decentra
         <div class="textCenter">[ This content is specific to the Keeper you are currently on ]</div>
     </div>
 </div>
-`;
-    finance = (data) => `
+`};
+    finance(data) { return `
 <div class="pt15 grid-span2columns">
     <div class="grid2by1 gap23 w100 h100">
         <div class="w100">
@@ -1271,7 +1271,7 @@ Working heroically on the technology of Gratitude - with the mission to decentra
         </div>
     </div>
 </div>
-`;
+`};
 }
 
 let accountBlocked = 0;

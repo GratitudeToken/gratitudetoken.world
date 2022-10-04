@@ -396,21 +396,11 @@ body::-webkit-scrollbar-thumb:hover {
   }
 }
 
-#slides button svg,
-#slides .button svg {
-  fill: #ffffff;
-  max-width: 32px;
-  max-height: 32px;
-  vertical-align: middle;
-  margin: -6px 10px 0 0;
-}
-
 button,
-.button,
-.newsletter {
+.button {
   display: inline-block;
   border-radius: 10px;
-  padding: 15px 23px 12px 23px;
+  padding: 12px 23px 13px 23px;
   line-height: 1;
   color: #ffffff;
   font-size: 3vh;
@@ -426,8 +416,9 @@ button,
 #slides button,
 #slides .button {
   font-size: 23px;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
   text-transform: uppercase;
+  display: block;
 }
 
 #slides button:hover,
@@ -435,43 +426,9 @@ button,
   background: #db463e;
 }
 
-.newsletter {
-  font-size: 2vh;
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid #ffffff50;
-  cursor: text;
-  transition: all 0.3s;
-  min-width: 360px;
-  max-width: 420px;
-}
-
-.newsletter:hover,
-.newsletter:focus,
-.newsletter:active {
-  background: rgba(0, 0, 0, 0.3);
-  border-color: #f15d5550;
-  outline: 0 none;
-}
-
-.newsletter::placeholder {
-  color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  transition: color 0.6s;
-}
-
-.newsletter:hover::placeholder,
-.newsletter:focus::placeholder,
-.newsletter:active::placeholder {
-  color: transparent;
-}
-
 #slides .countdown,
-#slides .countdown+p
-
-/*,#slides .button */
+#slides .countdown+p,
+#slides .button
   {
   opacity: 0;
   animation-name: fadeIn;
@@ -711,26 +668,26 @@ button,
   align-items: center;
   justify-content: center;
   margin: 0 auto 9vmin auto;
-  border: 1px solid #ff807a32;
+  border: 1px solid #ffffff32;
   position: relative;
   transition: all 400ms;
   cursor: pointer;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-  color: #ff807a;
+  color: #ffffff;
   animation: border 2s linear infinite;
 }
 
 @keyframes border {
   0% {
-    border-color: #ff807a32;
+    border-color: #ffffff32;
   }
 
   50% {
-    border-color: #ff807a00;
+    border-color: #ffffff00;
   }
 
   100% {
-    border-color: #ff807a32;
+    border-color: #ffffff32;
   }
 }
 
@@ -741,13 +698,13 @@ button,
 }
 
 #cards .active {
-  background-color: #ff807a10;
+  background-color: #ffffff10;
   border-color: transparent;
   color: #ffffff;
 }
 
 #cards svg {
-  fill: #ff807a;
+  fill: #ffffff;
   width: 9vmin;
   height: 9vmin;
   pointer-events: none;
@@ -777,7 +734,7 @@ button,
   bottom: 0;
   padding: 0.5vmin 0;
   background: #00000050;
-  border: 1px solid #ff807a32;
+  border: 1px solid #ffffff32;
   overflow: hidden;
   text-shadow: none;
   transition: all 0.3s;
@@ -786,18 +743,18 @@ button,
 
 @keyframes textColor {
   0% {
-    border-color: #ff807a32;
-    color: #ff807a;
+    border-color: #ffffff32;
+    color: #ffffff;
   }
 
   50% {
-    border-color: #ff807a00;
-    color: #ff807a00;
+    border-color: #ffffff00;
+    color: #ffffff00;
   }
 
   100% {
-    border-color: #ff807a32;
-    color: #ff807a;
+    border-color: #ffffff32;
+    color: #ffffff;
   }
 }
 
@@ -810,7 +767,7 @@ button,
   bottom: 0;
   right: 97%;
   z-index: -1;
-  background: #db463e99;
+  background: #ffffff99;
 }
 
 .SHIELD,
@@ -943,7 +900,6 @@ button,
   mix-blend-mode: screen;
   opacity: 0.23;
   animation: opacity 1s infinite;
-  pointer-events: none;
 }
 
 #cubeRange:hover {
@@ -957,7 +913,6 @@ button,
   width: 9vmin;
   height: 3vmin;
   cursor: pointer;
-  pointer-events: all;
 }
 
 @keyframes opacity {
@@ -1014,7 +969,7 @@ button,
 .cube .countdown {
   height: auto;
   font-size: 4vmin;
-  margin: 2vmin 0 0 0;
+  margin: 0;
   font-family: "Dosis", Arial, sans-serif;
 }
 
@@ -1157,7 +1112,7 @@ button,
   z-index: 4;
   position: absolute;
   right: calc(-50% + 67px);
-  transform: translateX(-536px);
+  transform: translateX(-804px);
   transition: transform 0.4s ease;
   z-index: 6;
 }
@@ -1506,6 +1461,9 @@ button,
 /* MOBILE */
 
 @media screen and (max-width: 959px) {
+  #youtubeVideo {
+    top: 18vh
+  }
   .section p {
     font-size: 3vmin;
   }
@@ -1542,18 +1500,6 @@ button,
     padding-top: 3vmin;
     color: #fff5f5;
     font-size: 4vmin
-  }
-
-  #slides button svg,
-  #slides .button svg {
-    margin: -5px 6px 0 0;
-    width: 26px;
-    height: 26px;
-  }
-
-  #slides .newsletter {
-    width: 90vw;
-    margin-bottom: 2vh;
   }
 
   .countdown {
@@ -1606,6 +1552,7 @@ button,
   #section3 {
     height: 110%;
     padding-top: 20%;
+    background: url('/img/section3.jpg') no-repeat !important
   }
 
   .GENESIS {
@@ -1763,7 +1710,7 @@ button,
 
   .cube .front-pane p {
     line-height: 4.2vmin;
-    font-size: 2.8vmin
+    font-size: 2.4vmin
   }
 
   .cube .back-pane p {
@@ -1792,10 +1739,6 @@ button,
 }
 
 @media screen and (orientation: portrait) and (max-width: 800px) {
-  #slides .newsletter {
-    min-width: 300px;
-  }
-
   #slides .theTitle {
     letter-spacing: 2vmin;
   }
@@ -1830,7 +1773,7 @@ button,
 
   .milestones {
     right: calc(-50% + 33.5px);
-    transform: translateX(-268px)
+    transform: translateX(-402px);
   }
 
   .milestones>div,
@@ -1920,9 +1863,6 @@ button,
 }
 
 @media screen and (orientation: landscape) and (max-height: 500px) {
-  #slides .newsletter {
-    font-size: 14px;
-  }
 
   #slides .theTitle {
     font-size: 12vmin;
@@ -1972,11 +1912,6 @@ button,
     z-index: 5;
     margin-top: 1vh;
     padding: 12px 18px;
-  }
-
-  #slides .button svg {
-    width: 20px;
-    height: 20px;
   }
 
   #section2 {
@@ -2266,4 +2201,10 @@ button,
   60% {
     transform: translate3d(2px, 0, 0);
   }
+}
+
+@media screen and (min-width: 1281px) {
+
+.milestones {-webkit-box-reflect: below 0 -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 0.4)));}
+
 }

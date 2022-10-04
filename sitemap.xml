@@ -38,6 +38,13 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
+  <loc>https://gratitudetoken.world/presale</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://gratitudetoken.world/presale/index.html" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://gratitudetoken.world/presale/index.html" />
+  <lastmod>2022-08-25T20:30:00+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>https://gratitudetoken.world/tokenomics</loc>
   <xhtml:link rel="alternate" hreflang="en" href="https://gratitudetoken.world/tokenomics/index.html" />
   <xhtml:link rel="alternate" hreflang="ro" href="https://gratitudetoken.world/tokenomics/index.html" />

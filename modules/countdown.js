@@ -2,7 +2,7 @@ import {$, $$} from '/modules/selector.js';
 
 export let countdowns = function() {
   // Set the date we're counting down to
-  var IDODeadline = new Date("Sept 09, 2022 23:23:23").getTime();
+  var IDODeadline = new Date("Dec 02, 2022 23:59:00").getTime();
   
   // Update the count down every 1 second
   var countdown = function(name, date) {
@@ -31,7 +31,7 @@ export let countdowns = function() {
           countdownContainer[i].innerHTML = days + ":" + hours + ":" + minutes + ":" + seconds;
           // If the count down is finished, write some text
           if (distance < 0) {
-            countdownContainer[i].innerHTML = "Public Presale is Live";
+            countdownContainer[i].innerHTML = "Public Presale is now Closed";
           }
         }
 
